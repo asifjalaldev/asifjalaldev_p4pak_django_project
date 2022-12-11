@@ -1,0 +1,301 @@
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+<style>
+    .ProfileContainer{
+        margin-top:20px;
+        color: #1a202c;
+        text-align: left;
+        background-color: #e2e8f0;    
+    }
+    .main-body {
+        padding: 15px;
+    }
+    .card {
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+    }
+    
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+    }
+    
+    .card-body {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1rem;
+    }
+    
+    .gutters-sm {
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+    
+    .gutters-sm>.col, .gutters-sm>[class*=col-] {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+    .mb-3, .my-3 {
+        margin-bottom: 1rem!important;
+    }
+    
+    .bg-gray-300 {
+        background-color: #e2e8f0;
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+    .shadow-none {
+        box-shadow: none!important;
+    }
+    
+</style>
+<div class="ProfileContainer">
+    <div class="main-body">
+    
+          <!-- Breadcrumb -->
+       
+          <!-- /Breadcrumb -->
+    <style>
+      .animation{
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+  position: relative;
+      }
+      @keyframes example {
+        {% comment %} from {background-color: red;}
+        to {background-color: yellow;} {% endcomment %}
+        0%   {background-color:red; left:0px; top:0px;}
+        25%  {background-color:green; left:100px; top:0px;}
+        
+        100% {background-color:blue; left:0px; top:0px;}
+      }
+    </style>
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                   {%if userProfile.profilePhoto%}
+                    <img src="{{userProfile.profilePhoto.url}}" alt="{{userProfile.fullName}}" class="rounded-circle" width="220" height="190" style="object-fit:cover; ">
+                   {%else%}
+                   <img class="rounded-circle" width="220" height="190"  style=" object-fit: cover;" src="{% static '/images/agent/agent_image.png' %}" alt="Photo">
+                   {%endif%}
+                    <div class="mt-3">
+                      <h4>{{userProfile.fullName}}
+                      </h4>
+                      <p class="text-secondary mb-1">Real Estate Agent</p>
+                      <p class="text-muted font-size-sm">in {{userProfile.AgentCity_id.cityName}}</p>
+                     {%if request.user.is_staff == False %}
+                      <a class="btn btn-success animation"  href="{%url 'boostProperty'%}" style="font-size: 18px; padding-left: 16px; padding-right: 16px;">Become an Agent</a>
+                     {%endif%}
+                      {% comment %} <button class="btn btn-primary">Follow</button>
+                      <button class="btn btn-outline-primary">Message</button> {% endcomment %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+                    <span class="text-secondary">{{userProfile.website_url}}</span>
+                  </li>
+                  {%if userProfile.twitter_url != ""%}
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter mr-2 icon-inline text-info"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>Twitter</h6>
+                    <span class="text-secondary">{{userProfile.twitter_url}}</span>
+                  </li>
+                  {%endif%}
+                  {%if userProfile.instagram_url != ""%}
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram mr-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
+                    <span class="text-secondary">{{userProfile.instagram_url}}</span>
+                  </li>
+                  {%endif%}
+                  {%if userProfile.facebook_url != ""%}
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+                    <span class="text-secondary">{{userProfile.facebook_url}}</span>
+                  </li>
+                  {%endif%}
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h5 class="mb-0">Full Name</h5>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{userProfile.fullName}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h5 class="mb-0">Email</h5>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {% comment %} {{ form.email.value }} {% endcomment %}
+                      {{userProfile.user.email}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h5 class="mb-0">Phone</h5>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{userProfile.phone}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h5 class="mb-0">Bio</h5>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     {{ userProfile.bio }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h5 class="mb-0">Address</h5>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{userProfile.address}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      {% comment %} <a class="btn btn-success "  href="{%url 'editProfile' pk=userProfile.id %}" style="font-size: 18px; padding-left: 16px; padding-right: 16px;">Edit</a> {% endcomment %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </div>
+<!--agent properites start-->
+<h3 class="agent-properties-list-heading">Properties by
+  <span class="property-posted-by">{{userProfile.fullName}}</span>
+</h3>
+{%for properity in userProperties%}
+<article class="property-listing-simple property-listing-simple-1 listing-post-odd hentry clearfix">
+  <div class="property-thumbnail col-sm-4 zero-horizontal-padding">
+      <div class="gallery-slider-two flexslider">
+          <ul class="slides">
+              <li>
+                  <a title="Feature Image" data-rel="gallery-1" class="swipebox"
+                     href="images/property/property-1-660x600.jpg">
+                      <img class="img-responsive" src="{{properity.img.url}}" alt="Thumbnail">
+                  </a>
+              </li>
+              <li>
+                  <a title="Feature Image" data-rel="gallery-1" class="swipebox"
+                     href="images/property/property-7-660x600.jpg">
+                      <img class="img-responsive" src="{{properity.img2.url}}" alt="Thumbnail">
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <!-- .property-thumbnail -->
+  <div class="title-and-meta col-sm-8">
+      <header class="entry-header">
+          <h3 class="entry-title"><a href="property-single.html" rel="bookmark">{{properity.property_title}}</a></h3>
+          <div class="price-wrapper hidden-lg">
+              <span class="prefix-text">From</span><span class="price">{{properity.rental_price}}</span>
+              <span class="postfix-text"></span>
+          </div>
+          <p class="property-address visible-lg">
+              <i class="fa fa-map-marker"></i>{{properity.Location}}
+          </p>
+      </header>
+      <div class="property-meta entry-meta clearfix">
+          <div class="meta-item">
+              <i class="meta-item-icon icon-area">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                      <path class="meta-icon" fill="#0DBAE8" d="M46 16v-12c0-1.104-.896-2.001-2-2.001h-12c0-1.103-.896-1.999-2.002-1.999h-11.997c-1.105 0-2.001.896-2.001 1.999h-12c-1.104 0-2 .897-2 2.001v12c-1.104 0-2 .896-2 2v11.999c0 1.104.896 2 2 2v12.001c0 1.104.896 2 2 2h12c0 1.104.896 2 2.001 2h11.997c1.106 0 2.002-.896 2.002-2h12c1.104 0 2-.896 2-2v-12.001c1.104 0 2-.896 2-2v-11.999c0-1.104-.896-2-2-2zm-4.002 23.998c0 1.105-.895 2.002-2 2.002h-31.998c-1.105 0-2-.896-2-2.002v-31.999c0-1.104.895-1.999 2-1.999h31.998c1.105 0 2 .895 2 1.999v31.999zm-5.623-28.908c-.123-.051-.256-.078-.387-.078h-11.39c-.563 0-1.019.453-1.019 1.016 0 .562.456 1.017 1.019 1.017h8.935l-20.5 20.473v-8.926c0-.562-.455-1.017-1.018-1.017-.564 0-1.02.455-1.02 1.017v11.381c0 .562.455 1.016 1.02 1.016h11.39c.562 0 1.017-.454 1.017-1.016 0-.563-.455-1.019-1.017-1.019h-8.933l20.499-20.471v8.924c0 .563.452 1.018 1.018 1.018.561 0 1.016-.455 1.016-1.018v-11.379c0-.132-.025-.264-.076-.387-.107-.249-.304-.448-.554-.551z"/>
+                  </svg>
+              </i>
+              <div class="meta-inner-wrapper">
+                  <span class="meta-item-label">Area</span>
+                  <span class="meta-item-value">{{properity.land_area}}<sub class="meta-item-unit">{{properity.unit}}</sub></span>
+              </div>
+          </div>
+          <div class="meta-item">
+              <i class="meta-item-icon icon-bed">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                      <path class="meta-icon" fill="#0DBAE8" d="M21 48.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v31c0 1.104-.895 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v7.001c0 1.104-.895 1.999-2 1.999zm25 37.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v31c0 1.104-.896 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v7.001c0 1.104-.896 1.999-2 1.999z"/>
+                  </svg>
+              </i>
+              <div class="meta-inner-wrapper">
+                  <span class="meta-item-label">Bedrooms</span>
+                  <span class="meta-item-value">{{properity.bedroom}}</span>
+              </div>
+          </div>
+          <div class="meta-item">
+              <i class="meta-item-icon icon-bath">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                      <path class="meta-icon" fill="#0DBAE8" d="M37.003 48.016h-4v-3.002h-18v3.002h-4.001v-3.699c-4.66-1.65-8.002-6.083-8.002-11.305v-4.003h-3v-3h48.006v3h-3.001v4.003c0 5.223-3.343 9.655-8.002 11.305v3.699zm-30.002-24.008h-4.001v-17.005s0-7.003 8.001-7.003h1.004c.236 0 7.995.061 7.995 8.003l5.001 4h-14l5-4-.001.01.001-.009s.938-4.001-3.999-4.001h-1s-4 0-4 3v17.005000000000003h-.001z"/>
+                  </svg>
+              </i>
+              <div class="meta-inner-wrapper">
+                  <span class="meta-item-label">Bathrooms</span>
+                  <span class="meta-item-value">{{properity.bathroom}}</span>
+              </div>
+          </div>
+        
+       
+          <div class="meta-item">
+              <i class="meta-item-icon icon-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                      <path class="meta-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#0DBAE8" d="M47.199 24.176l-23.552-23.392c-.504-.502-1.174-.778-1.897-.778l-19.087.09c-.236.003-.469.038-.696.1l-.251.1-.166.069c-.319.152-.564.321-.766.529-.497.502-.781 1.196-.778 1.907l.092 19.124c.003.711.283 1.385.795 1.901l23.549 23.389c.221.218.482.393.779.523l.224.092c.26.092.519.145.78.155l.121.009h.012c.239-.003.476-.037.693-.098l.195-.076.2-.084c.315-.145.573-.319.791-.539l18.976-19.214c.507-.511.785-1.188.781-1.908-.003-.72-.287-1.394-.795-1.899zm-35.198-9.17c-1.657 0-3-1.345-3-3 0-1.657 1.343-3 3-3 1.656 0 2.999 1.343 2.999 3 0 1.656-1.343 3-2.999 3z"/>
+                  </svg>
+              </i>
+              <div class="meta-inner-wrapper">
+                  <span class="meta-item-label">Status</span>
+                  <span class="meta-item-value">{{properity.purpose}}</span>
+              </div>
+          </div>
+      </div>
+      <!-- .property-meta -->
+      <a class="btn-default visible-md-inline-block" href="property-single.html">Show Details<i class="fa fa-angle-right"></i></a>
+  </div>
+  <!-- .title-and-meta -->
+  <div class="property-description visible-lg">
+      <h4 class="title-heading">Description</h4>
+      <p>{{properity.desc}}</p>
+      <div class="price-wrapper">
+          <span class="prefix-text">Price</span><span class="price">{{properity.rental_price}}</span>
+      </div>
+      <a class="btn-default" href="property-single.html">Show Details<i class="fa fa-angle-right"></i></a>
+  </div>
+  <!-- .property-description -->
+</article>
+<br>
+{%endfor%}
+          <!--agent propertities ended-->
+        </div>
+    </div>
+
+
+
+    {%endblock%}

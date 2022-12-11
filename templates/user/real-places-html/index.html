@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+
+{%load static%}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>P4pak Properity For All</title>
+    <link rel="icon" href=" {% static '/images/ms_icon_logo.png'%}" sizes="32x32" />
+    <link rel="icon" href=" {% static '/images/ms_icon_logo.png'%}" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="{% static 'user-temp-real-place/asset/images/cropped-ms-icon-310x310-180x180.png'%}">
+  
+<!--custom carousel css link file-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href=" {% static 'assets/css/customCarouselStyle.css' %} "/>
+<!--for registered agent-->
+<link rel="stylesheet" href=" {% static 'assets/css/registeredCustomCarouselStyle.css' %} "/>
+{% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> {% endcomment %}
+
+
+<!--bootstrap 4 link for carousel-->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!--bootsrap 4 link ended-->
+{% comment %} 
+<!-- new carousel test-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {% endcomment %}
+
+	{% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>  {% endcomment %}
+
+
+<!--end carousel-->
+
+    <!-- Google font-->
+    <link href=" {% static 'user-temp-real-place/asset/js/flexslider/flexslider.css' %} " rel="stylesheet">
+    <!-- Include the lightslider stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/js/lightslider/css/lightslider.min.css' %}" rel="stylesheet">
+    <!-- Include the owl-carousel stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/js/owl.carousel/owl.carousel.css' %} " rel="stylesheet">
+    <!-- Include the swipebox stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/js/swipebox/css/swipebox.min.css' %} " rel="stylesheet">
+    <!-- Include the select2 stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/js/select2/select2.css' %} " rel="stylesheet">
+    <!-- Include the font-awesome stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/css/font-awesome.min.css' %} " rel="stylesheet">
+    <!-- Include the select2 stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/css/animate.css' %} " rel="stylesheet">
+    <link href=" {% static 'user-temp-real-place/asset/js/magnific-popup/magnific-popup.css' %} " rel="stylesheet">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href=" {% static 'user-temp-real-place/asset/css/main.css' %} "/>
+    <!-- Default Theme stylesheet -->
+    <link rel="stylesheet" href=" {% static 'user-temp-real-place/asset/css/theme.css' %} "/>
+
+
+  {% comment %} <!--bootstrap links-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--end of bootstrap--> {% endcomment %}
+</head>
+<body>
+    <!--new carousel test-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+    {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" /> {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css">
+    <!--new carousel test-->
+
+
+    {%if messages%}
+    {%for message in messages%}
+    <div class="alert alert-success container " role="alert">
+    
+      {{message}}
+    
+      </div>
+      {% endfor %}
+      {% endif %}
+      <div class="page-loader">
+        
+       <div class= "text-center" style="padding-top:130px;">
+           <img class=""  src="{% static 'images/logo.png' %}" alt="Page Loader"/>
+       </div>
+        <img class="page-loader-img" src="{% static 'user-temp-real-place/asset/images/slider-loader.gif'%}" alt="Page Loader"/>
+       
+    </div>
+<div id="mobile-header" style=" background-color: green;" class="mobile-header hidden-md hidden-lg">
+    <div class="contact-number" >
+        <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+            <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#0080BC" d="M1.027 4.846l-.018.37.01.181c.068 9.565 7.003 17.42 15.919 18.48.338.075 1.253.129 1.614.129.359 0 .744-.021 1.313-.318.328-.172.448-.688.308-1.016-.227-.528-.531-.578-.87-.625-.435-.061-.905 0-1.521 0-1.859 0-3.486-.835-4.386-1.192l.002.003-.076-.034c-.387-.156-.696-.304-.924-.422-3.702-1.765-6.653-4.943-8.186-8.896-.258-.568-1.13-2.731-1.152-6.009h.003l-.022-.223c0-1.727 1.343-3.128 2.999-3.128 1.658 0 3.001 1.401 3.001 3.128 0 1.56-1.096 2.841-2.526 3.079l.001.014c-.513.046-.914.488-.914 1.033 0 .281.251 1.028.251 1.028.015 0 .131.188.119.188-.194-.539 1.669 5.201 7.021 7.849-.001.011.636.309.636.309.47.3 1.083.145 1.37-.347.09-.151.133-.32.14-.488.356-1.306 1.495-2.271 2.863-2.271 1.652 0 2.991 1.398 2.991 3.12 0 .346-.066.671-.164.981-.3.594-.412 1.21.077 1.699.769.769 1.442-.144 1.442-.144.408-.755.643-1.625.643-2.554 0-2.884-2.24-5.222-5.007-5.222-1.947 0-3.633 1.164-4.46 2.858-2.536-1.342-4.556-3.59-5.656-6.344 1.848-.769 3.154-2.647 3.154-4.849 0-2.884-2.241-5.222-5.007-5.222-2.41 0-4.422 1.777-4.897 4.144l-.091.711z"/>
+        </svg>
+    
+        <span class="desktop-version hidden-xs" ></span>
+     
+        <a class="mobile-version visible-xs-inline-block" href="tel://{{c.officeContact}}" title="Make a Call" style="background-color: #00C41C;">{{c.officeContact}}</a>
+      
+    </div>
+    <!-- .contact-number -->
+    <div class="mobile-header-nav">
+        <ul class="user-nav">
+
+        {%if request.user.is_authenticated%}
+          
+            <li><a href="{%url 'myListing'%}"><i class="fa fa-th-list"></i>My Properties</a></li>
+            <li><a class="submit-property-link" href="{%url 'submitListing'%}"><i class="fa fa-plus-circle"></i>Add Properity</a></li>
+            <li><a class="" href="{%url 'viewListings'%} "><i class="fa fa-list"></i>All Properties</a></li>
+            <li><a class="" href="{%url 'viewAgents'%} "><i class="fa fa-user"></i>All Agents</a></li>
+            <li><a href="{%url 'userLogout'%}"><i class="fa fa-th-list"></i>Logout</a></li>
+
+            {%else%}
+
+            <li><a class="submit-property-link" href="{%url 'submitListing'%}"><i class="fa fa-plus-circle"></i>Add Properity</a></li>
+            {% comment %} <li><a class="login-register-link" href="#login-modal" data-toggle="modal"><i class="fa fa-sign-in"></i>Sign up</a></li> {% endcomment %}
+                   <li><a class="" href="{%url 'viewListings'%} "><i class="fa fa-list"></i>All Properties</a></li>
+            <li><a class="" href="{%url 'viewAgents'%} "><i class="fa fa-user"></i>All Agents</a></li>
+            <li><a href="{%url 'nonStaffUserLogin'%}"><i class="fa fa-th-list"></i>Login</a></li>
+            {%endif%}
+        </ul>
+        <!-- .user-nav -->
+        <div class="social-networks header-social-nav">
+            {% comment %} <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a> {% endcomment %}
+        </div>
+        <!-- .social-networks -->
+    </div>
+</div>
+
+<header class="site-header header header-variation-one">
+    <div class="header-container">
+        <div class="header-menu-wrapper hidden-xs hidden-sm clearfix">
+            <a class="button-menu-reveal" id='manueClick' href="#"></a>
+           {% comment %} <a class="button-menu-close" href="#"><i class="fa fa-times"></i></a>  {% endcomment %}
+            <nav id="site-main-nav" class="site-main-nav" >
+                <ul class="main-menu clearfix">
+                    <li class="current-menu-item">
+                        <a href="{%url 'viewHome'%}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'viewListings' %}" >Properties</a>
+                       
+                    </li>
+                    <li><a href="{%url 'contact'%}" >Contact</a></li>
+                    {%if request.user.is_authenticated%}
+                    <li><a href="{%url 'viewProfile'%}" >Profile</a></li>
+{% comment %} 
+                   {%else%}
+                    <li style="text-align: right;"><a href="{%url 'register'%}" >Register Now</a></li> {% endcomment %}
+                    {%endif%}
+                </ul>
+            </nav>
+        </div>
+        <div class="row zero-horizontal-margin">
+            <div class="left-column">
+                <div id="site-logo" class="site-logo" style="background-color: #f2eeee; ">
+                    <div class="logo-inner-wrapper">
+                        <a href="{% url 'viewHome' %}"><img src="{% static 'images/logo.png' %}" alt="Logo"/></a>
+                    </div>
+                </div>
+            </div>
+            <!-- .left-column -->
+            <div class="right-column">
+                <div class="header-top hidden-xs hidden-sm clearfix">
+                    <div class="contact-number" style=" background-color: gray;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#0080BC" d="M1.027 4.846l-.018.37.01.181c.068 9.565 7.003 17.42 15.919 18.48.338.075 1.253.129 1.614.129.359 0 .744-.021 1.313-.318.328-.172.448-.688.308-1.016-.227-.528-.531-.578-.87-.625-.435-.061-.905 0-1.521 0-1.859 0-3.486-.835-4.386-1.192l.002.003-.076-.034c-.387-.156-.696-.304-.924-.422-3.702-1.765-6.653-4.943-8.186-8.896-.258-.568-1.13-2.731-1.152-6.009h.003l-.022-.223c0-1.727 1.343-3.128 2.999-3.128 1.658 0 3.001 1.401 3.001 3.128 0 1.56-1.096 2.841-2.526 3.079l.001.014c-.513.046-.914.488-.914 1.033 0 .281.251 1.028.251 1.028.015 0 .131.188.119.188-.194-.539 1.669 5.201 7.021 7.849-.001.011.636.309.636.309.47.3 1.083.145 1.37-.347.09-.151.133-.32.14-.488.356-1.306 1.495-2.271 2.863-2.271 1.652 0 2.991 1.398 2.991 3.12 0 .346-.066.671-.164.981-.3.594-.412 1.21.077 1.699.769.769 1.442-.144 1.442-.144.408-.755.643-1.625.643-2.554 0-2.884-2.24-5.222-5.007-5.222-1.947 0-3.633 1.164-4.46 2.858-2.536-1.342-4.556-3.59-5.656-6.344 1.848-.769 3.154-2.647 3.154-4.849 0-2.884-2.241-5.222-5.007-5.222-2.41 0-4.422 1.777-4.897 4.144l-.091.711z"/>
+                        </svg>
+                        {%for c in contact%}
+                        <span class="desktop-version hidden-xs" >{{c.officeContact}}</span>
+                        <a class="mobile-version visible-xs-inline-block" href="tel:{{c.officeContact}}" title="Make a Call">{{c.officeContact}}</a>
+                        {%endfor%}
+                    </div>
+                    <!-- .contact-number -->
+                    <ul class="user-nav">
+                        <li><a class="submit-property-link" href="{%url 'viewAgents'%} "><i class="fa fa-user"></i>View Agents</a></li>
+                       <li><a class="submit-property-link" href="{%url 'viewListings'%} "><i class="fa fa-list"></i>View Listings</a></li>
+                        {%if request.user.is_authenticated %}
+                        <li><a href="{%url 'userLogout'%}"><i class="fa fa-sign-out"></i>Logout</a></li>
+                        {% comment %} <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li> {% endcomment %}
+                        <li><a href="{%url 'myListing'%}"><i class="fa fa-th-list"></i>My Properties</a></li>
+                        <li><a class="submit-property-link"  href="{%url 'submitListing'%} " style="background-color: green; color:white"><i class="fa fa-plus-circle" ></i>Submit Your Properity</a></li>
+                      
+                        {%else%}
+                       
+                      
+                        {% comment %} <li><a class="login-register-link" href="#login-modal" data-toggle="modal"><i class="fa fa-sign-in"></i>Login / Sign up</a></li> {% endcomment %}
+                        <li><a href="{%url 'nonStaffUserLogin'%}"><i class="fa fa-login"></i>Login</a></li>
+                        <li><a class="submit-property-link"  href="{%url 'register'%} " style="background-color: green; color:white"><i class="fa fa-plus-circle" ></i>Register Now</a></li>
+                        {% endif %}
+                    
+                        </ul>
+                    <!-- .user-nav -->
+                    <div class="social-networks header-social-nav">
+                       {% comment %} <a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a> {% endcomment %}
+                    </div>
+                    <!-- .social-networks -->
+                </div>
+                <!-- .header-top -->
+                <div class="header-bottom clearfix">
+                    <div class="advance-search header-advance-search">
+                        
+                        <!-- search form-->
+                        <form class="advance-search-form" action="{%url 'searchListing'%}" method="get">
+                            <div class="inline-fields clearfix">
+                                <div class="option-bar property-location">
+                                    <select name="city" id="city" class="search-select">
+                                        {%for city in agentCity%}
+                                        <option value="{{city.id}}">{{city.cityName}}</option>
+                                      {%endfor%}
+                                    </select>
+                                </div>
+                                <div class="option-bar property-type">
+                                    <select name="type" id="select-property-type" class="search-select">
+                                        <option value="" selected="selected">Property Type</option>
+                                        <option value="Plat">Plot</option>
+                                        <option value="House">House</option>
+                                        <option value="Land">Land</option>
+                                    </select>
+                                </div>
+                                <div class="option-bar property-status">
+                                    <select name="status" id="select-status" class="search-select">
+                                        <option value="" selected="selected">Property Status</option>
+                                        <option value="Rent"> For Rent</option>
+                                        <option value="Sale"> For Sale</option>
+                                    </select>
+                                </div>
+                                <div class="option-bar form-control-buttons">
+                                    <a class="hidden-fields-reveal-btn" href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-plus-container" width="20" height="20" viewBox="0 0 20 20">
+                                            <g fill="#C15302">
+                                                <path class="icon icon-minus" d="M10.035 20.035c-2.092 0-4.313-.563-5.688-1.938-.406-.406-.688-.73-.688-1.141 0-.424.266-.859.891-.797.257.025.585.172.75.347 1.327.969 2.967 1.529 4.735 1.529 4.437 0 8.001-3.564 8.001-8.001 0-4.436-3.564-8-8.001-8-4.436 0-8 3.564-8 8 0 1.226.337 2.306.829 3.344 0 .001.277.495.313.938.04.491-.234.703-.656.875-.377.153-.859-.109-1.083-.452-.87-1.335-1.403-2.999-1.403-4.704 0-5.414 4.586-10 10-10 5.413 0 10 4.586 10 10 0 5.413-4.587 10-10 10zm-12-14v8-8zm16 5h-8c-.553 0-1-.447-1-1 0-.553.447-1 1-1h8c.553 0 1 .447 1 1 0 .553-.447 1-1 1z"/>
+                                                <path class="icon icon-plus" d="M10.226 15.035c-.553 0-1-.447-1-1v-8c0-.553.447-1 1-1 .553 0 1 .447 1 1v8c0 .553-.447 1-1 1z"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <input type="submit" value="Search" class="form-submit-btn" >
+                                </div>
+                            </div>
+                            <!-- .inline-fields -->
+                            <div class="hidden-fields clearfix">
+                                <div class="option-bar property-bedrooms">
+                                    <select name="bedrooms" id="select-bedrooms" class="search-select">
+                                        <option value="" selected="selected"> Beds</option>
+                                        <option value="">All</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                <div class="option-bar property-bathrooms">
+                                    <select name="bathrooms" id="select-bathrooms" class="search-select">
+                                        <option value="" selected="selected"> Baths </option>
+                                        <option value="">All</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                                <div class="option-bar property-min-price">
+                                    {% comment %} <select name="minPrice" id="select-min-price" class="search-select">
+                                        <option value="" selected="selected">Min Price</option>
+                                        <option value="1000.00">Rs 1,000</option>
+                                        <option value="5000.00">Rs 5,000</option>
+                                        <option value="10000">Rs 10,000</option>
+                                        <option value="50000">Rs 50,000</option>
+                                        <option value="100000">Rs 100,000</option>
+                                        <option value="200000">Rs 200,000</option>
+                                        <option value="300000">Rs 300,000</option>
+                                        <option value="400000">Rs 400,000</option>
+                                        <option value="500000">Rs 500,000</option>
+                                        <option value="600000">Rs 600,000</option>
+                                        <option value="700000">Rs 700,000</option>
+                                        <option value="800000">Rs 800,000</option>
+                                        <option value="900000">Rs 900,000</option>
+                                        <option value="1000000">Rs 1,000,000</option>
+                                        <option value="1500000">Rs 1,500,000</option>
+                                        <option value="2000000">Rs 2,000,000</option>
+                                        <option value="2500000">Rs 2,500,000</option>
+                                        <option value="5000000">Rs 5,000,000</option>
+                                    </select> {% endcomment %}
+                                </div>
+                                <div class="option-bar property-max-price">
+                                    <select name="maxPrice" id="select-max-price" class="search-select">
+                                        <option value="" selected="selected">Max Price</option>
+                                        <option value="5000">Rs 5,000</option>
+                                        <option value="10000">Rs 10,000</option>
+                                        <option value="50000">Rs 50,000</option>
+                                        <option value="100000">Rs 100,000</option>
+                                        <option value="200000">Rs 200,000</option>
+                                        <option value="300000">Rs 300,000</option>
+                                        <option value="400000">Rs 400,000</option>
+                                        <option value="500000">Rs 500,000</option>
+                                        <option value="600000">Rs 600,000</option>
+                                        <option value="700000">Rs 700,000</option>
+                                        <option value="800000">Rs 800,000</option>
+                                        <option value="900000">Rs 900,000</option>
+                                        <option value="1000000">Rs 1,000,000</option>
+                                        <option value="1500000">Rs ,500,000</option>
+                                        <option value="2000000">Rs ,000,000</option>
+                                        <option value="2500000">Rs ,500,000</option>
+                                        <option value="5000000">Rs 5,000,000</option>
+                                        <option value="10000000">Rs 10,000,000</option>
+                                    </select>
+                                </div>
+                                <div class="option-bar property-keyword">
+                                    <input type="text" name="keyword" id="keyword-txt" value="" placeholder="Keyword">
+                                </div>
+                                <div class="option-bar property-id">
+                                    <input type="text" name="property-id" id="property-id-txt" value="" placeholder="Property ID">
+                                </div>
+                                <div class="option-bar property-min-area">
+                                    <input type="text" name="min-area" id="min-area" pattern="[0-9]+" value="" placeholder="Min Area (sq ft)" title="Please only provide digits!">
+                                </div>
+                                <div class="option-bar property-max-area">
+                                    <input type="text" name="max-area" id="max-area" pattern="[0-9]+" value="" placeholder="Max Area (sq ft)" title="Please only provide digits!">
+                                </div>
+                            </div>
+                            <!-- .hidden-fields -->
+                        </form>
+                        <!-- .advance-search-form -->
+                    </div>
+                    <!-- .advance-search -->
+                </div>
+                <!-- .header-bottom -->
+            </div>
+            <!-- .right-column -->
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</header>
+<!-- .site-header -->
+{% comment %} 
+<div class="homepage-slider slider-variation-one flexslider">
+    
+    <ul class="slides">
+        {%for list in page_obj%}
+        <li>
+            <img src="{{homeImage.homeSliderImage.url}} " alt="{{homeImage.homeSliderImage}}">
+          </li>
+        {%endfor%}
+     
+    </ul>
+  
+</div> {% endcomment %}
+<!--new slider-->
+<style>
+    .slider-variation-three .slide-inner-container{
+        width:600px;
+        margin-top: 300px;
+        padding 20px 12px;
+    }
+</style>
+<div class="homepage-slider slider-variation-three flexslider slider-loader">
+    <ul class="slides">
+        {%for list in header%}
+        <li>
+            <div class="slide-overlay hidden-xs container">
+                {%if list.headerTextHeading != None %}
+                <div class="slide-inner-container" style="background-color:black;  opacity: 0.6;">
+                    <div class="slide-header" >
+
+                        
+                        <h3 class="slide-entry-title entry-title" style="">
+                            <a href="#" rel="bookmark" style="color:white; font-size:30px;"><b>{{list.headerTextHeading}}</b></a>
+                        </h3>
+                       
+                        {% comment %} <div class="price-and-status">
+                            <span class="price">$540,000</span>
+                            <a href="#">
+                                <span class="property-status-tag">For Sale</span>
+                            </a>
+                        </div> {% endcomment %}
+                    </div>
+                    {% comment %} <p class="hidden-sm">{{list.headerTextDescription}}</p> {% endcomment %}
+                    {% comment %} <a class="btn-default hidden-sm hidden-md" href="property-single.html">More Details<i class="fa fa-angle-right"></i></a> {% endcomment %}
+                </div> {%endif%}
+                
+            </div>
+        
+                <img src="{{list.homeSliderImage.url}} " alt="{{list.homeSliderImage}}">
+           
+        </li>
+        {%endfor%}
+        {% comment %} <li>
+            <div class="slide-overlay hidden-xs container">
+                <div class="slide-inner-container">
+                    <div class="slide-header">
+                        <h3 class="slide-entry-title entry-title">
+                            <a href="property-single.html" rel="bookmark">Why Joing p4pak</a>
+                        </h3>
+                        <div class="price-and-status">
+                            <span class="price">$4,750 Monthly</span>
+                            <a href="#">
+                                <span class="property-status-tag">For Rent</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <p class="hidden-sm"></p>
+                    <a class="btn-default hidden-sm hidden-md" href="property-single.html">More Details<i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <a href="property-single.html">
+                <img src="images/slider/slide-6.jpg" alt="Villa on Grand Avenue">
+            </a>
+        </li>
+        <li>
+            <div class="slide-overlay hidden-xs container">
+                <div class="slide-inner-container">
+                    <div class="slide-header">
+                        <h3 class="slide-entry-title entry-title">
+                            <a href="property-single.html" rel="bookmark">Home in Coral Gables</a>
+                        </h3>
+                        <div class="price-and-status">
+                            <span class="price">$850,000</span>
+                            <a href="#">
+                                <span class="property-status-tag">For Sale</span>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="hidden-sm">Elegant retreat in a quiet Coral Gables setting. This home provides wonderful entertaining spaces with…</p>
+                    <a class="btn-default hidden-sm hidden-md" href="property-single.html">More Details<i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <a href="property-single.html">
+                <img src="images/slider/slide-1.jpg" alt="Home in Coral Gables">
+            </a>
+        </li> {% endcomment %}
+    </ul>
+</div>
+<!--new slider ended-->
+
+<style>
+    .agentName span{
+        height: 28px;
+        width: 140px;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        margin: 0 5px 0 5px;
+        text-align: center;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+       
+    }
+ 
+        .hidden{
+            visibility:hidden;
+         }
+
+         .registerAgentBtn{
+            margin-left:70px; 
+            margin-bottom:22px; 
+            background-color:green; 
+            color:white;
+             border-radius:16%; 
+             padding: 4px 16px 4px 16px;
+
+         }
+         .linkBtn{
+            font-size: 18px; 
+            padding-left: 16px; 
+            padding-right: 16px;
+         }
+  
+</style>
+
+
+<!--end register Agent-->
+
+     <!--swiper2-->
+<div id="mobileAgent">
+    <section id="SectionCustom">
+        <div class=" swiper mySwiper2 containerCustom" >
+            <div class="swiper-wrapper contentCustom" >
+    
+                <!--start loop here-->
+                {%for agent in agentsPaginator_obj %}
+                
+                
+                <div class="swiper-slide cardCustom" >
+                    <div class="card-contentCustom">
+                        <div class="imageCustom">
+                            
+                        {% if agent.img.url is not None %}
+                           <a href="{%url 'agentDetails'  pk=agent.id %}"><img src="{{agent.img.url}}" alt=""></a>
+    
+                            {% else%}
+                            <a href="{%url 'agentDetails'  pk=agent.id %}"><img class="img-circle" src="{% static '/images/agent/agent_image.png' %}" alt="{{agent.name}}"></a>
+                         {%endif%}
+    
+                        </div>
+    
+                        <div class="media-iconsCustom">
+                            {% if agent.facebook_url %}
+                            <a href="agent.facebook_url"><i class="fa-brands fa-facebook"></i></a>
+    
+                            <a href="agent.email_address"><i class="fa-brands fa-email"></i></a>
+                            {%endif%}
+                        </div>
+                        <div class="name-professionCustom">
+                            <span class="nameCustom" style="text-overflow:ellipsis;">{{agent.name}}</span>
+                            <span class="professionCustom">{{agent.AgentCity_id.cityName}} </span>
+    
+                        </div>
+                        <div class="ratingCustom">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                       
+                        </div>
+                       
+                        <div class="buttonCustom">
+                          
+                            <a class ="fcc-btn" href="tel:{{agent.phoneNo}}" >Contact</a>
+    
+                        
+                        </div>
+                    </div>
+                </div>
+             
+                {%endfor%}
+    
+                
+    
+    
+            </div>
+       
+        </div>
+    
+        <div class="swiper-button-next" id="mobile_next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+</div>
+
+    <!--agent directory -->
+<div class="container">
+    <div class="row">
+        <div class ="col-md-12">
+            <h1  class="text-center">
+                <h2 class="section-title text-center">Platinum Agents</h2>
+             </h1>
+            </div>
+        </div>
+    </div>
+<!--platinum agent custom code-->
+
+ <div class="desktopAgents">
+<section id="SectionCustom" >
+    <div class=" swiper mySwiper containerCustom">
+        <div class="swiper-wrapper contentCustom" >
+
+            <!--start loop here--> 
+            {%for agent in agentsPaginator_obj %}
+
+          
+            <div class="swiper-slide cardCustom" >
+                <div class="card-contentCustom container">
+                    <div class="imageCustom">
+                        
+                    {% if agent.img.url is not None %}
+                     <img src="{{agent.img.url}}" alt="">
+
+                        {% else%}
+                       <img class="img-circle" src="{% static '/images/agent/agent_image.png' %}" alt="{{agent.name}}">
+                     {%endif%}
+
+                    </div>
+
+                    <div class="media-iconsCustom">
+                        {% if agent.facebook_url %}
+                        <a href="agent.facebook_url"><i class="fa-brands fa-facebook"></i></a>
+
+                        <a href="agent.email_address"><i class="fa-brands fa-email"></i></a>
+                        {%endif%}
+                    </div>
+                    <div class="name-professionCustom">
+                        <div class="agentName">
+                        <span class="nameCustom" style="text-overflow:ellipsis;">{{agent.name}}</span>
+                        </div>
+                        <span class="professionCustom">{{agent.AgentCity_id.cityName}} </span>
+
+                    </div>
+                    <div class="ratingCustom">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                   
+                    </div><br><br><br>
+                    <label id="contactlbl1" class="" style=" font-size:14px; border-radius:10px; padding:6px 16px 6px 6px; margin-top:12px; background-color:green; color:white;"><i  class="fa fa-phone"></i> &nbsp;   {{agent.phoneNo}} </label>
+                    <div class="buttonCustom">
+                        <label class="hidden" id="agentNo">{{agent.phoneNo}}</label>
+                  
+                    </div>
+                </div>
+            </div>
+        
+            {%endfor%}
+
+           
+
+          
+        </div>
+   
+    </div>
+
+    <div class="swiper-button-next" id="desk_next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</section>
+</div>
+
+     <!--swiper2-->
+<div id="mobileAgent">
+    <section id="SectionCustom">
+        <div class=" swiper mySwiper2 containerCustom" >
+            <div class="swiper-wrapper contentCustom" >
+    
+                <!--start loop here-->
+                {%for agent in agentsPaginator_obj %}
+                
+                
+                <div class="swiper-slide cardCustom" >
+                    <div class="card-contentCustom">
+                        <div class="imageCustom">
+                            
+                        {% if agent.img.url is not None %}
+                           <a href="{%url 'agentDetails'  pk=agent.id %}"><img src="{{agent.img.url}}" alt=""></a>
+    
+                            {% else%}
+                            <a href="{%url 'agentDetails'  pk=agent.id %}"><img class="img-circle" src="{% static '/images/agent/agent_image.png' %}" alt="{{agent.name}}"></a>
+                         {%endif%}
+    
+                        </div>
+    
+                        <div class="media-iconsCustom">
+                            {% if agent.facebook_url %}
+                            <a href="agent.facebook_url"><i class="fa-brands fa-facebook"></i></a>
+    
+                            <a href="agent.email_address"><i class="fa-brands fa-email"></i></a>
+                            {%endif%}
+                        </div>
+                        <div class="name-professionCustom">
+                            <span class="nameCustom" style="text-overflow:ellipsis;">{{agent.name}}</span>
+                            <span class="professionCustom">{{agent.AgentCity_id.cityName}} </span>
+    
+                        </div>
+                        <div class="ratingCustom">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                       
+                        </div>
+                       
+                        <div class="buttonCustom">
+                          
+                            <a class ="fcc-btn" href="tel:{{agent.phoneNo}}" >Contact</a>
+    
+                        
+                        </div>
+                    </div>
+                </div>
+             
+                {%endfor%}
+    
+                
+    
+    
+            </div>
+       
+        </div>
+    
+        <div class="swiper-button-next" id="mobile_next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+</div>
+
+
+<style>
+    .fcc-btn {
+        background-color: #199319;
+        color: white;
+        padding: 15px 25px;
+        text-decoration: none;
+        border-radius:30px;
+      }
+      .fcc-btn:hover {
+        background-color: white;
+        color: #199319;
+        padding: 15px 25px;
+        text-decoration: none;
+        border-radius:30px;
+       
+      }
+    
+    @media only screen and (max-width: 1200px) {
+        #imagC{
+          width:360px;
+          
+        }
+        .textHelp{
+            width:350;
+        }
+        #imagbanner{
+            height:"605px";
+             width:"100%";
+             
+        }
+       .desktopAgents{
+            display:none;
+        }
+        .swiper-button-prev {
+            margin-left: 50px;
+            transform: scale(0.6);
+          }
+          .swiper-button-next {
+            margin-right: 50px;
+            transform: scale(0.6);
+          }
+      } 
+      @media only screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 2000px){
+    #mobileAgent{
+        display:none;
+    }
+    .swiper-button-prev {
+        margin-left: 100px;
+        transform: scale(0.6);
+      }
+      .swiper-button-next {
+        margin-right: 50px;
+        transform: scale(0.6);
+        margin-right: 100px;
+      }
+      .left{
+        margin-right: 990px;
+      }
+      .right{
+    
+      }
+      #features{
+      
+        position: relative;
+        }
+        .features-content{
+        margin: 0 auto;
+        }
+  }
+    
+
+    
+     
+</style>
+        <!--swiper 2 ended -->
+
+
+<!--Carousel123 start-->
+
+<style>
+    @media (min-width: 768px) {
+
+        /* show 3 items */
+        .carousel-inner .active,
+        .carousel-inner .active + .carousel-item,
+        .carousel-inner .active + .carousel-item + .carousel-item,
+        .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item  {
+            display: block;
+        }
+        
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item,
+        .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+            transition: none;
+        }
+        
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+          position: relative;
+          transform: translate3d(0, 0, 0);
+        }
+        
+        .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+            position: absolute;
+            top: 0;
+            right: -25%;
+            z-index: -1;
+            display: block;
+            visibility: visible;
+        }
+        
+        /* left or forward direction */
+        .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+        .carousel-item-next.carousel-item-left + .carousel-item,
+        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item,
+        .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+            position: relative;
+            transform: translate3d(-100%, 0, 0);
+            visibility: visible;
+        }
+        
+        /* farthest right hidden item must be abso position for animations */
+        .carousel-inner .carousel-item-prev.carousel-item-right {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            display: block;
+            visibility: visible;
+        }
+        
+        /* right or prev direction */
+        .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+        .carousel-item-prev.carousel-item-right + .carousel-item,
+        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item,
+        .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+            position: relative;
+            transform: translate3d(100%, 0, 0);
+            visibility: visible;
+            display: block;
+            visibility: visible;
+        }
+    
+        }
+    
+     /* Bootstrap Lightbox using Modal */
+    
+    #profile-grid { overflow: auto; white-space: normal; } 
+    #profile-grid .profile { padding-bottom: 40px; }
+    #profile-grid .panel { padding: 0 }
+    #profile-grid .panel-body { padding: 15px }
+    #profile-grid .profile-name { font-weight: bold; }
+    #profile-grid .thumbnail {margin-bottom:6px;}
+    #profile-grid .panel-thumbnail { overflow: hidden; }
+    #profile-grid .img-rounded { border-radius: 4px 4px 0 0;}
+   .registerAgentName{
+   color: green;
+    font-size: 19px;
+    text-align:center;
+    }
+    .registerAgentCity{
+
+    font-size: 15px;
+    text-align:center;
+    }
+    .registerAgentDetailBtn{
+    text-align:center;
+    }
+    .registerAgentDetailBtn a{
+    text-align:center;
+    color: white;
+    background-color: green;
+    border-radius: 4px;
+    padding: 6px 6px 6px 6px;
+    }
+</style>
+<!--new owl carousel-->
+
+<!--test code for register aagent-->
+    <!--agent directory -->
+
+
+  
+    <div class="container">
+        <div class="row" style="text-align:center;">
+            <div class ="col-md-12" >
+                <h2 class="section-title text-center" style="margin-top:42px;">Registered Agent</h2>
+            </div>
+        </div>
+    </div>
+    <!--platinum agent custom code-->
+<div class="container-fluid" style="background-color: #e5fbdd; padding: 17px 29px 19px 29px;">
+    <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+            {%for agent in PlatinumAgentList%}
+            {%if forloop.counter == 1 %}
+            <div class="carousel-item col-md-3  active" >
+                {%else%}
+            <div class="carousel-item col-md-3 " >
+                {%endif%}
+                <div class="panel panel-default">
+                   <div class="panel-thumbnail">
+                     <a href="{%url 'RegisteredAgentDetails'  pk=agent.id %}" title="image 3" class="thumb">
+                        {% if agent.profile.profilePhoto %}
+                       <img class="img-fluid mx-auto d-block img-circle" style="width: 215px; height:204px; object-fit: cover;"  src="{{agent.profile.profilePhoto.url}}" alt="slide 2">
+                         {% else%}
+                       <img class="img-fluid mx-auto d-block  img-circle" style="width: 215px; height:204px; object-fit: cover;"  src="{% static '/images/agent/agent_image.png' %}" alt="{{agent.username}}">
+                      {%endif%}
+                       </a>
+                      
+                   
+                        <div class="registerAgentName"><b>{{agent.profile.fullName}}</b></div>
+                         <div class="registerAgentCity"><b >{{agent.profile.AgentCity_id.cityName}}</b></div>
+                        <div class="registerAgentDetailBtn"> <a class="read-more" href="{%url 'RegisteredAgentDetails' pk=agent.id %}">View Details <i class="fa fa-arrow-circle-o-right"></i></a>
+                         </div> 
+                   </div>
+                 </div>
+             </div>
+            {%endfor%}
+
+        </div>
+        <div >
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev" style="display: block; width: 2px; height: 2px;">
+            <span class="carousel-control-prev-icon" style=" background-color: red; margin-left: -33px; margin-top: 122px;" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+    </div>
+    <div>
+        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next" style="display: block; width: 12px; height: 12px;">
+            <span class="carousel-control-next-icon" style="margin-left: 144px; margin-left: 14px; background-color:red; margin-top: 122px; " aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </div>
+</div>
+
+
+
+<!--new 2 carousel-->
+
+<!-- new owl carousel ended-->
+
+<script>
+  
+    $('#carouselExample').on('slide.bs.carousel', function (e) {
+
+  
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 4;
+    var totalItems = $('.carousel-item').length;
+    
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i=0; i<it; i++) {
+            // append slides to end
+            if (e.direction=="left") {
+                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+            }
+            else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+            }
+        }
+    }
+    });
+
+
+  $('#carouselExample').carousel({ 
+                interval: 2000
+        });
+
+
+  $(document).ready(function() {
+    /* show lightbox when clicking a thumbnail */
+    $('a.thumb').click(function(event){
+      event.preventDefault();
+      var content = $('.modal-body');
+      content.empty();
+        var title = $(this).attr("title");
+        $('.modal-title').html(title);        
+        content.html($(this).html());
+        $(".modal-profile").modal({show:true});
+    });
+
+  });
+</script>
+
+<!--carousel123 end-->
+
+<br><br>
+        <section class=" " style="background-color:#F5F2F2; ">
+            <br><br>
+            <div class="container text-center" style="background-color: #F5F2F2; ">
+                <header class="submit-property-header" >
+                    <h3 class="sub-title " style="color: #5C5959; font-family:Helvetica;">Welcome</h3>
+                    <h2 class="title" style="color: #5C5959;">Be a part of p4pak.com</h2>
+                    <p style="color: black;">
+                        We have a big customer base to market your property to right buyers. So get started by following these simple steps.
+                    </p>
+                </header>
+                <div class="row submit-property-placeholders">
+                    <div class="col-sm-4 submit-property-placeholder" >
+                        <div class="image-wrapper">
+                            <a href="#" ><img  src="{%static 'images/icon-1.svg'%}" alt="Icon"/></a>
+                        </div>
+                        <h3 class="submit-property-title">Register</h3>
+                       
+                    </div>
+                    <div class="col-sm-4 submit-property-placeholder">
+                        <div class="image-wrapper">
+                            <a href="#"><img src="{% static 'images/icon-2.svg'%}" alt="Icon"/></a>
+                        </div>
+                        <h3 class="submit-property-title">Fill Up Property Details</h3>
+                     
+                    </div>
+                    <div class="col-sm-4 submit-property-placeholder">
+                        <div class="image-wrapper">
+                            <a href="#"><img src="{%static 'images/icon-3.svg'%}" alt="Icon"/></a>
+                        </div>
+                        <h3 class="submit-property-title">You are Done!</h3>
+                       
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a class="btn-large btn-green" href="{%url 'submitListing'%}">Submit Your Property</a>
+                </div>
+            </div>
+            <!-- .container -->
+            <br><br>
+        </section>
+
+
+<!--how can we help you section-->
+<!--  -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="color: green; " class="text-center">
+                <b class="textHelp"> How Can We Help You <br>
+               With Your Properity Business</b>
+           </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+  <div class="card-deck" id="features" >
+   
+    <div class="card " class="features-content">
+        <div class=" text-center">
+        <img id="imagC" src={% static 'images/new image2.jpg' %} alt="Thumbnail" width="520" height="260" > 
+        </div>
+        <div class="card-body">
+        <h3 class="card-title features-content" style="color:orange; text-align: center;"> Properity Listing</h3>
+        <p class="textHelp card-text features-content" style="font-size:18px; text-align: center;">You can upload your unlimited properties here for free. Just click on "Register Now"</p> </div>
+      <div class="card-footer" style="text-align: center;">
+      <div class="">
+            <a class="btn-large btn-green" style="margin-bottom: 20px; text-align: center;" href="{%url 'register'%}">Register Now</a>
+       </div>
+      </div>
+    </div>
+    <div class="card">
+        <div class=" text-center">
+            <img id="imagC" src={% static 'images/handShak1.jpg' %} alt="Thumbnail" width="520" height="260" > 
+        </div>
+      <div class="card-body">
+        <h3 class="card-title" style="color:orange; text-align: center;"> Agents Directory
+        </h3>
+        <p class="card-text textHelp" style="font-size:18px; text-align: center;" class="text-center">You can find Real Estate Agents or Property Dealers in all over the Pakistan. Just Click Find Agent Now.
+        </p>
+      </div>
+      <div class="card-footer" style="text-align: center;">
+        <a class="btn-large btn-green" href="{%url 'viewAgents'%}" > Find Agent Now</a>
+            </div>
+    </div>
+
+  </div><!--dock-->
+</div><!--col-->
+</div><!--row-->
+
+</div><!--.container-->
+
+
+
+
+
+<h2 class="section-title text-center" style="margin-top:42px;">Featured Properties</h2>
+
+<div id="content-wrapper" class="site-content-wrapper">
+    <div id="content" class="site-content layout-boxed">
+        <main id="main" class="site-main">
+
+
+
+
+<!--New Code for featured properity with banner integrations-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+        {%for list in page_obj%}
+            <article class="property-listing-simple property-listing-simple-2 hentry clearfix fade-in-left animated">
+                <div class="property-thumbnail col-sm-5 zero-horizontal-padding">
+                    <div class="price-wrapper" style="background-color: red; width:30%; height:40px;">
+                        <span class="price" style="font-size:17px">Featured </span>
+                    </div>
+                    <div class="gallery-slider-two flexslider">
+                        <ul class="slides">
+                            <li>
+                                 <a title="Feature Image" data-rel="gallery-1" class="swipebox"
+                                     href="images/property/property-1-660x600.jpg">
+                                     <a href="{%url 'viewSingleList'  pk=list.id %}"><img class="img-responsive" style=" object-fit: cover; "  src="{{list.img.url}}" alt="{{list.img}}"  ></a>
+                                     <!-- old style attribute in img tage-->
+                                     {% comment %} <img class="img-responsive" src="images/property/property-1-660x600.jpg" alt="Thumbnail"> {% endcomment %}
+                                 </a>
+                            </li>
+                            <li>
+                                 <a title="Feature Image" data-rel="gallery-1" class="swipebox"
+                                     href="images/property/property-7-660x600.jpg">
+                                     <a href="{%url 'viewSingleList'  pk=list.id %}"><img class="img-responsive" style=" object-fit: cover; "  src="{{list.img2.url}}" alt="{{list.img2}}"  ></a>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              <!-- .property-thumbnail -->
+              <style>
+                .meta-icon{
+                    fill:#FF9F52
+                }
+                .flex-control-paging li a:hover, .flex-control-paging li a.flex-active{
+                    background-color:#FF9F52
+                }
+           
+                  
+            
+            
+              </style>
+              <div class="title-and-meta col-sm-7">
+                  <header class="entry-header">
+                      <h3 class="entry-title"><a href="{%url 'viewSingleList'  pk=list.id %}" rel="bookmark">{{list.property_title}}</a></h3>
+                  </header>
+                  <div class="property-meta entry-meta clearfix">
+                      <div class="meta-item">
+                          <i class="meta-item-icon icon-area">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                                  <path class="meta-icon" fill="#FF9F52" d="M46 16v-12c0-1.104-.896-2.001-2-2.001h-12c0-1.103-.896-1.999-2.002-1.999h-11.997c-1.105 0-2.001.896-2.001 1.999h-12c-1.104 0-2 .897-2 2.001v12c-1.104 0-2 .896-2 2v11.999c0 1.104.896 2 2 2v12.001c0 1.104.896 2 2 2h12c0 1.104.896 2 2.001 2h11.997c1.106 0 2.002-.896 2.002-2h12c1.104 0 2-.896 2-2v-12.001c1.104 0 2-.896 2-2v-11.999c0-1.104-.896-2-2-2zm-4.002 23.998c0 1.105-.895 2.002-2 2.002h-31.998c-1.105 0-2-.896-2-2.002v-31.999c0-1.104.895-1.999 2-1.999h31.998c1.105 0 2 .895 2 1.999v31.999zm-5.623-28.908c-.123-.051-.256-.078-.387-.078h-11.39c-.563 0-1.019.453-1.019 1.016 0 .562.456 1.017 1.019 1.017h8.935l-20.5 20.473v-8.926c0-.562-.455-1.017-1.018-1.017-.564 0-1.02.455-1.02 1.017v11.381c0 .562.455 1.016 1.02 1.016h11.39c.562 0 1.017-.454 1.017-1.016 0-.563-.455-1.019-1.017-1.019h-8.933l20.499-20.471v8.924c0 .563.452 1.018 1.018 1.018.561 0 1.016-.455 1.016-1.018v-11.379c0-.132-.025-.264-.076-.387-.107-.249-.304-.448-.554-.551z"/>
+                              </svg>
+                          </i>
+                          <div class="meta-inner-wrapper">
+                              <span class="meta-item-label">Area</span>
+                              <span class="meta-item-value">{{list.land_area}}<sub class="meta-item-unit">{{list.unit}}</sub></span>
+                          </div>
+                      </div>
+                      <div class="meta-item">
+                          <i class="meta-item-icon icon-bed">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                                  <path class="meta-icon" fill="#0DBAE8" d="M21 48.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v31c0 1.104-.895 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.106 0 2 .896 2 2v7.001c0 1.104-.895 1.999-2 1.999zm25 37.001h-19c-1.104 0-2-.896-2-2v-31c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v31c0 1.104-.896 2-2 2zm0-37.001h-19c-1.104 0-2-.895-2-1.999v-7.001c0-1.104.896-2 2-2h19c1.104 0 2 .896 2 2v7.001c0 1.104-.896 1.999-2 1.999z"/>
+                    </svg>
+                          </i>
+                          <div class="meta-inner-wrapper">
+                              <span class="meta-item-label">Bedrooms</span>
+                              <span class="meta-item-value">{{list.bedroom}}</span>
+                </div>
+                      </div>
+                      <div class="meta-item">
+                          <i class="meta-item-icon icon-bath">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                                  <path class="meta-icon" fill="#0DBAE8" d="M37.003 48.016h-4v-3.002h-18v3.002h-4.001v-3.699c-4.66-1.65-8.002-6.083-8.002-11.305v-4.003h-3v-3h48.006v3h-3.001v4.003c0 5.223-3.343 9.655-8.002 11.305v3.699zm-30.002-24.008h-4.001v-17.005s0-7.003 8.001-7.003h1.004c.236 0 7.995.061 7.995 8.003l5.001 4h-14l5-4-.001.01.001-.009s.938-4.001-3.999-4.001h-1s-4 0-4 3v17.005000000000003h-.001z"/>
+                    </svg>
+                          </i>
+                <div class="meta-inner-wrapper">
+                              <span class="meta-item-label">Bathrooms</span>
+                              <span class="meta-item-value">{{list.bathroom}}</span>
+                          </div>
+                      </div>
+                      <div class="meta-item">
+                          <i class="meta-item-icon icon-garage">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                        <path class="meta-icon" fill="#0DBAE8" d="M44 0h-40c-2.21 0-4 1.791-4 4v44h6v-40c0-1.106.895-2 2-2h31.999c1.106 0 2.001.895 2.001 2v40h6v-44c0-2.209-1.792-4-4-4zm-36 8.001h31.999v2.999h-31.999zm0 18h6v5.999h-2c-1.104 0-2 .896-2 2.001v6.001c0 1.103.896 1.998 2 1.998h2v2.001c0 1.104.896 2 2 2s2-.896 2-2v-2.001h11.999v2.001c0 1.104.896 2 2.001 2 1.104 0 2-.896 2-2v-2.001h2c1.104 0 2-.895 2-1.998v-6.001c0-1.105-.896-2.001-2-2.001h-2v-5.999h5.999v-3h-31.999v3zm8 12.999c-1.104 0-2-.895-2-1.999s.896-2 2-2 2 .896 2 2-.896 1.999-2 1.999zm10.5 2h-5c-.276 0-.5-.225-.5-.5 0-.273.224-.498.5-.498h5c.275 0 .5.225.5.498 0 .275-.225.5-.5.5zm1-2h-7c-.275 0-.5-.225-.5-.5s.226-.499.5-.499h7c.275 0 .5.224.5.499s-.225.5-.5.5zm-6.5-2.499c0-.276.224-.5.5-.5h5c.275 0 .5.224.5.5s-.225.5-.5.5h-5c-.277 0-.5-.224-.5-.5zm11 2.499c-1.104 0-2.001-.895-2.001-1.999s.896-2 2.001-2c1.104 0 2 .896 2 2s-.896 1.999-2 1.999zm0-12.999v5.999h-16v-5.999h16zm-24-13.001h31.999v3h-31.999zm0 5h31.999v3h-31.999z"/>
+                    </svg>
+                          </i>
+                          <div class="meta-inner-wrapper">
+                              <span class="meta-item-label">Garages</span>
+                              <span class="meta-item-value">2</span>
+                </div>
+                      </div>
+                      <div class="meta-item">
+                          <i class="meta-item-icon icon-ptype">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                        <path class="meta-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#0DBAE8" d="M24 48.001c-13.255 0-24-10.745-24-24.001 0-13.254 10.745-24 24-24s24 10.746 24 24c0 13.256-10.745 24.001-24 24.001zm10-27.001l-10-8-10 8v11c0 1.03.888 2.001 2 2.001h3.999v-9h8.001v9h4c1.111 0 2-.839 2-2.001v-11z"/>
+                              </svg>
+                          </i>
+                          <div class="meta-inner-wrapper">
+                            <span class="meta-item-label">Type</span>
+                            <span class="meta-item-value">{{list.property_type}}</span>
+              </div>
+                      </div>
+                      <div class="meta-item">
+                          <i class="meta-item-icon icon-tag">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="meta-icon-container" width="30" height="30" viewBox="0 0 48 48">
+                                  <path class="meta-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#0DBAE8" d="M47.199 24.176l-23.552-23.392c-.504-.502-1.174-.778-1.897-.778l-19.087.09c-.236.003-.469.038-.696.1l-.251.1-.166.069c-.319.152-.564.321-.766.529-.497.502-.781 1.196-.778 1.907l.092 19.124c.003.711.283 1.385.795 1.901l23.549 23.389c.221.218.482.393.779.523l.224.092c.26.092.519.145.78.155l.121.009h.012c.239-.003.476-.037.693-.098l.195-.076.2-.084c.315-.145.573-.319.791-.539l18.976-19.214c.507-.511.785-1.188.781-1.908-.003-.72-.287-1.394-.795-1.899zm-35.198-9.17c-1.657 0-3-1.345-3-3 0-1.657 1.343-3 3-3 1.656 0 2.999 1.343 2.999 3 0 1.656-1.343 3-2.999 3z"/>
+                              </svg>
+                          </i>
+                          <div class="meta-inner-wrapper">
+                              <span class="meta-item-label">Status</span>
+                              <span class="meta-item-value">For {{list.purpose}}</span>
+                </div>
+                      </div>
+                  </div>
+               <!-- .property-meta -->
+              </div>
+              <!-- .title-and-meta -->
+            </article>
+        {% endfor %}
+
+        <div class="container" style="background-color:; font-color:white" >
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+       
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+            
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div> 
+        </div>
+            {% comment %} <div class="pagination">
+            
+              <a class="prev page-numbers" href="#"><i class="fa fa-angle-left"></i></a>
+               <span class="page-numbers current">1</span>
+        
+               <a class="next page-numbers" href="#"><i class="fa fa-angle-right"></i></a>
+            </div> {% endcomment %}
+        </div>
+
+        {% comment %} <div class="col-md-3 site-sidebar-content" id="banner1">
+            <aside class="sidebar">
+                <section class="widget widget-featured-properties" >
+                    <ul class="widget-featured-properties">
+                        <li>
+                            
+                            <figure class="featured-properties-thumbnail" >
+                                <img id="imagbanner"  height="505px" width="700px" style="  "  src="{{sideBanner.sideBanner.url}}"   >
+                            </figure>
+                        </li>
+                </section>
+            </aside>
+            <!-- .sidebar -->
+        </div> {% endcomment %}
+    </div>
+</div><!--end of Featured Properity container-->
+
+
+
+
+
+
+
+
+            <div class="container">
+                <div class="row row-odd zero-horizontal-margin">
+                  
+                  
+                </div>
+                <!-- .row-odd -->
+              
+                <!--experiment code-->
+                
+            </div>
+
+           
+
+
+<!--banner -->
+
+
+     
+<style>
+   
+</style>
+<br><br><br>
+<!-- Popular location section -->
+
+
+ <section>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="text-center">
+               <h2>Popular Locations</h2>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+
+                <section class="widget clearfix widget_lc_taxonomy" >
+                    <h4 class="">Popular Cities to Buy Properties </h4>
+                    <ul>
+                        <li>
+                            
+                            <ul class="">
+                                {%for key, value in TopcitiesForPropertyDict.items %}
+                                {%if forloop.counter < 11%}
+                                 
+                                <li><a href="{% url 'popularCityPropertyForSale' cityName=key %}">Houses for Sale in {{key}}</a> ({{value}}) </li>
+
+                                {%endif%}
+                                {%endfor%}
+                            </ul>
+
+                        </li>
+                    </ul>
+                </section> 
+              
+
+            </div>
+      
+            <div class="col-sm-6 col-md-4">
+                <section class="widget clearfix widget_recent_entries" >
+                   <h4 class="">Popular Cities to Rent Properties</h4>
+                   <ul>
+                      {%for key, value in TopCityForRent.items %}
+                     {%if forloop.counter < 11%}
+
+                     <li><a href="{% url 'popularCityPropertyForRent' cityName=key %}"> Houses to Rent in {{key}} </a>({{value}})</li>
+
+                        {%endif%}
+                         {%endfor%}
+                    </ul>
+                </section>
+            </div>
+            <div class="col-sm-6 col-md-4">
+
+              <section class="widget clearfix widget_recent_entries" >
+                 <h4 class="">Popular Cities of Agent Directory</h4>
+                <ul>
+                      {%for key, value in TopAgentDict.items %}
+                      {%if forloop.counter < 11%}
+
+                      <li><a href="{% url 'popularCityAgents' cityName=key %}"> Agents in {{key}} </a>({{value}})</li>
+
+                      {%endif%}
+                     {%endfor%}
+                </ul>
+              </section>
+   
+    
+            </div>
+
+
+      
+         <hr style="margin-top:-10px;">
+        <div class="row ">
+            <div class="col-md-6 ">
+               
+            </div>
+            <div class="col-md-6 text-center">
+               
+            </div>
+        </div>
+    
+        <div class="row ">
+            <div class="col-md-6">
+             
+           
+             <br>
+           
+            </div>
+            <div class="col-md-6" style="padding-left:100px; font-size:15px;">
+            
+              
+              <br>
+       
+            </div>
+        </div>
+    </div>
+ 
+</section>  
+
+<!-- Popular location section ended-->
+
+
+
+
+<!--featured agents shown here-->
+
+<!--show all featured agents-->
+
+
+
+{% comment %} <section class="partners">
+    <div class="container" style="color:#56203D;">
+    <div class="agent-post-listing" >
+                     
+    <div class="row zero-horizontal-margin" style="">
+    <h3 class="title">
+        <h1 style="color: green; " class="text-center">
+            <b> Our Feature Agents <br>
+            </b>
+         </h1>
+      
+    </h3>
+ {%for agent in agentsPaginator_obj %}
+ <div  class="col-sm-6 col-md-3 zero-horizontal-padding " style="color:#56203D;">
+    {% if forloop.counter|divisibleby:2 %}
+    <article class="agent-listing-post agent-post-even clearfix hentry" style=" inset; border-style: groove;  border-color: #FFEEE3;">
+         {%else %}
+        
+    <article class="agent-listing-post agent-post-odd clearfix hentry" style=" inset; border-style: groove;  border-color: #FFEEE3;">
+     
+ {%endif%}
+ <div class="agent-content-wrapper agent-common-styles" style="color:#56203D;">
+            
+    {% if agent.isFeatured is True %}
+    <div style=" text-align: right; margin-right: -24px; margin-top:-18px"><span class="property-status-tag" style="padding: 2, 2,2 2; background-color:green; color:white;">Featured</span> </div>
+    
+    {% elif agent.status == "Verified" %}
+    <div style=" text-align: right; margin-right: -24px; margin-top:-18px"><span class="property-status-tag" style="padding: 2, 2,2 2; background-color:yellow; color:black;">Verified</span> </div>
+    
+    {%endif%}
+    {%if agent.batch == "Gold" %}
+    <div><a href="#" style="margin-bottom: 125px;"><img class="img-circle" style="width:36px; height:45px; " src="{% static '/images/agent/gold.png' %}" alt="{{agent.batch}}"></a>
+    </div>
+    {% endif %}
+ 
+    <div class="inner-wrapper clearfix ">
+      
+        <figure class="agent-image">
+            {% if agent.img.url is not None %}
+            <a href="#"><img class="img-circle" src="{{agent.img.url}}" alt="{{agent.name}}"></a>
+           
+             {% else%}
+                <a href="#"><img class="img-circle" src="{% static '/images/agent/agent_image.png' %}" alt="{{agent.name}}"></a>
+             {%endif%}
+          
+               </figure>
+
+       
+            <h5 class="agent-name"  style="color:#483A58;"><a href="#"><h3>{{agent.name}} </h5>
+            
+             <hr>
+           <!--  social-profiles   -->
+
+              
+        </div>
+        
+        <ul class="agent-contacts-list" >
+         
+            <li class="mobile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+                    <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#56638A" d="M17.001 23.999h-10.001c-1.657 0-3-1.343-3-2.999v-18c0-1.656 1.343-3 3-3h10.001c1.655 0 2.999 1.344 2.999 3v18c0 1.656-1.344 2.999-2.999 2.999zm.999-19.999c0-1.105-.896-2-2-2h-8c-1.105 0-2 .896-2 2v16c0 1.104.895 2 2 2h8c1.104 0 2-.896 2-2v-16zm-4 1h-4c-.552 0-1-.447-1-1 0-.552.448-1 1-1h4c.553 0 1.001.448 1.001 1 0 .553-.448 1-1.001 1zm-2 13c1.105 0 2 .672 2 1.499 0 .829-.895 1.501-2 1.501s-2-.672-2-1.501c0-.827.895-1.499 2-1.499z"/>
+                </svg>
+                <span class="fa fa-phone" style="color: #483A58">     Mobile:  </span><a href='tel:{{agent.phoneNo}}' style="color: #483A58; font-size:18px">{{agent.phoneNo}}</a>
+            </li>
+           
+            <li class="map-pin">
+                <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="40" height="40" viewBox="0 0 24 24">
+                    <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#483A58" d="M12 23.999c.048 0-8-11.582-8-15.999 0-4.419 3.581-8 8-8s8 3.581 8 8c0 4.417-8.084 15.999-8 15.999zm0-19.001c-1.658 0-3.002 1.345-3.002 3.002 0 1.657 1.344 3.002 3.002 3.002 1.657 0 3.002-1.345 3.002-3.002 0-1.658-1.345-3.002-3.002-3.002z"/>
+                </svg>
+                <span style="color:#483A58;">Address:</span > <span style="color:#56638A;">{{agent.address}}</span>
+            </li>
+        </ul>
+        <h6 class="agent-name" style="color:#483A58;"><a href="#" >City</a>
+        
+            <span style="color: #483A58; font-size: 18px;">{{agent.AgentCity_id.cityName}}</span></h6>
+            <a class="btn-default " style="text-decorations: none; font-family: impact; background-color: white; color:green; " href="tel:{{agent.phoneNo}}" > <span class="fa fa-phone">  Contact</span></a>
+                                   
+          </div>
+
+    <div  class="agent-social-profiles text-center" >
+        <div style="background-color: yellow;">
+            <h4>Social Links</h4>
+
+        </div>
+       
+        {% if agent.facebook_url %}
+                         
+             <a  style="font-size:34px;" class="facebook" target="_blank" href="{{agent.facebook_url}}"><i class="fa fa-facebook"></i></a></center>
+                           
+         {%endif%}
+         {% if agent.email_address %}
+             <a  style="font-size:34px;" class="gplus" target="_blank" href="{{agent.email_address}}"><i  class="fa fa-envelope"></i></a>
+         {%endif%}  
+         {%if agent.website_address  %}
+         <a  style="font-size:34px;" class="facebook" target="_blank" href="{{agent.website_address}}"><i class="fa fa-globe"></i></a></center>
+             
+         {% endif %}
+
+     </div> 
+    </article>
+      
+        <!-- .agent-listing-post -->
+     </div>
+    {%endfor%}
+
+
+ <!--pagination code from docs-->
+
+
+
+
+    </div>
+    <!-- .row-->
+    </div>
+
+
+</section>
+
+
+<div class="container-fluied" style="background-color:green; font-color:white">
+    <div class="pagination">
+        <span class="step-links">
+            {% if agentsPaginator_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ agentsPaginator_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ agentsPaginator_obj.number }} of {{ agentsPaginator_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if agentsPaginator_obj.has_next %}
+                <a href="?page={{ agentsPaginator_obj.next_page_number }}">next</a>
+                <a href="?page={{ agentsPaginator_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>  {% endcomment %}
+
+<div>
+<!-- .property-listing-page -->
+
+
+            {% comment %}
+            
+            <section class="partners">
+                <div class="container">
+                    <div class="row zero-horizontal-margin">
+                        <div class="col-xs-12">
+                            <h3 class="title">
+                                We are Working as <span>Partners</span> with Following Prestigious Companies.
+                            </h3>
+                            <ul class="list-grid-layout list-unstyled">
+                                <li><a href="#"><img class="img-responsive" src="images/partner/videohive.png" alt="Thumbnail"></a></li>
+                                <li><a href="#"><img class="img-responsive" src="images/partner/codecanyon.png" alt="Thumbnail"></a></li>
+                                <li><a href="#"><img class="img-responsive" src="images/partner/audiojungle.png" alt="Thumbnail"></a></li>
+                                <li><a href="#"><img class="img-responsive" src="images/partner/themeforest.png" alt="Thumbnail"></a></li>
+                                <li><a href="#"><img class="img-responsive" src="images/partner/photodune.png" alt="Thumbnail"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- .container -->
+            </section>
+            
+             {% endcomment %}
+            <!-- .partners -->
+{% comment %}           
+            <section class="home-recent-posts">
+                <div class="container">
+                    <header class="section-header">
+                        <h3 class="section-title">Latest News</h3>
+                        <div class="recent-posts-carousel-nav carousel-nav">
+                            <a class="carousel-prev-item prev">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="arrow-container" width="32" height="52" viewBox="0 0 32 52">
+                                    <g class="left-arrow" fill="#fff">
+                                        <path opacity=".5" d="M31.611 7.646l-6.787-7.057-24.435 25.406 6.787 7.057z"/>
+                                        <path d="M.389 26.006l6.787-7.058 24.435 25.406-6.787 7.057z"/>
+                                    </g>
+                                </svg>
+                            </a>
+                            <a class="carousel-next-item next">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="arrow-container" width="32" height="52" viewBox="0 0 32 52">
+                                    <g class="right-arrow" fill-rule="evenodd" clip-rule="evenodd" fill="#fff">
+                                        <path d="M.388 44.354l6.788 7.057 24.436-25.406-6.788-7.057-24.436 25.406z"/>
+                                        <path opacity=".5" d="M31.612 25.994l-6.788 7.058-24.436-25.406 6.788-7.057 24.436 25.405z"/>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </header>
+                    <div class="recent-posts-carousel">
+                        <div class="owl-carousel">
+                            <div class="recent-posts-item">
+                                <article class="clearfix format-gallery hentry">
+                                    <div class="post-thumbnail-container">
+                                        <div class="gallery-slider-two flexslider">
+                                            <ul class="slides">
+                                                <li>
+                                                    <a title="Feature Image" data-rel="gallery-1" class="swipebox" href="images/news/news-post-7-660x600.jpg">
+                                                        <img  src="images/news/news-post-7-660x600.jpg" alt="Thumbnail">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a title="Feature Image" data-rel="gallery-1" class="swipebox" href="images/news/news-post-5-660x600.jpg">
+                                                        <img  src="images/news/news-post-5-660x600.jpg" alt="Thumbnail">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a title="Feature Image" data-rel="gallery-1" class="swipebox" href="images/news/news-post-4-660x600.jpg">
+                                                        <img  src="images/news/news-post-4-660x600.jpg" alt="Thumbnail">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="post-content-wrapper">
+                                        <div class="post-header entry-header">
+                                            <h4 class="post-title entry-title"> <a href="#">Gallery Post Format</a></h4>
+                                            <div class="post-meta entry-meta">
+                                                <span class="author-link">By <a rel="author" href="#">John Doe</a></span>
+                                            </div>
+                                        </div>
+                                        <p>Competently harness enterprise vortals via revolutionary e-tailers. Monotonectally recaptiualize one-to-one relationships whereas ubiquitous…</p>
+                                        <a class="read-more" href="#">More <i class="fa fa-arrow-circle-o-right"></i></a>
+                                    </div>
+                                    <!-- .post-content-wrapper -->
+                                </article>
+                            </div>
+                            <div class="recent-posts-item">
+                                <article class="clearfix format-image hentry">
+                                    <div class="post-thumbnail-container">
+                                        <figure class="post-thumbnail">
+                                            <a href="#"><img src="images/news/news-post-3-660x600.jpg" class="img-responsive wp-post-image" alt="News Post"></a>
+                                        </figure>
+                                    </div>
+                                    <!-- .post-thumbnail-container -->
+                                    <div class="post-content-wrapper">
+                                        <div class="post-header entry-header">
+                                            <h4 class="post-title entry-title"><a href="#">Image Post Format</a></h4>
+                                            <div class="post-meta entry-meta">
+                                                <span class="author-link">By <a rel="author" href="#">John Doe</a></span>
+                                            </div>
+                                        </div>
+                                        <p>Enthusiastically disintermediate progressive innovation before high-payoff metrics. Intrinsicly generate sticky services without B2B…</p>
+                                        <a class="read-more" href="#">More <i class="fa fa-arrow-circle-o-right"></i></a>
+                                    </div>
+                                    <!-- .post-content-wrapper -->
+                                </article>
+                            </div>
+                            <div class="recent-posts-item">
+                                <article class="clearfix format-video hentry">
+                                    <div class="post-thumbnail-container">
+                                        <div class="embed-responsive embed-responsive-4by3">
+                                            <iframe src="https://player.vimeo.com/video/89541885?title=0&amp;byline=0&amp;portrait=0"></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="post-content-wrapper">
+                                        <div class="post-header entry-header">
+                                            <h4 class="post-title entry-title"><a href="#">Video Post Format</a></h4>
+                                            <div class="post-meta entry-meta">
+                                                <span class="author-link">By <a rel="author" href="#">John Doe</a></span>
+                                            </div>
+                                        </div>
+                                        <p>Uniquely customize future-proof niche markets via worldwide users. Proactively negotiate user-centric schemas after…</p>
+                                        <a class="read-more" href="#">More <i class="fa fa-arrow-circle-o-right"></i></a>
+                                    </div>
+                                    <!-- .post-content-wrapper -->
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .container -->
+            </section>
+           {% endcomment %}
+
+            <!-- .home-recent-posts -->
+        </main>
+        <!-- .site-main -->
+        <style>
+        hr{  
+            border: none; 
+            border-bottom: 1px solid gainsboro;  
+           }
+        </style>
+
+        <script type="text/javascript">
+            function active_course() {
+              if ($(".active_course").length) {
+                $(".active_course").owlCarousel({
+                  loop: true,
+                  margin: 20,
+                  items: 3,
+                  nav: true,
+                  autoplay: 2500,
+                  smartSpeed: 1500,
+                  dots: false,
+                  responsiveClass: true,
+                  thumbs: true,
+                  thumbsPrerendered: true,
+                  navText: ["<img src='https://colorlib.com/preview/theme/edustage/img/prev.png'>", "<img src='https://colorlib.com/preview/theme/edustage/img/next.png'>"],
+                  responsive: {
+                    0: {
+                      items: 1,
+                      margin: 0
+                    },
+                    991: {
+                      items: 2,
+                      margin: 30
+                    },
+                    1200: {
+                      items: 3,
+                      margin: 30
+                    }
+                  }
+                });
+              }
+            }
+            active_course();
+          </script>
+        <hr>
+        <footer class="site-footer site-footer-one ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 footer-logo fade-in-left animated">
+                        <a href="#">
+                            <img id="imagC" class="img-responsive" src="{% static 'images/logo.png' %}" alt="Footer Logo"/>
+                        </a>
+                        <br>
+                        <p class="copyright-text">
+                           <br> © Copyright 2022 All rights reserved by www.P4pak.com
+                        </p>
+        
+                    </div>
+                    <div class="col-lg-9 footer-widget-area ">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3 fade-in-up animated">
+        
+                                <section class="widget clearfix widget_lc_taxonomy">
+                                    <h3 class="widget-title">Company</h3>
+                                    <ul>
+                                        <li>
+                                            
+                                            <ul class="">
+                                                <li><a href="{%url 'contact'%}">Contact Us</a></li>
+                                                <li><a href="{%url 'viewListings'%}">Properties</a></li>
+                                                <li><a href="{%url 'viewAgents'%}">Real Estate Agents</a></li>
+                                                <li><a href="{% url 'register' %}">Join P4pak</a></li>
+                                                <li><a href="{%url 'nonStaffUserLogin'%}">Sign in</a> </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </section> 
+                              
+        
+                            </div>
+                            {% comment %} <div class="col-sm-6 col-md-3">
+        
+                                <section class="widget clearfix widget_recent_entries">
+                                    <h3 class="widget-title">Connect</h3>
+                                    <ul>
+                                        <li><a href="#">Real Estate Agents</a></li>
+                                        <li><a href="#">Join P4pak</a></li>
+                                       
+                                    </ul>
+                                </section>
+                         
+                            </div> {% endcomment %}
+                            <div class="clearfix visible-sm"></div>
+                            <div class="col-sm-6 col-md-3 fade-in-up animated">
+                              
+                                <section class="widget clearfix widget_lc_taxonomy">
+                                    <h3  class="widget-title">Head Office</h3>
+                                    <ul>
+                                        {%for c in contact%}
+                                        <address>
+                                            <i class="fa fa-map-marker" style="color:#030104;"></i>{{c.officeAdress}}
+                                        </address>
+                                
+                                        <li class="phone">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+                                                <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#030104" d="M1.027 4.846l-.018.37.01.181c.068 9.565 7.003 17.42 15.919 18.48.338.075 1.253.129 1.614.129.359 0 .744-.021 1.313-.318.328-.172.448-.688.308-1.016-.227-.528-.531-.578-.87-.625-.435-.061-.905 0-1.521 0-1.859 0-3.486-.835-4.386-1.192l.002.003-.076-.034c-.387-.156-.696-.304-.924-.422-3.702-1.765-6.653-4.943-8.186-8.896-.258-.568-1.13-2.731-1.152-6.009h.003l-.022-.223c0-1.727 1.343-3.128 2.999-3.128 1.658 0 3.001 1.401 3.001 3.128 0 1.56-1.096 2.841-2.526 3.079l.001.014c-.513.046-.914.488-.914 1.033 0 .281.251 1.028.251 1.028.015 0 .131.188.119.188-.194-.539 1.669 5.201 7.021 7.849-.001.011.636.309.636.309.47.3 1.083.145 1.37-.347.09-.151.133-.32.14-.488.356-1.306 1.495-2.271 2.863-2.271 1.652 0 2.991 1.398 2.991 3.12 0 .346-.066.671-.164.981-.3.594-.412 1.21.077 1.699.769.769 1.442-.144 1.442-.144.408-.755.643-1.625.643-2.554 0-2.884-2.24-5.222-5.007-5.222-1.947 0-3.633 1.164-4.46 2.858-2.536-1.342-4.556-3.59-5.656-6.344 1.848-.769 3.154-2.647 3.154-4.849 0-2.884-2.241-5.222-5.007-5.222-2.41 0-4.422 1.777-4.897 4.144l-.091.711z"/>
+                                            </svg>
+                                            <span class="hidden-xs">{{c.officeContact}}</span><a class="visible-xs-inline-block" href="tel://{{c.officeContact}}" title="Make a Call">{{c.officeContact}}</a>
+                                        </li>
+                                        <li class="email">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="14px" height="14px" viewBox="0 0 14 14">
+                                                <g class="contacts-icon" fill="#030104">
+                                                    <path d="M7 9l-1.732-1.516-4.952 4.245c.18.167.423.271.691.271h11.986c.267 0 .509-.104.688-.271l-4.949-4.245-1.732 1.516zM13.684 2.271c-.18-.168-.422-.271-.691-.271h-11.986c-.267 0-.509.104-.689.273l6.682 5.727 6.684-5.729zM0 2.878v8.308l4.833-4.107zM9.167 7.079l4.833 4.107v-8.311z"/>
+                                                </g>
+                                            </svg>
+                                            <a href="">{{c.officeEmail}}</a>
+                                        </li>
+                                        {%endfor%}
+                                    </ul>
+                                </section>
+                        
+                            </div>
+                            <div class="col-sm-6 col-md-3 fade-in-right animated">
+                                <section id="inspiry_social_media_icons-1" class="widget clearfix widget_inspiry_social_media_icons">
+                                    <h3 class="widget-title">Connect With Us</h3>
+                                    <div class="social-networks clearfix">
+                                        <a class="twitter" href="#twitter" target="_blank"><i class="fa fa-twitter fa-lg"></i></a><a class="facebook" href="https://web.facebook.com/P4PAKpropertiesForAll/?_rdc=1&_rdr" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+                                        <a class="linkedin" href="#linkedin" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a><a class="instagram" href="#instagram" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+                                        </a>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- .footer -->
+    </div>
+    <!-- .site-content -->
+</div>
+<!-- .site-content-wrapper -->
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+{% comment %} <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> {% endcomment %}
+{% comment %} <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> {% endcomment %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+<script src=" {% static 'user-temp-real-place/asset/js/jquery-1.12.3.min.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/flexslider/jquery.flexslider-index-min.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/lightslider/js/lightslider.min.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/select2/select2.min.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/owl.carousel/owl.carousel.min.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/swipebox/js/jquery.swipebox.min.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/jquery.hoverIntent.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/jquery.validate.min.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/jquery.form.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/transition.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/jquery.appear.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/modal.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/meanmenu/jquery.meanmenu.min.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/jquery.placeholder.min.js' %}"></script>
+<script src=" {% static 'user-temp-real-place/asset/js/custom.js' %}"></script>
+
+<!--custom carousel js file link-->
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src=" {% static 'assets/js/carouselJs.js' %}"></script>
+
+
+
+<div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="login-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                   
+                    <button type="button" class="close close-modal-dialog " data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+                <form id="login-form" action="{% url 'nonStaffUserLogin' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-element">
+                        <label class="login-form-label" for="login-username">Agent Name</label>
+                        <input  id="agent_name"  type="text" class="login-form-input login-form-input-common email required" title="* Please provide user name or email!" placeholder="Email">
+                   
+
+                    </div>
+                    <div class="form-element">
+                        <label class="login-form-label" for="password">Phone Number</label>
+                        <input  id ="agent_phone"  type="text" class="login-form-input login-form-input-common email required"  placeholder="phone">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" class="login-form-submit login-form-input-common" value="Contact">
+                    </div>
+                </form>
+                <div class="clearfix">
+                    <span >Not a Member?<a href="{% url 'register' %}" >Sign up now</a></span>
+                    <span class="forgot-password pull-right"><a href="#" class="activate-section" data-section="password-section">Forgot Password?</a></span>
+                </div>
+            </div>
+            <div class="buttons-external">
+                <div class="graphic">
+                    <span class="or">or</span>
+                    <span class="vertical-line"></span>
+                    <span class="circle"></span>
+                </div>
+                <div class="clearfix">
+                    <a class="button facebook-button" href="#"><i class="fa fa-facebook"></i>Login with Facebook</a>
+                    <a class="button google-button" href="#"><i class="fa fa-google"></i>Login with Google</a>
+                </div>
+            </div>
+        </div>
+        <!-- .login-section -->
+        <div class="password-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <span>Reset Password</span>
+                    <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+                <form id="forgot-form" action="#" method="post">
+                    <div class="form-element">
+                        <label class="login-form-label" for="password-reset">User Name or Email<span>*</span></label>
+                        <input id="password-reset" name="password-reset" type="text" class="login-form-input login-form-input-common email required" title="* Please provide user name or email!" placeholder="Email">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" name="user-submit" class="login-form-submit login-form-input-common" value="Reset Password">
+                    </div>
+                </form>
+                <div class="clearfix">
+                    <span class="sign-up pull-left">Not a Member?<a href="{%url  'register'%}" class="activate-section" data-section="register-section">Sign up now</a></span>
+                    <span class="login-link pull-right"><a href="#" class="activate-section" data-section="login-section">Login</a></span>
+                </div>
+            </div>
+        </div>
+      
+        <!-- .password-reset-section -->
+        <div class="register-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <span>Register</span>
+                    <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+                <form  method="POST" action="{%url 'register'%}" id="register-form" >
+                    {% csrf_token %}
+             
+                  <!--oooooooooooooooooooooooooo-->
+                  {{ form.non_field_errors }}
+                  <table style="background-color:#D1D1D1; color:151515" >
+<tr>
+  <td> {{ form.username.errors }}
+      <label for="{{ form.username.id_for_label }}">Username:</label> </td>
+</tr>
+ <tr>
+     <td>  {{ form.username }} </td>
+  </tr>
+  <tr>
+      <td>
+          <label for="{{ form.email.id_for_label }}">Email:</label></td>
+   </tr>
+   <tr>
+      <td> {{ form.email }}</td>
+   </tr>
+   <tr>
+      <td>
+          {{ form.email.errors }}</td>
+   </tr>
+   <tr>
+      <td>
+          {{ form.password1.errors }}</td>
+   </tr>
+
+   <tr>
+      <td>
+          <label for="{{ form.password1.id_for_label }}">Password:</label></td>
+   </tr>
+   <tr>
+      <td>
+          {{ form.password1 }}</td>
+   </tr>
+   <tr>
+      <td> {{ form.password2.errors }}
+          <label for="{{ form.password2.id_for_label }}">Confirm Password:</label></td>
+   </tr>
+   <tr>
+      <td>
+          {{ form.password2 }}</td>
+   </tr>
+   <tr><td>
+       <p id="demo">
+
+       </p></td></tr>
+  <tr>
+      <td>  <input type="submit" name="user-submit" onclick="myFunction()" class="login-form-submit login-form-input-common" value="Register">
+      </td>
+  </tr>
+    <tr>
+        <td>   <span class="login-link pull-left"><a href="#" class="activate-section" data-section="login-section">Login</a></span></td>
+        <td> <span class="forgot-password pull-right"><a href="#" class="activate-section" data-section="password-section">Forgot Password?</a></span>
+        </td>
+    </tr>
+
+</div>
+</table>
+
+</div>
+            
+                </form>
+                <div class="clearfix">
+                 
+                      </div>
+            </div>
+        </div>
+        <!-- .register-section -->
+    </div>
+    <!-- .modal-dialog -->
+</div>
+<!-- .modal -->
+<!--my js code start here! -->
+<script>
+
+  
+
+
+
+
+    </script>
+<!--00000000000000end0000000000000000-->
+<script>
+    
+    {% comment %} window.onload = function(){
+        document.getElementById('manueClick').click();
+    }; {% endcomment %}
+    (function ($) {
+        "use strict";
+
+        if (jQuery().validate) {
+
+            //Login
+            $('#login-form').validate();
+
+            //Register
+            $('#register-form').validate();
+
+            //Forgot Password
+            $('#forgot-form').validate();
+        }
+
+        /*-----------------------------------------------------------------------------------*/
+        /* Modal dialog for Login and Register
+         /*-----------------------------------------------------------------------------------*/
+        var loginModal = $('#login-modal'),
+            modalSections = loginModal.find('.modal-section');
+
+        $('.activate-section').on('click', function (event) {
+            var targetSection = $(this).data('section');
+            modalSections.slideUp();
+            loginModal.find('.' + targetSection).slideDown();
+            event.preventDefault();
+            var phonNo=$('#contactLbl').val();
+            $('#agent_phone').val(phonNo);
+        });
+
+    })(jQuery);
+
+   
+     
+</script>
+
+{% comment %} <!--bootstrap links-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--end of bootstrap--> {% endcomment %}
+</body>
+</html>
+<script>
+    //get input values of agentst
+   function showContact(){
+    document.getElementById("contactlbl1").className = ''; 
+    document.getElementById("contactBtn1").innerText=document.getElementById("contactlbl1").innerText;
+    alert(document.getElementById("contactlbl1").innerText)
+   }
+function getInputValues(){
+    // var id=document.getElementById("input{{agent.id}}").value;
+     var phone=document.getElementById("phonNo").value;
+     var name=document.getElementById("name{{agent.id}}").value;
+    // var fb=document.getElementById("fb{{agent.id}}").value;
+     document.getElementById('agent_name').value = name;
+     document.getElementById('agent_phone').value = phone;
+   
+   //  alert(name);
+   //  alert(phone);
+ 
+ }
+function displayNumber(){
+    var phoneNo=document.getElementById("contactLbl").value
+    document.getElementById("contactBtn").value=phoneNo
+}
+
+
+ //end of getting input value in button click
+</script>

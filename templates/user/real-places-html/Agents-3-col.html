@@ -1,0 +1,220 @@
+
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+
+
+<!-- .site-header -->
+<div class="page-head " style="background: url(images/banner.jpg) #494c53 no-repeat center top;  background-size: cover;">
+    <div class="container">
+        <div class="page-head-content">
+            <h1 class="page-title"><span>Agents</span></h1>
+        </div>
+    </div>
+</div>
+<style>
+    .agent-search-desktop{
+        background: rgba(0, 0, 0, 0.6);
+        padding-left:12px;
+         padding-right:12px;
+         padding-top:6px;
+         padding-bottom:6px;
+     
+    }
+  
+</style>
+<!--mobile search bar-->
+<div class="hidden-lg">
+    <form method='get' action="{%url 'searchAgent'%}">
+       {%csrf_token%}
+      <div class="row price-and-status">
+       <div class="col-md-4" style="padding-left: 1px; padding-right: 10px">
+       <select class="form-select" name="city_id" aria-label="Default select example" style="max-width:90%;">
+           {%for city in agentCity%}
+           <option value="{{city.id}}">{{city.cityName}}</option>
+           {% endfor %}
+         </select>
+       </div>
+       <div class="col-md-6 " style="padding-left: 1px; padding-right: 10px">
+           <input type="text" name="search_name" class="form-control  form-control-lg" placeholder="Company" style="height:40px; font-size:14pt; width: 96%; margin-left:12px;">
+           </div>
+       <div class="col-md-2" style="padding-left: 1px; padding-right: 10px">
+         {% comment %} <a class="btn-default hidden-sm hidden-md" href="{%url 'searchAgent'%}" style="background-color:green;">Find<i class="fa fa-angle-right"></i></a>  {% endcomment %}
+         <button class="" Type="submit" style="font-size:18px; background-color:green; color:white;padding:10px 24px 7px 24px; width:99%;" >Find </button> 
+       </div>
+   </div>
+    </form>
+   </div>
+   <!--search bar for mobile ended-->
+<!--sticky search bar-->
+<div class="agent-search-desktop hidden-xs" style=" ">
+  <form method='get' action="{%url 'searchAgent'%}" >
+    {%csrf_token%}
+    <div class="row price-and-status ">
+         <div class="col-md-4" style="padding-left: 1px; padding-left: 80px;">
+                <select class="" name="city_id" aria-label="Default select example" style=" border-radius:4px;border:12px solid #AAAAAA;">
+                  {% comment %} <option value='Select City' selected>Select City</option> {% endcomment %}
+                  {%for city in agentCity%}
+                  <option value="{{city.id}}">{{city.cityName}}</option>
+                  {% endfor %}
+                </select>
+    </div>
+    <div class="col-md-6 " style="padding-left: 1px; padding-right: 10px">
+        <input type="text" name="search_name" class="form-control  form-control-lg" placeholder="Company" style="height:47px; width=50px; font-size:14pt;  border-radius: 7px;">
+    </div>
+    <div class="col-md-2" style="padding-left: 1px; padding-right: 10px">
+      {% comment %} <a class="btn-default hidden-sm hidden-md" href="{%url 'searchAgent'%}" style="background-color:green;">Find<i class="fa fa-angle-right"></i></a>  {% endcomment %}
+      <button class="" Type="submit" style="font-size:18px; color:white; background-color:green; padding:5px 24px 5px 24px;  border-radius: 7px;">Find </button> 
+    </div>
+  </form>
+</div>
+</div>
+</div>
+<!--sticky search bar ended-->
+<style></style>
+<!-- .page-head -->
+<div id="content-wrapper" class="site-content-wrapper site-pages">
+    <div id="content" class="site-content layout-boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 site-main-content">
+                    <main id="main" class="site-main">
+                        <!-- .filter-by -->
+                        <div id="gallery-container" class="gallery-container gallery-3-columns gallery-post-listing isotope row">
+                            {%for agent in page_obj %}
+                            <div class="col-xs-6 for-sale col-md-4 col-gallery-item isotope-item for-sale ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry " >
+                                    <figure class="gallery-thumbnail">
+                                        {% if agent.img.url is not None %}
+                                        <img class="img-responsive" src="{{agent.img.url}}" style=" width: 444px; height: 328px;" alt="Photo">
+                                        {%else%}
+                                        <img class="img-responsive"  style=" width: 444px; height: 328px; object-fit: cover;" src="{% static '/images/agent/agent_image.png' %}" alt="Photo">
+                                        {%endif%}
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a   title="{{agent.name}}">{{agent.name}}</a></h3>
+                                            City: {{agent.AgentCity_id.cityName}}<br>
+                                           {%if agent.address %}
+                                            Address:
+                                            {{agent.address}}
+                                            {%endif%}
+                                            <br><br>
+                                          <button class="btn success hidden-xs" href="#login-modal" data-toggle="modal" data-number="{{agent.phoneNo}}" data-Name="{{agent.name}}" id="btnCall" onclick="call(this)"><i class="fa fa-phone"></i>      Call</button>
+                                          {% comment %} <button class="btn success hidden-lg" href="#login-modal" data-toggle="modal" data-number="{{agent.phoneNo}}" data-Name="{{agent.name}}" id="btnCallMobile" onclick="call(this)"><i class="fa fa-phone"></i>      Call</button> {% endcomment %}
+                                          <a class="btn success hidden-lg text-center" style="font-size:12px; border-radius:12px;  background-color: green; color:white; " href="tel:{{agent.phoneNo}}" > <li class="fa fa-phone">   Contact</li></a>
+                                    </div>
+                                    <style>
+                                        .btn {
+                                            border: 2px solid black;
+                                            background-color: white;
+                                            color: black;
+                                            padding:4px 34px 4px 34px;
+                                            font-size: 16px;
+                                            cursor: pointer;
+                                          }
+                                          
+                                          /* Green */
+                                          .success {
+                                            border-color: #04AA6D;
+                                            color: green;
+                                          }
+                                          
+                                          .success:hover {
+                                            background-color: #04AA6D;
+                                            color: white;
+                                          }
+                                    </style>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            {%empty%}
+                            <p style="color: red;">ooOps! no agent found</p>
+                           {%endfor%}
+                            <!-- .col-gallery-item -->
+                        </div>
+                        <!-- .gallery-container -->
+                    </main>
+                    <!-- .site-main -->
+                </div>
+                <!-- .site-main-content -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .site-content -->
+</div>
+  <div class="container" style="background-color:; font-color:white" >
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1 &{{ parameters }}">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}&{{ parameters }}">previous</a>
+                {% endif %}
+   
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}&{{ parameters }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}&{{ parameters }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div> 
+    </div>
+<div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="login-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <button type="button" class="close close-modal-dialog " data-dismiss="modal" aria-hidden="true"><i style="color:black;" class="fa fa-times fa-lg"></i></button>
+              <h3 class="text-center">Contact Detail</h3>
+                  Agent: <h3 id="agentName"> </h3>
+                  <span> Phone Number:  <h4 id="agentNo"><i class="fa fa-phone"></i></h4></span>
+                </div>
+           
+               
+            </div>
+           
+        </div>
+        <!-- .login-section -->
+        {% comment %} <div class="password-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <span>Reset Password</span>
+                    <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+               <form id="forgot-form" action="#" method="post">
+                    <div class="form-element">
+                        <label class="login-form-label" for="password-reset">User Name or Email<span>*</span></label>
+                        <input id="password-reset" name="password-reset" type="text" class="login-form-input login-form-input-common email required" title="* Please provide user name or email!" placeholder="Email">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" name="user-submit" class="login-form-submit login-form-input-common" value="Reset Password">
+                    </div>
+                </form>
+                <div class="clearfix">
+                    <span class="sign-up pull-left">Not a Member?<a href="#" class="activate-section" data-section="register-section">Sign up now</a></span>
+                    <span class="login-link pull-right"><a href="#" class="activate-section" data-section="login-section">Login</a></span>
+                </div>
+            </div>
+        </div> {% endcomment %}
+    </div>
+    <!-- .modal-dialog -->
+</div>
+
+<script>
+   function call(e){
+    //var data = JSON.parse("{{agentJSON|escapejs}}");
+      var text = document.getElementById("btnCount");
+     
+      phoneNumber= e.getAttribute('data-number');
+      agentName= e.getAttribute('data-Name');
+     // alert(phoneNumber);
+      document.getElementById("agentNo").innerHTML = phoneNumber;
+      document.getElementById("agentName").innerHTML = agentName;
+   }
+</script>
+{%endblock%}

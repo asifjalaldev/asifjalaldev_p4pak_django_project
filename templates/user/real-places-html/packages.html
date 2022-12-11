@@ -1,0 +1,75 @@
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+<div class="pricing-wrapper clearfix">
+    <!-- Titulo -->
+  
+    <div class="pricing-table">
+      <h3 class="pricing-title">Basic</h3>
+      <div class="price">Rs2000<sup>/mon</sup></div>
+      <!-- Lista de Caracteristicas / Propiedades -->
+      <ul class="table-list">
+        <li>1  <span>Feature Add</span></li>
+        <del><li>1  <span>Top 10 Property</span></li></del>
+        <li>1  <span>Bump Up</span></li>
+        <li>  <span>Agent</span></li>
+      </ul>
+      <!-- Contratar / Comprar -->
+      <div class="table-buy">
+        {% comment %} <p>Rs 2000<sup>/ mon</sup></p> {% endcomment %}
+        <a href="#" class="pricing-action" style="background: #218218;">Buy Now</a>
+      </div>
+    </div>
+     
+    <div class="pricing-table">
+        <h3 class="pricing-title">Super</h3>
+        <div class="price">Rs 5000<sup>/mon</sup></div>
+        <!-- Lista de Caracteristicas / Propiedades -->
+        <ul class="table-list">
+          <li>1 <span>Feature Add</span></li>
+          <li>1  <span>Top 10 Property</span></li>
+          <li>3 <span>Feature Bum ups </span></li>
+          <li> <span>Gold Agent </span></li>
+        </ul>
+
+        <!-- Contratar / Comprar -->
+        <div class="table-buy">
+          {% comment %} <p>Rs 500<sup>/ mon</sup></p> {% endcomment %}
+          <a href="#" class="pricing-action" style="background: #218218;">Buy Now</a>
+        </div>
+      </div>
+    <div class="pricing-table recommended">
+      <h3 class="pricing-title">Bulk</h3>
+      <div class="price">Rs 10000<sup>/ mon</sup></div>
+      <!-- Lista de Caracteristicas / Propiedades -->
+      <ul class="table-list">
+        <li>5 <span>Feature Ads</span></li>
+        <li>1 Top 10 Property <span></span></li>
+        <li>10  <span>Bum ups</span></li>
+        <li>  <span>Platinum Agent</span></li>
+      </ul>
+      <!-- Contratar / Comprar -->
+      <div class="table-buy">
+        {% comment %} <p>$100<sup>/ mes</sup></p> {% endcomment %}
+        <a href="#" class="pricing-action" style="background: #218218;">Buy Now</a>
+      </div>
+    </div>
+  
+    {% comment %} <div class="pricing-table">
+      <h3 class="pricing-title">Banners</h3>
+      <div class="price">Rs 1<sup>/ mon</sup></div>
+      <!-- Lista de Caracteristicas / Propiedades -->
+      <ul class="table-list">
+        <li>100 GB <span>De almacenamiento</span></li>
+        <li>8 Dominios <span>incluidos</span></li>
+        <li>200 GB <span>De transferencia mensual</span></li>
+        
+      </ul>
+      <!-- Contratar / Comprar -->
+      <div class="table-buy">
+        <p>$200<sup>/ mes</sup></p>
+        <a href="#" class="pricing-action">Buy Now</a>
+      </div>
+    </div> {% endcomment %}
+  </div>
+{%endblock%}

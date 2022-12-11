@@ -1,0 +1,142 @@
+{%extends 'admin/admin_main.html'%}
+{%load static%}
+{%block content%}
+<div class="container">
+<form method="post" action="{%url 'viewCity'%}" style="background-color: #ADB3FC">
+    <br>
+    {% csrf_token %}
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group ">
+                <h4 > Add new City </h4>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group" style="color:black; font-size:16px;">
+                <label for="title">City Name</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="cityName" placeholder="Enter City Name" required>
+            </div>
+        </div>
+    </div>
+    <div class="row"> 
+        <div class="col-md-12">
+            <div class="form-group text-center" style="color:black;">
+                <input type="hidden" name="action" value="add_property">
+                {%if messages%}
+                {%for message in messages%}
+
+               <p class="text text-success text-center"> {{message}}<p>
+            
+                {%endfor%}
+                {% endif %}
+              
+                <button type="submit" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5 "><i class="ti-plus"></i>Add City</button>
+             
+            </div>
+        </div>
+    </div>
+
+</form>
+<hr>
+
+<!--search city-->
+{% comment %} <form method="get" action="{%url 'searchCity'%}" style="background-color: #ADB3FC">
+    <br>
+    {% csrf_token %}
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group ">
+                <h4 > Search City </h4>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group" style="color:black; font-size:16px;">
+                <label for="title">City Name</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="searchCityName" placeholder="Enter City Name" required>
+            </div>
+        </div>
+    </div>
+    <div class="row"> 
+        <div class="col-md-12">
+            <div class="form-group text-center" style="color:black;">
+                <input type="hidden" name="action" value="add_property">
+                {%if messages%}
+                {%for message in messages%}
+
+               <p class="text text-danger text-center"> {{message}}<p>
+            
+                {%endfor%}
+                {% endif %}
+              
+                <button type="submit" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5 "><i class="ti-plus"></i>Search City</button>
+             
+            </div>
+        </div>
+    </div>
+
+</form>
+ {% endcomment %}
+
+<div class="row">
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-title">
+            <h4>All Cities </h4>
+            
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table" style="background-color: #ADB3FC" class="text text-center">
+                    <thead>
+                        <tr > 
+                           
+                            <th class="text text-center">City id</th>
+                            <th class="text text-center">City Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for c in city%}
+                        <tr class="text text-center">
+                            <th scope="row">{{c.id}}</th>
+                            <td style="color: black; font-size:17px;" class="text text-center">{{c.cityName}}</td>
+                           
+                        </tr>
+                       {%endfor%}
+                    </tbody>
+                </table>
+
+                <div class="container-fluied" style="background-color:green; font-color:white">
+                    <div class="pagination">
+                        <span class="step-links" style="background-color:green; color:white">
+                            {% if city.has_previous %}
+                                <a href="?page=1" style="background-color:green; color:white">&laquo; first</a>
+                                <a href="?page={{ city.previous_page_number }}" style="background-color:green; color:white">previous</a>
+                            {% endif %}
+               
+                            <span class="current" style="background-color:green; color:white">
+                                Page {{ city.number }} of {{ city.paginator.num_pages }}.
+                            </span>
+                    
+                            {% if city.has_next %}
+                                <a href="?page={{ city.next_page_number }}" style="background-color:green; color:white">next</a>
+                                <a href="?page={{ city.paginator.num_pages }}" style="background-color:green; color:white">last &raquo;</a>
+                            {% endif %}
+                        </span>
+                    </div> 
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{%endblock%}

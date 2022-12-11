@@ -1,0 +1,443 @@
+{%load static%}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>P4Pak</title>
+    <link rel="icon" href="{% static 'images/ms_icon_logo.png' %}" sizes="32x32" />
+
+    <link rel="icon" href="{% static 'images/ms_icon_logo.png' %}" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="{% static 'images/ms_icon_logo.png' %}">
+    <!-- bootstrap cdn-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'user-temp-real-place/asset/css/PricingTableStyleSheet.css'%}" rel="stylesheet">
+<!-- comment 3 lines 14,17,18,19,20-->
+
+<!--custom carousel css link file-->
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href=" {% static 'assets/css/customCarouselStyle.css' %} "/>
+<!--carousel end-->
+
+    {% comment %} <!-- Google font-->
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:400,700,600,500' rel='stylesheet' type='text/css'>
+    <!-- Include the flexslider stylesheet --> {% endcomment %}
+    <link href=" {% static 'user-temp-real-place/asset/js/flexslider/flexslider.css'%}" rel="stylesheet">
+    <!-- Include the lightslider stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/js/lightslider/css/lightslider.min.css'%}" rel="stylesheet">
+    <!-- Include the owl-carousel stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/js/owl.carousel/owl.carousel.css'%}" rel="stylesheet">
+    <!-- Include the swipebox stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/js/swipebox/css/swipebox.min.css'%}" rel="stylesheet">
+    <!-- Include the select2 stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/js/select2/select2.css'%}" rel="stylesheet">
+    <!-- Include the font-awesome stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/css/font-awesome.min.css'%}" rel="stylesheet">
+    <!-- Include the select2 stylesheet -->
+    <link href=" {% static 'user-temp-real-place/asset/css/animate.css'%}" rel="stylesheet">
+    <link href=" {% static 'user-temp-real-place/asset/js/magnific-popup/magnific-popup.css'%}" rel="stylesheet">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href=" {% static 'user-temp-real-place/asset/css/main.css'%}"/>
+    <!-- Default Theme stylesheet -->
+    <link rel="stylesheet" href=" {% static 'user-temp-real-place/asset/css/theme.css'%}"/>
+
+
+</head>
+<body>
+    <div class="page-loader">
+        
+        <div class= "text-center" style="padding-top:130px;">
+            <img class=""  src="{% static 'images/logo.png' %}" alt="Page Loader"/>
+        </div>
+         <img class="page-loader-img" src="{% static 'user-temp-real-place/asset/images/slider-loader.gif'%}" alt="Page Loader"/>
+        
+    </div>
+
+<div id="mobile-header" class="mobile-header hidden-md hidden-lg">
+    <div class="contact-number">
+        <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+            <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#0080BC" d="M1.027 4.846l-.018.37.01.181c.068 9.565 7.003 17.42 15.919 18.48.338.075 1.253.129 1.614.129.359 0 .744-.021 1.313-.318.328-.172.448-.688.308-1.016-.227-.528-.531-.578-.87-.625-.435-.061-.905 0-1.521 0-1.859 0-3.486-.835-4.386-1.192l.002.003-.076-.034c-.387-.156-.696-.304-.924-.422-3.702-1.765-6.653-4.943-8.186-8.896-.258-.568-1.13-2.731-1.152-6.009h.003l-.022-.223c0-1.727 1.343-3.128 2.999-3.128 1.658 0 3.001 1.401 3.001 3.128 0 1.56-1.096 2.841-2.526 3.079l.001.014c-.513.046-.914.488-.914 1.033 0 .281.251 1.028.251 1.028.015 0 .131.188.119.188-.194-.539 1.669 5.201 7.021 7.849-.001.011.636.309.636.309.47.3 1.083.145 1.37-.347.09-.151.133-.32.14-.488.356-1.306 1.495-2.271 2.863-2.271 1.652 0 2.991 1.398 2.991 3.12 0 .346-.066.671-.164.981-.3.594-.412 1.21.077 1.699.769.769 1.442-.144 1.442-.144.408-.755.643-1.625.643-2.554 0-2.884-2.24-5.222-5.007-5.222-1.947 0-3.633 1.164-4.46 2.858-2.536-1.342-4.556-3.59-5.656-6.344 1.848-.769 3.154-2.647 3.154-4.849 0-2.884-2.241-5.222-5.007-5.222-2.41 0-4.422 1.777-4.897 4.144l-.091.711z"/>
+        </svg>
+        {%for c in contact%}
+        <span class="desktop-version hidden-xs">{{c.officeContact}}</span>
+        <a class="mobile-version visible-xs-inline-block" href="tel://{{c.officeContact}}" title="Make a Call">{{c.officeContact}}</a>
+        {%endfor%}
+    </div>
+    <!-- .contact-number -->
+    <div class="mobile-header-nav">
+        <ul class="user-nav">
+            {%if request.user.is_authenticated%}
+          
+            <li><a href="{%url 'myListing'%}"><i class="fa fa-th-list"></i>My Properties</a></li>
+            <li><a class="submit-property-link" href="{%url 'submitListing'%}"><i class="fa fa-plus-circle"></i>Add new Properity</a></li>
+            <li><a class="" href="{%url 'viewListings'%} "><i class="fa fa-list"></i>View All Properties</a></li>
+            <li><a class="" href="{%url 'viewAgents'%} "><i class="fa fa-user"></i>View Agents</a></li>
+            <li><a href="{%url 'userLogout'%}"><i class="fa fa-th-list"></i>Logout</a></li>
+
+            {%else%}
+
+            <li><a class="submit-property-link" href="{%url 'submitListing'%}"><i class="fa fa-plus-circle"></i>Add Properity</a></li>
+            {% comment %} <li><a class="login-register-link" href="#login-modal" data-toggle="modal"><i class="fa fa-sign-in"></i>Sign up</a></li> {% endcomment %}
+                   <li><a class="" href="{%url 'viewListings'%} "><i class="fa fa-list"></i>View All Properties</a></li>
+            <li><a class="" href="{%url 'viewAgents'%} "><i class="fa fa-user"></i>View Agents</a></li>
+            <li><a href="{%url 'nonStaffUserLogin'%}"><i class="fa fa-th-list"></i>Login</a></li>
+            {%endif%}
+        </ul>
+        <!-- .user-nav -->
+        <div class="social-networks header-social-nav">
+            <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+        </div>
+        <!-- .social-networks -->
+    </div>
+</div>
+<header class="site-header header header-variation-two">
+    <div class="container">
+        <div class="row zero-horizontal-margin">
+            <div class="col-lg-3 zero-horizontal-padding">
+                <div id="site-logo" class="site-logo">
+                    <div class="logo-inner-wrapper">
+                        <a href="{%url 'viewHome'%}"><img src="{% static '/images/logo.png' %}" alt="Logo"/></a>
+                        <small class="tag-line"></small>
+                    </div>
+                </div>
+            </div>
+            <!-- .left-column -->
+            <div class="col-lg-9 zero-horizontal-padding hidden-xs hidden-sm">
+                <div class="header-top clearfix">
+                    
+                   
+                   
+                    <!-- .social-networks -->
+                    <ul class="user-nav">
+                        {%if request.user.is_authenticated%}
+                         <li><a href="{%url 'myListing'%}"><i class="fa fa-th-list"></i>My Properties</a></li>
+                        <li><a class="" href="{%url 'viewListings'%} "><i class="fa fa-list"></i>All Properties</a></li>
+                        <li><a class="" href="{%url 'viewAgents'%} "><i class="fa fa-user"></i>All Agents</a></li>
+                        <li><a href="{%url 'userLogout'%}"><i class="fa fa-th-list"></i>Logout</a></li>
+                        <li><a class="submit-property-link" style="background-color: green;" href="{%url 'submitListing'%}"><i class="fa fa-plus-circle"></i>Add Properity</a></li>
+                      
+                        {%else%}
+                        <li><a href="{%url 'nonStaffUserLogin'%}"><i class="fa fa-th-list"></i>Login</a></li>
+          
+                        <li><a class="submit-property-link" href="{%url 'submitListing'%}"><i class="fa fa-plus-circle"></i>Add Properity</a></li>
+                        {% comment %} <li><a class="login-register-link" href="#login-modal" data-toggle="modal"><i class="fa fa-sign-in"></i>Sign up</a></li> {% endcomment %}
+                               <li><a class="" href="{%url 'viewListings'%} "><i class="fa fa-list"></i>All Properties</a></li>
+                        <li><a class="" href="{%url 'viewAgents'%} "><i class="fa fa-user"></i>All Agents</a></li>
+                        {%endif%}
+                    </ul>
+                  {%for c in contact%}
+                    <!-- .user-nav -->
+                    <div class="contact-number">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#0080BC" d="M1.027 4.846l-.018.37.01.181c.068 9.565 7.003 17.42 15.919 18.48.338.075 1.253.129 1.614.129.359 0 .744-.021 1.313-.318.328-.172.448-.688.308-1.016-.227-.528-.531-.578-.87-.625-.435-.061-.905 0-1.521 0-1.859 0-3.486-.835-4.386-1.192l.002.003-.076-.034c-.387-.156-.696-.304-.924-.422-3.702-1.765-6.653-4.943-8.186-8.896-.258-.568-1.13-2.731-1.152-6.009h.003l-.022-.223c0-1.727 1.343-3.128 2.999-3.128 1.658 0 3.001 1.401 3.001 3.128 0 1.56-1.096 2.841-2.526 3.079l.001.014c-.513.046-.914.488-.914 1.033 0 .281.251 1.028.251 1.028.015 0 .131.188.119.188-.194-.539 1.669 5.201 7.021 7.849-.001.011.636.309.636.309.47.3 1.083.145 1.37-.347.09-.151.133-.32.14-.488.356-1.306 1.495-2.271 2.863-2.271 1.652 0 2.991 1.398 2.991 3.12 0 .346-.066.671-.164.981-.3.594-.412 1.21.077 1.699.769.769 1.442-.144 1.442-.144.408-.755.643-1.625.643-2.554 0-2.884-2.24-5.222-5.007-5.222-1.947 0-3.633 1.164-4.46 2.858-2.536-1.342-4.556-3.59-5.656-6.344 1.848-.769 3.154-2.647 3.154-4.849 0-2.884-2.241-5.222-5.007-5.222-2.41 0-4.422 1.777-4.897 4.144l-.091.711z"/>
+                        </svg>
+                        <span class="desktop-version hidden-xs">{{c.officeContact}}</span>
+                        <a class="mobile-version visible-xs-inline-block" href="tel://{{c.officeContact}}" title="Make a Call">{{c.officeContact}}</a>
+                    </div>
+                {%endfor%}
+                    <!-- .contact-number -->
+                </div>
+                <!-- .header-top -->
+                <div class="header-bottom clearfix">
+                    <nav id="site-main-nav" class="site-main-nav">
+                        <ul class="main-menu clearfix">
+                       
+                    </nav>
+                </div>
+                <!-- .header-bottom -->
+            </div>
+            <!-- .right-column -->
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</header>
+
+{%block content%}
+
+
+{% endblock %}
+
+
+
+<footer class="site-footer site-footer-one ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 footer-logo fade-in-left animated">
+                <a href="#">
+                    <img class="img-responsive" src="{% static 'images/logo.png' %}" alt="Footer Logo"/>
+                </a>
+                <br>
+                <p class="copyright-text">
+                   <br> © Copyright 2022 All rights reserved by www.P4pak.com
+                </p>
+
+            </div>
+            <div class="col-lg-9 footer-widget-area ">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 fade-in-up animated">
+
+                        <section class="widget clearfix widget_lc_taxonomy">
+                            <h3 class="widget-title">Company</h3>
+                            <ul>
+                                <li>
+                                    
+                                    <ul class="">
+                                        <li><a href="{%url 'contact'%}">Contact Us</a></li>
+                                        <li><a href="{%url 'viewListings'%}">Properties</a></li>
+                                        <li><a href="{%url 'viewAgents'%}">Real Estate Agents</a></li>
+                                        <li><a href="{% url 'register' %}">Join P4pak</a></li>
+                                        <li><a href="{%url 'nonStaffUserLogin'%}">Sign in</a> </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </section> 
+                      
+
+                    </div>
+                    {% comment %} <div class="col-sm-6 col-md-3">
+
+                        <section class="widget clearfix widget_recent_entries">
+                            <h3 class="widget-title">Connect</h3>
+                            <ul>
+                                <li><a href="#">Real Estate Agents</a></li>
+                                <li><a href="#">Join P4pak</a></li>
+                               
+                            </ul>
+                        </section>
+                 
+                    </div> {% endcomment %}
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-sm-6 col-md-3 fade-in-up animated">
+                      
+                        <section class="widget clearfix widget_lc_taxonomy">
+                            <h3  class="widget-title">Head Office</h3>
+                            <ul>
+                                {%for c in contact%}
+                                <address>
+                                    <i class="fa fa-map-marker" style="color:#030104;"></i>{{c.officeAdress}}
+                                </address>
+                        
+                                <li class="phone">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+                                        <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#030104" d="M1.027 4.846l-.018.37.01.181c.068 9.565 7.003 17.42 15.919 18.48.338.075 1.253.129 1.614.129.359 0 .744-.021 1.313-.318.328-.172.448-.688.308-1.016-.227-.528-.531-.578-.87-.625-.435-.061-.905 0-1.521 0-1.859 0-3.486-.835-4.386-1.192l.002.003-.076-.034c-.387-.156-.696-.304-.924-.422-3.702-1.765-6.653-4.943-8.186-8.896-.258-.568-1.13-2.731-1.152-6.009h.003l-.022-.223c0-1.727 1.343-3.128 2.999-3.128 1.658 0 3.001 1.401 3.001 3.128 0 1.56-1.096 2.841-2.526 3.079l.001.014c-.513.046-.914.488-.914 1.033 0 .281.251 1.028.251 1.028.015 0 .131.188.119.188-.194-.539 1.669 5.201 7.021 7.849-.001.011.636.309.636.309.47.3 1.083.145 1.37-.347.09-.151.133-.32.14-.488.356-1.306 1.495-2.271 2.863-2.271 1.652 0 2.991 1.398 2.991 3.12 0 .346-.066.671-.164.981-.3.594-.412 1.21.077 1.699.769.769 1.442-.144 1.442-.144.408-.755.643-1.625.643-2.554 0-2.884-2.24-5.222-5.007-5.222-1.947 0-3.633 1.164-4.46 2.858-2.536-1.342-4.556-3.59-5.656-6.344 1.848-.769 3.154-2.647 3.154-4.849 0-2.884-2.241-5.222-5.007-5.222-2.41 0-4.422 1.777-4.897 4.144l-.091.711z"/>
+                                    </svg>
+                                    <span class="hidden-xs">{{c.officeContact}}</span><a class="visible-xs-inline-block" href="tel://{{c.officeContact}}" title="Make a Call">{{c.officeContact}}</a>
+                                </li>
+                                <li class="email">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="14px" height="14px" viewBox="0 0 14 14">
+                                        <g class="contacts-icon" fill="#030104">
+                                            <path d="M7 9l-1.732-1.516-4.952 4.245c.18.167.423.271.691.271h11.986c.267 0 .509-.104.688-.271l-4.949-4.245-1.732 1.516zM13.684 2.271c-.18-.168-.422-.271-.691-.271h-11.986c-.267 0-.509.104-.689.273l6.682 5.727 6.684-5.729zM0 2.878v8.308l4.833-4.107zM9.167 7.079l4.833 4.107v-8.311z"/>
+                                        </g>
+                                    </svg>
+                                    <a href="">{{c.officeEmail}}</a>
+                                </li>
+                                {%endfor%}
+                            </ul>
+                        </section>
+                
+                    </div>
+                    <div class="col-sm-6 col-md-3 fade-in-right animated">
+                        <section id="inspiry_social_media_icons-1" class="widget clearfix widget_inspiry_social_media_icons">
+                            <h3 class="widget-title">Connect With Us</h3>
+                            <div class="social-networks clearfix">
+                                <a class="twitter" href="#twitter" target="_blank"><i class="fa fa-twitter fa-lg"></i></a><a class="facebook" href="https://web.facebook.com/P4PAKpropertiesForAll/?_rdc=1&_rdr" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+                                <a class="linkedin" href="#linkedin" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a><a class="instagram" href="#instagram" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- .footer -->
+<!--Bootstarp cdn-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+<!--bootstrap cdn end-->
+{% comment %} <script src="{% static 'user-temp-real-place/asset/js/jquery-1.12.3.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/flexslider/jquery.flexslider-min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/lightslider/js/lightslider.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/select2/select2.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/owl.carousel/owl.carousel.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/swipebox/js/jquery.swipebox.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.hoverIntent.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.validate.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.form.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/transition.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.appear.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/modal.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/meanmenu/jquery.meanmenu.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.placeholder.min.js'%}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+<script src='http://maps.google.com/maps/api/js'></script>
+<script src="{% static 'user-temp-real-place/asset/js/property-submit.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/custom.js'%}"></script> {% endcomment %}
+
+<!--new files-->
+<script src="{% static 'user-temp-real-place/asset/js/jquery-1.12.3.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/flexslider/jquery.flexslider-min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/lightslider/js/lightslider.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/select2/select2.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/owl.carousel/owl.carousel.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/swipebox/js/jquery.swipebox.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.hoverIntent.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.validate.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.form.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/transition.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.appear.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/modal.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/meanmenu/jquery.meanmenu.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/jquery.placeholder.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/magnific-popup/jquery.magnific-popup.min.js'%}"></script>
+{% comment %} <script src="{% static 'user-temp-real-place/asset/js/share.min.js'%}"></script> {% endcomment %}
+{% comment %} <script src="{% static 'user-temp-real-place/asset/js/property-share.js'%}"></script> {% endcomment %}
+<script src="{% static 'user-temp-real-place/asset/js/sly.min.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/property-horizontal-scrolling.js'%}"></script>
+<script src="{% static 'user-temp-real-place/asset/js/custom.js'%}"></script>
+<!--new file end-->
+
+<!--custom carousel js file link-->
+  <!-- Swiper JS -->
+  {% comment %} <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src=" {% static 'assets/js/agentCarouselJs.js' %}"></script> {% endcomment %}
+
+<!--carousel ended-->
+
+
+<div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="login-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <span><i class="fa fa-sign-in"></i>Login</span>
+                    <button type="button" class="close close-modal-dialog " data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+                <form id="login-form" action="#" method="post" enctype="multipart/form-data">
+                    <div class="form-element">
+                        <label class="login-form-label" for="login-username">Username</label>
+                        <input id="login-username" name="username" type="text" class="login-form-input login-form-input-common required" autofocus="" title="* Please enter a valid username." placeholder="Username">
+                    </div>
+                    <div class="form-element">
+                        <label class="login-form-label" for="password">Password</label>
+                        <input id="password" name="password" type="password" class="login-form-input login-form-input-common required" placeholder="Password">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" class="login-form-submit login-form-input-common" value="Login">
+                    </div>
+                </form>
+                <div class="clearfix">
+                    <span class="sign-up pull-left">Not a Member?<a href="#" class="activate-section" data-section="register-section">Sign up now</a></span>
+                    <span class="forgot-password pull-right"><a href="#" class="activate-section" data-section="password-section">Forgot Password?</a></span>
+                </div>
+            </div>
+            <div class="buttons-external">
+                <div class="graphic">
+                    <span class="or">or</span>
+                    <span class="vertical-line"></span>
+                    <span class="circle"></span>
+                </div>
+                <div class="clearfix">
+                    <a class="button facebook-button" href="#"><i class="fa fa-facebook"></i>Login with Facebook</a>
+                    <a class="button google-button" href="#"><i class="fa fa-google"></i>Login with Google</a>
+                </div>
+            </div>
+        </div>
+        <!-- .login-section -->
+        <div class="password-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <span>Reset Password</span>
+                    <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+                <form id="forgot-form" action="#" method="post">
+                    <div class="form-element">
+                        <label class="login-form-label" for="password-reset">User Name or Email<span>*</span></label>
+                        <input id="password-reset" name="password-reset" type="text" class="login-form-input login-form-input-common email required" title="* Please provide user name or email!" placeholder="Email">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" name="user-submit" class="login-form-submit login-form-input-common" value="Reset Password">
+                    </div>
+                </form>
+                <div class="clearfix">
+                    <span class="sign-up pull-left">Not a Member?<a href="#" class="activate-section" data-section="register-section">Sign up now</a></span>
+                    <span class="login-link pull-right"><a href="#" class="activate-section" data-section="login-section">Login</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- .password-reset-section -->
+        <div class="register-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <span>Register</span>
+                    <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+                <form id="register-form" action="#" method="post">
+                    <div class="form-element">
+                        <label class="login-form-label" for="register-username">Username<span>*</span></label>
+                        <input id="register-username" name="username" type="text" class="login-form-input login-form-input-common required" title="* Please enter a valid username." placeholder="Username">
+                    </div>
+                    <div class="form-element">
+                        <label class="login-form-label" for="user_email">Email<span>*</span></label>
+                        <input id="user_email" name="user_email" type="text" class="login-form-input login-form-input-common email required" title="* Please provide valid email address!" placeholder="Email">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" name="user-submit" class="login-form-submit login-form-input-common" value="Register">
+                    </div>
+                </form>
+                <div class="clearfix">
+                    <span class="login-link pull-left"><a href="#" class="activate-section" data-section="login-section">Login</a></span>
+                    <span class="forgot-password pull-right"><a href="#" class="activate-section" data-section="password-section">Forgot Password?</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- .register-section -->
+    </div>
+    <!-- .modal-dialog -->
+</div>
+<!-- .modal -->
+<script>
+   
+   
+    (function ($) {
+        "use strict";
+
+        if (jQuery().validate) {
+
+            //Login
+            $('#login-form').validate();
+
+            //Register
+            $('#register-form').validate();
+
+            //Forgot Password
+            $('#forgot-form').validate();
+        }
+
+        /*-----------------------------------------------------------------------------------*/
+        /* Modal dialog for Login and Register
+         /*-----------------------------------------------------------------------------------*/
+        var loginModal = $('#login-modal'),
+            modalSections = loginModal.find('.modal-section');
+
+        $('.activate-section').on('click', function (event) {
+            var targetSection = $(this).data('section');
+            modalSections.slideUp();
+            loginModal.find('.' + targetSection).slideDown();
+            event.preventDefault();
+        });
+
+    })(jQuery);
+</script>
+</body>
+</html>

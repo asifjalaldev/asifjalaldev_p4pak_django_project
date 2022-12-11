@@ -1,0 +1,80 @@
+{%extends 'admin/admin_main.html'%}
+{%load static%}
+{%block content%}
+<div class="container">
+  <a href="{%url 'viewAgentDir'%}" style="background-color:yellow; font=15px;">view all Agent Directory</a>
+  <form method="get"  action="{%url 'searchAgents'%}" style="background-color:gray;">
+  <div class="row">
+      {% csrf_token %}
+    <div class="col-md-4">
+         <input class="form-control form-control-lg" name="agent_name" type="text" placeholder="Search Agent by Name">
+    </div>
+    <div class="col-md-4">
+        <select name="isFeatured" class="search-select valid" class="form-control" aria-invalid="False">
+                 
+          <option value="False"> Select </option>
+         
+          
+          <option  value="True">Featured</option>
+          <option  value="platinum">Platinum</option>
+     
+        </select>
+
+    </div>
+    
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-primary btn-flat m-b-10 m-l-5 ">search</button>
+    </div>
+
+  </div>
+</form>
+{%for message in messages%}
+{{message}}
+{%endfor%}
+</div>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Agent Name</th>
+            <th scope="col">Agent City</th>
+            <th scope="col">Agent Status</th>
+            <th scope="col">Contact No.</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for agent in agentsPaginator_obj%}
+          <tr>
+            <th scope="row">{{agent.id}}</th>
+            <td>{{agent.name}}</td>
+            <td>{{agent.AgentCity_id.cityName}}</td>
+            <td>{{agent.status}}</td>
+            <td>{{agent.phoneNo}}</td>
+            <td> <a href="{%url 'editAgent' pk=agent.id%}" rel="bookmark">Edit</a>
+          </tr>
+      {%endfor%}
+        </tbody>
+      </table>
+</div>
+<div class="container-fluied" style="background-color:green; color:white">
+    <div class="pagination">
+        <span class="step-links">
+            {% if agentsPaginator_obj.has_previous %}
+                <a href="?page=1"style="color:white;">&laquo; first</a>
+                <a href="?page={{ agentsPaginator_obj.previous_page_number }}" style="color:white;">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ agentsPaginator_obj.number }} of {{ agentsPaginator_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if agentsPaginator_obj.has_next %}
+                <a href="?page={{ agentsPaginator_obj.next_page_number }}" style="color:white;">next</a>
+                <a href="?page={{ agentsPaginator_obj.paginator.num_pages }}" style="color:white;">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{%endblock%}

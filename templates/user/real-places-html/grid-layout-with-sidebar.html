@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real Places</title>
+    <link rel="icon" href="images/cropped-ms-icon-310x310-32x32.png" sizes="32x32" />
+    <link rel="icon" href="images/cropped-ms-icon-310x310-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="images/cropped-ms-icon-310x310-180x180.png">
+    <!-- Google font-->
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dosis:400,700,600,500' rel='stylesheet' type='text/css'>
+    <!-- Include the flexslider stylesheet -->
+    <link href="js/flexslider/flexslider.css" rel="stylesheet">
+    <!-- Include the lightslider stylesheet -->
+    <link href="js/lightslider/css/lightslider.min.css" rel="stylesheet">
+    <!-- Include the owl-carousel stylesheet -->
+    <link href="js/owl.carousel/owl.carousel.css" rel="stylesheet">
+    <!-- Include the swipebox stylesheet -->
+    <link href="js/swipebox/css/swipebox.min.css" rel="stylesheet">
+    <!-- Include the select2 stylesheet -->
+    <link href="js/select2/select2.css" rel="stylesheet">
+    <!-- Include the font-awesome stylesheet -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Include the select2 stylesheet -->
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="js/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/main.css"/>
+    <!-- Default Theme stylesheet -->
+    <link rel="stylesheet" href="css/theme.css"/>
+</head>
+<body>
+<div class="page-loader">
+    <img class="page-loader-img" src="images/page-loader-img.gif" alt="Page Loader"/>
+</div>
+<div id="mobile-header" class="mobile-header hidden-md hidden-lg">
+    <div class="contact-number">
+        <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+            <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#0080BC" d="M1.027 4.846l-.018.37.01.181c.068 9.565 7.003 17.42 15.919 18.48.338.075 1.253.129 1.614.129.359 0 .744-.021 1.313-.318.328-.172.448-.688.308-1.016-.227-.528-.531-.578-.87-.625-.435-.061-.905 0-1.521 0-1.859 0-3.486-.835-4.386-1.192l.002.003-.076-.034c-.387-.156-.696-.304-.924-.422-3.702-1.765-6.653-4.943-8.186-8.896-.258-.568-1.13-2.731-1.152-6.009h.003l-.022-.223c0-1.727 1.343-3.128 2.999-3.128 1.658 0 3.001 1.401 3.001 3.128 0 1.56-1.096 2.841-2.526 3.079l.001.014c-.513.046-.914.488-.914 1.033 0 .281.251 1.028.251 1.028.015 0 .131.188.119.188-.194-.539 1.669 5.201 7.021 7.849-.001.011.636.309.636.309.47.3 1.083.145 1.37-.347.09-.151.133-.32.14-.488.356-1.306 1.495-2.271 2.863-2.271 1.652 0 2.991 1.398 2.991 3.12 0 .346-.066.671-.164.981-.3.594-.412 1.21.077 1.699.769.769 1.442-.144 1.442-.144.408-.755.643-1.625.643-2.554 0-2.884-2.24-5.222-5.007-5.222-1.947 0-3.633 1.164-4.46 2.858-2.536-1.342-4.556-3.59-5.656-6.344 1.848-.769 3.154-2.647 3.154-4.849 0-2.884-2.241-5.222-5.007-5.222-2.41 0-4.422 1.777-4.897 4.144l-.091.711z"/>
+        </svg>
+        <span class="desktop-version hidden-xs">1-800-555-1234</span>
+        <a class="mobile-version visible-xs-inline-block" href="tel://1-800-555-1234" title="Make a Call">1-800-555-1234</a>
+    </div>
+    <!-- .contact-number -->
+    <div class="mobile-header-nav">
+        <ul class="user-nav">
+            <li><a class="login-register-link" href="#login-modal" data-toggle="modal"><i class="fa fa-sign-in"></i>Sign up</a></li>
+            <!--<li><a href="index.html"><i class="fa fa-sign-out"></i>Logout</a></li>-->
+            <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
+            <li><a href="my-properties.html"><i class="fa fa-th-list"></i>My Properties</a></li>
+            <li><a href="favorites.html"><i class="fa fa-star"></i>Favorites</a></li>
+            <li><a class="submit-property-link" href="submit-property.html"><i class="fa fa-plus-circle"></i>Submit</a></li>
+        </ul>
+        <!-- .user-nav -->
+        <div class="social-networks header-social-nav">
+            <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+        </div>
+        <!-- .social-networks -->
+    </div>
+</div>
+<header class="site-header header header-variation-two">
+    <div class="container">
+        <div class="row zero-horizontal-margin">
+            <div class="col-lg-3 zero-horizontal-padding">
+                <div id="site-logo" class="site-logo">
+                    <div class="logo-inner-wrapper">
+                        <a href="index.html"><img src="images/logo-2.png" alt="Logo"/></a>
+                        <small class="tag-line">Coolest Real Estate Theme Ever</small>
+                    </div>
+                </div>
+            </div>
+            <!-- .left-column -->
+            <div class="col-lg-9 zero-horizontal-padding hidden-xs hidden-sm">
+                <div class="header-top clearfix">
+                    <div class="social-networks header-social-nav">
+                        <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a><a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a><a class="gplus" target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <!-- .social-networks -->
+                    <ul class="user-nav">
+                        <li><a class="login-register-link" href="#login-modal" data-toggle="modal"><i class="fa fa-sign-in"></i>Sign up</a></li>
+                        <!--<li><a href="index.html"><i class="fa fa-sign-out"></i>Logout</a></li>-->
+                        <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
+                        <li><a href="my-properties.html"><i class="fa fa-th-list"></i>My Properties</a></li>
+                        <li><a href="favorites.html"><i class="fa fa-star"></i>Favorites</a></li>
+                        <li><a class="submit-property-link" href="submit-property.html"><i class="fa fa-plus-circle"></i>Submit</a></li>
+                    </ul>
+                    <!-- .user-nav -->
+                    <div class="contact-number">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#0080BC" d="M1.027 4.846l-.018.37.01.181c.068 9.565 7.003 17.42 15.919 18.48.338.075 1.253.129 1.614.129.359 0 .744-.021 1.313-.318.328-.172.448-.688.308-1.016-.227-.528-.531-.578-.87-.625-.435-.061-.905 0-1.521 0-1.859 0-3.486-.835-4.386-1.192l.002.003-.076-.034c-.387-.156-.696-.304-.924-.422-3.702-1.765-6.653-4.943-8.186-8.896-.258-.568-1.13-2.731-1.152-6.009h.003l-.022-.223c0-1.727 1.343-3.128 2.999-3.128 1.658 0 3.001 1.401 3.001 3.128 0 1.56-1.096 2.841-2.526 3.079l.001.014c-.513.046-.914.488-.914 1.033 0 .281.251 1.028.251 1.028.015 0 .131.188.119.188-.194-.539 1.669 5.201 7.021 7.849-.001.011.636.309.636.309.47.3 1.083.145 1.37-.347.09-.151.133-.32.14-.488.356-1.306 1.495-2.271 2.863-2.271 1.652 0 2.991 1.398 2.991 3.12 0 .346-.066.671-.164.981-.3.594-.412 1.21.077 1.699.769.769 1.442-.144 1.442-.144.408-.755.643-1.625.643-2.554 0-2.884-2.24-5.222-5.007-5.222-1.947 0-3.633 1.164-4.46 2.858-2.536-1.342-4.556-3.59-5.656-6.344 1.848-.769 3.154-2.647 3.154-4.849 0-2.884-2.241-5.222-5.007-5.222-2.41 0-4.422 1.777-4.897 4.144l-.091.711z"/>
+                        </svg>
+                        <span class="desktop-version hidden-xs">1-800-555-1234</span>
+                        <a class="mobile-version visible-xs-inline-block" href="tel://1-800-555-1234" title="Make a Call">1-800-555-1234</a>
+                    </div>
+                    <!-- .contact-number -->
+                </div>
+                <!-- .header-top -->
+                <div class="header-bottom clearfix">
+                    <nav id="site-main-nav" class="site-main-nav">
+                        <ul class="main-menu clearfix">
+                            <li class="current-menu-item">
+                                <a href="index.html">Home</a>
+                                <ul class="sub-menu">
+                                    <li><a href="index.html">Home Variation One</a></li>
+                                    <li><a href="home-2.html">Home Variation Two</a></li>
+                                    <li><a href="home-3.html">Home Variation Three</a></li>                             <li><a href="home-4.html">Home Variation Four</a></li><li><a href="home-5.html">Home Variation Five</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Properties</a>
+                                <ul class="sub-menu">
+                                    <li><a href="list-layout-fullwidth.html">List layout Full Width</a></li>
+                                    <li><a href="list-layout-with-sidebar.html">List Layout Wiith Sidebar</a></li>
+                                    <li><a href="grid-layout-fullwidth.html">Grid Layout Full Width</a></li>
+                                    <li><a href="grid-layout-with-sidebar.html">Grid Layout with Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="property-single.html">Property</a>
+                                <ul class="sub-menu">
+                                    <li><a href="property-single.html">Variation One</a></li>
+                                    <li><a href="property-single-2.html">Variation Two</a></li>
+                                    <li><a href="property-single-3.html">Variation Three</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="blog.html">News</a>
+                                <ul class="sub-menu">
+                                    <li><a href="single.html">Single Post</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Pages</a>
+                                <ul class="sub-menu">
+                                    <li><a href="agent-2-column.html">Agent 2 Column</a></li>
+                                    <li><a href="agent-3-column.html">Agent 3 Column</a></li>
+                                    <li><a href="agent-4-column.html">Agent 4 Column</a></li>
+                                    <li><a href="agent-single.html">Agent Single</a></li>
+                                    <li><a href="submit-property.html">Submit Properties</a></li>
+                                    <li><a href="profile.html">User Profile</a></li>
+                                    <li><a href="my-properties.html">My Properties</a></li>
+                                    <li><a href="favorites.html">Favorite Properties</a></li>
+                                    <li><a href="page.html">Page</a></li>
+                                    <li><a href="page-full-width.html">Page full-width</a></li>
+                                    <li><a href="404.html">Page 404</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Galleries</a>
+                                <ul class="sub-menu">
+                                    <li><a href="gallery-2-columns.html">Gallery Two Column</a></li>
+                                    <li><a href="gallery-3-columns.html">Gallery Three Column</a></li>
+                                    <li><a href="gallery-4-columns.html">Gallery Four Column</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- .header-bottom -->
+            </div>
+            <!-- .right-column -->
+        </div>
+        <!-- .row -->
+    </div>
+    <!-- .container -->
+</header>
+<!-- .site-header -->
+<div class="page-head " style="background: url(images/banner.jpg) #494c53 no-repeat center top;  background-size: cover;">
+    <div class="container">
+        <div class="page-head-content">
+            <h1 class="page-title"><span>List Layout With Sidebar</span></h1>
+        </div>
+    </div>
+</div>
+<!-- .page-head -->
+<div id="content-wrapper" class="site-content-wrapper site-pages">
+    <div id="content" class="site-content layout-boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 site-main-content">
+                    <main id="main" class="site-main">
+                        <div class="page-listing-control clearfix">
+                            <div class="row">
+                                <div class="col-xs-6 col-lg-7">
+                                    <h3 class="heading results">12 Properties Found</h3>
+                                </div>
+                                <div class="col-xs-6 col-lg-5 page-controls-wrapper">
+                                    <div class="sort-controls">
+                                        <select name="sort-properties" id="sort-properties">
+                                            <option value="default">Default Order</option>
+                                            <option value="price-asc">Sort by Price Low to High</option>
+                                            <option value="price-desc">Sort by Price High to Low</option>
+                                            <option value="date-asc">Sort by Date Old to New</option>
+                                            <option value="date-desc">Sort by Date New to Old</option>
+                                        </select>
+                                    </div>
+                                    <!-- .sort-controls -->
+                                </div>
+                                <!-- .page-controls-wrapper -->
+                            </div>
+                            <!-- .row -->
+                        </div>
+                        <!-- .page-listing-control -->
+                        <div class="row">
+                            <div class="col-xs-6 col-md-4 col-grid-post">
+                                <article class="property-listing-grid post-for-grid hentry clearfix">
+                                    <div class="property-thumbnail">
+                                        <div class="gallery-slider-two flexslider">
+                                            <ul class="slides">
+                                                <li>
+                                                    <a title="Feature Image" data-rel="gallery-1" class="swipebox"
+                                                       href="images/property/property-1-660x600.jpg">
+                                                        <img class="img-responsive" src="images/property/property-1-660x600.jpg" alt="Thumbnail">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a title="Feature Image" data-rel="gallery-1" class="swipebox"
+                                                       href="images/property/property-7-660x600.jpg">
+                                                        <img class="img-responsive" src="images/property/property-7-660x600.jpg" alt="Thumbnail">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="title-and-meta">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title"><a href="property-single.html" rel="bookmark">Home in Merrick Way</a></h3>
+                                            <p class="property-type">Single Family Home</p>
+                                            <div class="price-and-status-wrapper clearfix">
+                                                <div class="price-wrapper">
+                                                    <span class="price">$540,000                                                                    </span>
+                                                </div>
+                                                <div class="status-tag-wrapper">
+                                                    <a href="#"><span class="property-status-tag">For Sale</span></a>
+                                                </div>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <!-- .title-and-meta -->
+                                </article>
+                                <!-- .property-listing-page -->
+                            </div>
+                            <!-- .col-grid-post -->
+                            <div class="col-xs-6 col-md-4 col-grid-post">
+                                <article class="property-listing-grid post-for-grid hentry clearfix">
+                                    <div class="property-thumbnail">
+                                        <a href="property-single.html"><img class="img-responsive" src="images/property/property-12-660x600.jpg" alt="Thumbnail"></a>
+                                    </div>
+                                    <div class="title-and-meta">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title"><a href="property-single.html" rel="bookmark">Villa in Coral Gables</a></h3>
+                                            <p class="property-type">Villa</p>
+                                            <div class="price-and-status-wrapper clearfix">
+                                                <div class="price-wrapper">
+                                                    <span class="price">$825,000                                                                    </span>
+                                                </div>
+                                                <div class="status-tag-wrapper">
+                                                    <a href="#"><span class="property-status-tag">For Sale</span></a>
+                                                </div>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <!-- .title-and-meta -->
+                                </article>
+                                <!-- .property-listing-page -->
+                            </div>
+                            <!-- .col-grid-post -->
+                            <div class="col-xs-6 col-md-4 col-grid-post">
+                                <article class="property-listing-grid post-for-grid hentry clearfix">
+                                    <div class="property-thumbnail">
+                                        <a href="property-single.html"><img class="img-responsive" src="images/property/property-10-660x600.jpg" alt="Thumbnail"></a>
+                                    </div>
+                                    <div class="title-and-meta">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title"><a href="property-single.html" rel="bookmark">Street Food Restaurant</a></h3>
+                                            <p class="property-type">Shop</p>
+                                            <div class="price-and-status-wrapper clearfix">
+                                                <div class="price-wrapper">
+                                                    <span class="price">$1,600                                                                            Monthly                                                                    </span>
+                                                </div>
+                                                <div class="status-tag-wrapper">
+                                                    <a href="#"><span class="property-status-tag">For Rent</span></a>
+                                                </div>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <!-- .title-and-meta -->
+                                </article>
+                                <!-- .property-listing-page -->
+                            </div>
+                            <!-- .col-grid-post -->
+                            <div class="col-xs-6 col-md-4 col-grid-post">
+                                <article class="property-listing-grid post-for-grid hentry clearfix">
+                                    <div class="property-thumbnail">
+                                        <a href="property-single.html"><img class="img-responsive" src="images/property/property-9-660x600.jpg" alt="Thumbnail"></a>
+                                    </div>
+                                    <div class="title-and-meta">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title"><a href="property-single.html" rel="bookmark">Villa on Hollywood Boulevard</a></h3>
+                                            <p class="property-type">Villa</p>
+                                            <div class="price-and-status-wrapper clearfix">
+                                                <div class="price-wrapper">
+                                                    <span class="price">$740,000                                                                    </span>
+                                                </div>
+                                                <div class="status-tag-wrapper">
+                                                    <a href="#"><span class="property-status-tag">For Sale</span></a>
+                                                </div>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <!-- .title-and-meta -->
+                                </article>
+                                <!-- .property-listing-page -->
+                            </div>
+                            <!-- .col-grid-post -->
+                            <div class="col-xs-6 col-md-4 col-grid-post">
+                                <article class="property-listing-grid post-for-grid hentry clearfix">
+                                    <div class="property-thumbnail">
+                                        <a href="property-single.html"><img class="img-responsive" src="images/property/property-2-660x600.jpg" alt="Thumbnail"></a>
+                                    </div>
+                                    <div class="title-and-meta">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title"><a href="property-single.html" rel="bookmark">Villa on Grand Avenue</a></h3>
+                                            <p class="property-type">Villa</p>
+                                            <div class="price-and-status-wrapper clearfix">
+                                                <div class="price-wrapper">
+                                                    <span class="price">$4,750                                                                            Monthly                                                                    </span>
+                                                </div>
+                                                <div class="status-tag-wrapper">
+                                                    <a href="#"><span class="property-status-tag">For Rent</span></a>
+                                                </div>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <!-- .title-and-meta -->
+                                </article>
+                                <!-- .property-listing-page -->
+                            </div>
+                            <!-- .col-grid-post -->
+                            <div class="col-xs-6 col-md-4 col-grid-post">
+                                <article class="property-listing-grid post-for-grid hentry clearfix">
+                                    <div class="property-thumbnail">
+                                        <a href="property-single.html"><img class="img-responsive" src="images/property/property-8-660x600.jpg" alt="Thumbnail"></a>
+                                    </div>
+                                    <div class="title-and-meta">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title"><a href="property-single.html" rel="bookmark">Office Space at Northwest 107th Avenue</a></h3>
+                                            <p class="property-type">Office</p>
+                                            <div class="price-and-status-wrapper clearfix">
+                                                <div class="price-wrapper">
+                                                    <span class="price">$3,100                                                                            Monthly                                                                    </span>
+                                                </div>
+                                                <div class="status-tag-wrapper">
+                                                    <a href="#"><span class="property-status-tag">For Rent</span></a>
+                                                </div>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <!-- .title-and-meta -->
+                                </article>
+                                <!-- .property-listing-page -->
+                            </div>
+                            <!-- .col-grid-post -->
+                        </div>
+                        <!-- .row-->
+                        <div class="pagination">
+                            <a class="prev page-numbers" href="#"><i class="fa fa-angle-left"></i></a>
+                            <span class="page-numbers current">1</span>
+                            <a class="page-numbers" href="#">2</a>
+                            <a class="next page-numbers" href="#"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <!-- .pagination -->
+                    </main>
+                    <!-- .site-main -->
+                </div>
+                <!-- .site-main-content -->
+                <div class="col-md-3 site-sidebar-content">
+                    <aside class="sidebar">
+                        <section class="widget widget-advance-search advance-search">
+                            <h3 class="advance-search-widget-title"><i class="fa fa-search"></i>Find Your Home</h3>
+                            <form class="advance-search-form" action="#" method="get">
+                                <div class="row field-wrap">
+                                    <div class="option-bar col-xs-12 property-location">
+                                        <select name="location" id="location" class="search-select">
+                                            <option value="any">Location (Any)</option>
+                                            <option value="miami">Miami</option>
+                                            <option value="little-havana">- Little Havana</option>
+                                            <option value="perrine">- Perrine</option>
+                                            <option value="doral">- Doral</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-type">
+                                        <select name="type" id="select-property-type" class="search-select">
+                                            <option value="any" selected="selected">Property Type (Any)</option>
+                                            <option value="commercial"> Commercial</option>
+                                            <option value="office">-  Office</option>
+                                            <option value="shop">-  Shop</option>
+                                            <option value="residential"> Residential</option>
+                                            <option value="apartment">-  Apartment</option>
+                                            <option value="apartment-building">-  Apartment Building</option>
+                                            <option value="condominium">-  Condominium</option>
+                                            <option value="single-family-home">-  Single Family Home</option>
+                                            <option value="villa">-  Villa</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-status">
+                                        <select name="status" id="select-status" class="search-select">
+                                            <option value="any" selected="selected">Property Status (Any)</option>
+                                            <option value="for-rent"> For Rent</option>
+                                            <option value="for-sale"> For Sale</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-keyword">
+                                        <input type="text" name="keyword" id="keyword-txt" value="" placeholder="Keyword">
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-id">
+                                        <input type="text" name="property-id" id="property-id-txt" value="" placeholder="Property ID">
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-bedrooms">
+                                        <select name="bedrooms" id="select-bedrooms" class="search-select">
+                                            <option value="any" selected="selected">Min Beds (Any)</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-bathrooms">
+                                        <select name="bathrooms" id="select-bathrooms" class="search-select">
+                                            <option value="any" selected="selected">Min Baths (Any)</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-min-price">
+                                        <select name="min-price" id="select-min-price" class="search-select">
+                                            <option value="any" selected="selected">Min Price (Any)</option>
+                                            <option value="1000">$1,000</option>
+                                            <option value="5000">$5,000</option>
+                                            <option value="10000">$10,000</option>
+                                            <option value="50000">$50,000</option>
+                                            <option value="100000">$100,000</option>
+                                            <option value="200000">$200,000</option>
+                                            <option value="300000">$300,000</option>
+                                            <option value="400000">$400,000</option>
+                                            <option value="500000">$500,000</option>
+                                            <option value="600000">$600,000</option>
+                                            <option value="700000">$700,000</option>
+                                            <option value="800000">$800,000</option>
+                                            <option value="900000">$900,000</option>
+                                            <option value="1000000">$1,000,000</option>
+                                            <option value="1500000">$1,500,000</option>
+                                            <option value="2000000">$2,000,000</option>
+                                            <option value="2500000">$2,500,000</option>
+                                            <option value="5000000">$5,000,000</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-max-price">
+                                        <select name="max-price" id="select-max-price" class="search-select">
+                                            <option value="any" selected="selected">Max Price (Any)</option>
+                                            <option value="5000">$5,000</option>
+                                            <option value="10000">$10,000</option>
+                                            <option value="50000">$50,000</option>
+                                            <option value="100000">$100,000</option>
+                                            <option value="200000">$200,000</option>
+                                            <option value="300000">$300,000</option>
+                                            <option value="400000">$400,000</option>
+                                            <option value="500000">$500,000</option>
+                                            <option value="600000">$600,000</option>
+                                            <option value="700000">$700,000</option>
+                                            <option value="800000">$800,000</option>
+                                            <option value="900000">$900,000</option>
+                                            <option value="1000000">$1,000,000</option>
+                                            <option value="1500000">$1,500,000</option>
+                                            <option value="2000000">$2,000,000</option>
+                                            <option value="2500000">$2,500,000</option>
+                                            <option value="5000000">$5,000,000</option>
+                                            <option value="10000000">$10,000,000</option>
+                                        </select>
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-min-area">
+                                        <input type="text" name="min-area" id="min-area" pattern="[0-9]+" value="" placeholder="Min Area (sq ft)" title="Please only provide digits!">
+                                    </div>
+                                    <div class="option-bar col-xs-12 property-max-area">
+                                        <input type="text" name="max-area" id="max-area" pattern="[0-9]+" value="" placeholder="Max Area (sq ft)" title="Please only provide digits!">
+                                    </div>
+                                    <div class="option-bar col-xs-12 submit-btn-wrappe">
+                                        <input type="submit" value="Search" class="form-submit-btn">
+                                    </div>
+                                </div>
+                                <!-- .field-wrap -->
+                                <div class="extra-search-fields">
+                                    <h5 class="title"><span class="text-wrapper">Looking for certain features</span></h5>
+                                    <ul class="features-checkboxes-wrapper list-unstyled clearfix">
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-2-stories" value="2-stories"><label for="feature-2-stories">2 Stories<small>(6)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-26-ceilings" value="26-ceilings"><label for="feature-26-ceilings">26' Ceilings<small>(1)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-bike-path" value="bike-path"><label for="feature-bike-path">Bike Path<small>(1)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-central-cooling" value="central-cooling"><label for="feature-central-cooling">Central Cooling<small>(4)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-central-heating" value="central-heating"><label for="feature-central-heating">Central Heating<small>(3)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-dual-sinks" value="dual-sinks"><label for="feature-dual-sinks">Dual Sinks<small>(5)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-electric-range" value="electric-range"><label for="feature-electric-range">Electric Range<small>(5)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-emergency-exit" value="emergency-exit"><label for="feature-emergency-exit">Emergency Exit<small>(2)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-fire-alarm" value="fire-alarm"><label for="feature-fire-alarm">Fire Alarm<small>(3)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-fire-place" value="fire-place"><label for="feature-fire-place">Fire Place<small>(4)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-home-theater" value="home-theater"><label for="feature-home-theater">Home Theater<small>(3)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-hurricane-shutters" value="hurricane-shutters"><label for="feature-hurricane-shutters">Hurricane Shutters<small>(1)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-jog-path" value="jog-path"><label for="feature-jog-path">Jog Path<small>(1)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-laundry-room" value="laundry-room"><label for="feature-laundry-room">Laundry Room<small>(3)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-lawn" value="lawn"><label for="feature-lawn">Lawn<small>(5)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-marble-floors" value="marble-floors"><label for="feature-marble-floors">Marble Floors<small>(5)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-next-to-busy-way" value="next-to-busy-way"><label for="feature-next-to-busy-way">Next To Busy Way<small>(1)</small></label></span></li>
+                                        <li><span class="option-set"><input type="checkbox" name="features[]" id="feature-swimming-pool" value="swimming-pool"><label for="feature-swimming-pool">Swimming Pool<small>(4)</small></label></span></li>
+                                    </ul>
+                                </div>
+                                <!-- .extra-search-fields -->
+                            </form>
+                            <!-- .advance-search-form -->
+                        </section>
+                        <section class="widget widget-featured-properties">
+                            <h3 class="widget-title">Featured Properties</h3>
+                            <ul class="widget-featured-properties">
+                                <li>
+                                    <figure class="featured-properties-thumbnail">
+                                        <span class="price">$4,750 Monthly</span>
+                                        <a href="property-single.html"><img class="img-responsive" src="images/property/property-2-850x570.jpg" alt="Thumbnail"></a>
+                                    </figure>
+                                    <h4 class="featured-properties-title"><a href="property-single.html">Villa on Grand Avenue</a></h4>
+                                    <p>Spacious and fabulous home in prime location. This executive style four bed,… <a href="#" class="read-more-link">Know More</a></p>
+                                </li>
+                                <li>
+                                    <figure class="featured-properties-thumbnail">
+                                        <span class="price">$850,000</span>
+                                        <a href="property-single.html"><img class="img-responsive" src="images/property/property-3-850x570.jpg" alt="Thumbnail"></a>
+                                    </figure>
+                                    <h4 class="featured-properties-title"><a href="property-single.html">Home in Coral Gables</a></h4>
+                                    <p>Elegant retreat in a quiet Coral Gables setting. This home provides wonderful… <a href="#" class="read-more-link">Know More</a></p>
+                                </li>
+                            </ul>
+                        </section>
+                    </aside>
+                    <!-- .sidebar -->
+                </div>
+                <!-- .site-sidebar-content -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .site-content -->
+</div>
+<!-- .site-content-wrapper -->
+<footer class="site-footer site-footer-two">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 footer-logo fade-in-left animated">
+                <a href="#">
+                    <img class="img-responsive" src="images/footer-logo.png" alt="Footer Logo"/>
+                </a>
+                <p class="copyright-text">
+                    © Copyright 2015 All rights reserved by <a href="#">Real Places</a>
+                </p>
+            </div>
+            <div class="col-lg-9 footer-widget-area fade-in-up animated">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <section class="widget clearfix widget_lc_taxonomy">
+                            <h3 class="widget-title">Locations</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">Miami</a> (12)
+                                    <ul class="children">
+                                        <li><a href="#">Little Havana</a> (2)</li>
+                                        <li><a href="#">Perrine</a> (1)</li>
+                                        <li><a href="#">Doral</a> (1)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <section class="widget clearfix widget_lc_taxonomy">
+                            <h3 class="widget-title">Property Types</h3>
+                            <ul>
+                                <li>
+                                    <a href="">Residential</a> (9)
+                                    <ul class="children">
+                                        <li><a href="#">Villa</a> (3)</li>
+                                        <li><a href="#">Single Family Home</a> (3)</li>
+                                        <li><a href="#">Condominium</a> (1)</li>
+                                        <li><a href="#">Apartment Building</a> (1)</li>
+                                        <li><a href="#">Apartment</a> (1)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Commercial</a> (3)
+                                    <ul class="children">
+                                        <li class="cat-item cat-item-42"><a href="#">Shop</a> (2)</li>
+                                        <li class="cat-item cat-item-39"><a href="#">Office</a> (1)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+                    <div class="col-sm-6 col-md-3">
+                        <section class="widget clearfix widget_lc_taxonomy">
+                            <h3 class="widget-title">Property Statuses</h3>
+                            <ul>
+                                <li><a href="#">For Rent</a> (6)</li>
+                                <li><a href="#">For Sale</a> (6)</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <section id="inspiry_social_media_icons-1" class="widget clearfix widget_inspiry_social_media_icons">
+                            <h3 class="widget-title">Connect With Us</h3>
+                            <div class="social-networks clearfix">
+                                <a class="twitter" href="#twitter" target="_blank"><i class="fa fa-twitter fa-lg"></i></a><a class="facebook" href="#facebook" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+                                <a class="linkedin" href="#linkedin" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a><a class="google-plus" href="#google-plus" target="_blank"><i class="fa fa-google-plus fa-lg"></i></a><a class="instagram" href="#instagram" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+                                <a class="youtube-square" href="#youtube" target="_blank"><i class="fa fa-youtube-square fa-lg"></i></a><a class="pinterest" href="#pinterest" target="_blank"><i class="fa fa-pinterest fa-lg"></i></a><a class="rss" href="#rss" target="_blank"><i class="fa fa-rss fa-lg"></i></a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- .footer -->
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/flexslider/jquery.flexslider-min.js"></script>
+<script src="js/lightslider/js/lightslider.min.js"></script>
+<script src="js/select2/select2.min.js"></script>
+<script src="js/owl.carousel/owl.carousel.min.js"></script>
+<script src="js/swipebox/js/jquery.swipebox.min.js"></script>
+<script src="js/jquery.hoverIntent.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/transition.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/meanmenu/jquery.meanmenu.min.js"></script>
+<script src="js/jquery.placeholder.min.js"></script>
+<script src="js/custom.js"></script>
+<div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="login-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <span><i class="fa fa-sign-in"></i>Login</span>
+                    <button type="button" class="close close-modal-dialog " data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+                <form id="login-form" action="#" method="post" enctype="multipart/form-data">
+                    <div class="form-element">
+                        <label class="login-form-label" for="login-username">Username</label>
+                        <input id="login-username" name="username" type="text" class="login-form-input login-form-input-common required" autofocus="" title="* Please enter a valid username." placeholder="Username">
+                    </div>
+                    <div class="form-element">
+                        <label class="login-form-label" for="password">Password</label>
+                        <input id="password" name="password" type="password" class="login-form-input login-form-input-common required" placeholder="Password">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" class="login-form-submit login-form-input-common" value="Login">
+                    </div>
+                </form>
+                <div class="clearfix">
+                    <span class="sign-up pull-left">Not a Member?<a href="#" class="activate-section" data-section="register-section">Sign up now</a></span>
+                    <span class="forgot-password pull-right"><a href="#" class="activate-section" data-section="password-section">Forgot Password?</a></span>
+                </div>
+            </div>
+            <div class="buttons-external">
+                <div class="graphic">
+                    <span class="or">or</span>
+                    <span class="vertical-line"></span>
+                    <span class="circle"></span>
+                </div>
+                <div class="clearfix">
+                    <a class="button facebook-button" href="#"><i class="fa fa-facebook"></i>Login with Facebook</a>
+                    <a class="button google-button" href="#"><i class="fa fa-google"></i>Login with Google</a>
+                </div>
+            </div>
+        </div>
+        <!-- .login-section -->
+        <div class="password-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <span>Reset Password</span>
+                    <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+                <form id="forgot-form" action="#" method="post">
+                    <div class="form-element">
+                        <label class="login-form-label" for="password-reset">User Name or Email<span>*</span></label>
+                        <input id="password-reset" name="password-reset" type="text" class="login-form-input login-form-input-common email required" title="* Please provide user name or email!" placeholder="Email">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" name="user-submit" class="login-form-submit login-form-input-common" value="Reset Password">
+                    </div>
+                </form>
+                <div class="clearfix">
+                    <span class="sign-up pull-left">Not a Member?<a href="#" class="activate-section" data-section="register-section">Sign up now</a></span>
+                    <span class="login-link pull-right"><a href="#" class="activate-section" data-section="login-section">Login</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- .password-reset-section -->
+        <div class="register-section modal-section">
+            <div class="form-wrapper">
+                <div class="form-heading clearfix">
+                    <span>Register</span>
+                    <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                </div>
+                <form id="register-form" action="#" method="post">
+                    <div class="form-element">
+                        <label class="login-form-label" for="register-username">Username<span>*</span></label>
+                        <input id="register-username" name="username" type="text" class="login-form-input login-form-input-common required" title="* Please enter a valid username." placeholder="Username">
+                    </div>
+                    <div class="form-element">
+                        <label class="login-form-label" for="user_email">Email<span>*</span></label>
+                        <input id="user_email" name="user_email" type="text" class="login-form-input login-form-input-common email required" title="* Please provide valid email address!" placeholder="Email">
+                    </div>
+                    <div class="form-element">
+                        <input type="submit" name="user-submit" class="login-form-submit login-form-input-common" value="Register">
+                    </div>
+                </form>
+                <div class="clearfix">
+                    <span class="login-link pull-left"><a href="#" class="activate-section" data-section="login-section">Login</a></span>
+                    <span class="forgot-password pull-right"><a href="#" class="activate-section" data-section="password-section">Forgot Password?</a></span>
+                </div>
+            </div>
+        </div>
+        <!-- .register-section -->
+    </div>
+    <!-- .modal-dialog -->
+</div>
+<!-- .modal -->
+<script>
+    (function ($) {
+        "use strict";
+
+        if (jQuery().validate) {
+
+            //Login
+            $('#login-form').validate();
+
+            //Register
+            $('#register-form').validate();
+
+            //Forgot Password
+            $('#forgot-form').validate();
+        }
+
+        /*-----------------------------------------------------------------------------------*/
+        /* Modal dialog for Login and Register
+         /*-----------------------------------------------------------------------------------*/
+        var loginModal = $('#login-modal'),
+            modalSections = loginModal.find('.modal-section');
+
+        $('.activate-section').on('click', function (event) {
+            var targetSection = $(this).data('section');
+            modalSections.slideUp();
+            loginModal.find('.' + targetSection).slideDown();
+            event.preventDefault();
+        });
+
+    })(jQuery);
+</script>
+</body>
+</html>

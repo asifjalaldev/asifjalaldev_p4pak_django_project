@@ -1,0 +1,354 @@
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+
+<div class="container">
+          
+    <nav>
+        <ol class="breadcrumb" style=" color:green">
+            {%if request.user.is_authenticated%}
+             <li><a href="{%url 'myListing'%}">My Properties</a></li>
+             <li><a href="{%url 'viewListings'%}">All Properties</a></li>
+             {%endif%}
+             <li><a href="{%url 'viewHome'%}">Home</a></li>
+         </ol> 
+     </nav>
+    </div>
+<div class="container white-box submit-property-box" style="background-color:#BDFEC2; color:black;">
+    <form method="post" class="submit-form" action="{%url 'editListing' pk=list.id%}" enctype="multipart/form-data">
+        <br>
+        {% csrf_token %}
+        
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="form-option">
+                    <h2 > Edit Property </h2>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-option">
+                    <label for="title">Property Title</label>
+                    <input type="hidden" name="Feature" value="{{list.isFeatured}}">
+                    <input type="text" value="{{list.property_title}}"  class="required" id="ptitle" name="title" placeholder="" required>
+                </div>
+                <div cclass="form-option">
+                    <label for="description">Property Description</label>
+                    <textarea class="required"  rows="3" name="description"  placeholder="" > {{list.desc}} </textarea>
+                </div>
+            </div>
+           
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-option">
+                    <label for="type">Type</label>
+                    <select name="type" name="type" id="type" class="required" aria-invalid="false" >
+                        {%if list.property_type == "Plat"%}
+                        <option value="">Select</option>
+                        <option selected="selected" value="Plat">Plot</option>
+                        <option value="House">House</option>
+                        <option value="Land">Land</option>
+                        {%endif%}
+                        {%if list.property_type == "House"%}
+                        <option value="">Select</option>
+                        <option value="Plat">Plot</option>
+                        <option selected="selected" value="House">House</option>
+                        <option value="Land">Land</option>
+                        {%endif%}
+                        {%if list.property_type == "Land"%}
+                        <option value="">Select</option>
+                        <option value="Plat">Plot</option>
+                        <option  value="House">House</option>
+                        <option selected="selected" value="Land">Land</option>
+                        {%endif%}
+                        {%if list.property_type == ""%}
+                        <option selected="selected" value="">Select</option>
+                        <option value="Plat">Plot</option>
+                        <option value="House">House</option>
+                        <option value="Land">Land</option>
+                        {%endif%}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-option">
+                    <label for="city">Location</label>
+                    <input type="text" value="{{list.Location}}" name="location" id="pLocation" class="required" placeholder="">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-option">
+                    <label for="city">City</label>
+                    <select name="city" class="search-select valid" aria-invalid="false">
+                     
+                      <option value=""> Select City </option>
+                      {%for c in allCities%}
+                      {%if c.id == city.id %}
+                        <option selected="selected" value="{{c.id}}">{{c.cityName}}</option>
+                        
+                        {%endif%}
+                        <option  value="{{c.id}}">{{c.cityName}}</option>
+                    {%endfor%}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-option"><br>
+                    <button type="Button" style="background-color: #007008;" class="btn-small btn-orange" data-toggle="modal" data-target="#exampleModalCenter"><i class="ti-plus"></i>Add New City</button>
+              
+                                      </button>
+                </div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-option">
+                    <label for="status">Status</label>
+                    <select name="purpose" id="status" class="search-select valid" aria-invalid="false" >
+                        {% if list.purpose == "Rent" %}
+                        <option  value="">Select</option>
+                        <option selected="selected" value="Rent">For Rent</option>
+                        <option value="Sale">For Sale</option>
+                        
+                        {% elif list.purpose == "Sale" %}
+                        <option  value="">Select</option>
+                        <option  value="Rent"> For Rent</option>
+                        <option selected="selected" value="Sale">For Sale</option>
+                     
+                        {% else%}
+                        <option selected="selected"  value="">Select</option>
+                        <option  value="Rent"> For Rent</option>
+                        <option value="Sale"> For Sale</option>
+                        {%endif%}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-option">
+                    <label>Bedrooms</label>
+                    <input type="number" name="bedroom" class="required" placeholder="" min="0" value="{{list.bedroom}}" required>
+                   
+                  
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div  class="form-option">
+                    <label>Bathrooms</label>
+                    <input type="number" name="bathroom" class="required" placeholder="" min="0" value="{{list.bathroom}}" required>
+                   
+                  
+                </div>
+            </div>
+           
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-option">
+                    <label for="price">Sale OR Rent Price</label>
+                    <input type="text" value="{{list.rental_price}}" name="price"  class="required" placeholder="" >
+                </div>
+            </div>
+        </div>
+        <div class="row">
+         
+           <div class="col-md-6">
+               <div class="form-option">
+            <label for="status">Select units</label>
+                    <select name="unit" id="status" class="search-select valid" aria-invalid="false">
+                   {%if list.unit == "sqrft" %} 
+                      <option value="">Select</option> 
+                      <option selected="selected" value="sqrft"> Sqrft</option>
+                      <option value="marla"> Merla</option>
+                      <option value="kanal"> Kanal</option>
+                      {%elif list.unit == "marla" %}
+                     
+                      <option value="">Select</option> 
+                      <option selected="selected" value="marla"> Merla</option>
+                      <option value="sqrft"> Sqrft</option>
+                      <option value="kanal"> Kanal</option>
+                      {%elif list.unit == "kanal" %}
+                     
+                      <option value="">Select</option> 
+                      <option  value="marla"> Merla</option>
+                      <option value="sqrft"> Sqrft</option>
+                      <option selected="selected" value="kanal"> Kanal</option>
+                      {%elif list.unit == "" %}
+                     
+                        <option selected="selected" value="">Select</option> 
+                        <option value="marla"> Merla</option>
+                        <option value="sqrft"> Sqrft</option>
+                        <option value="kanal"> Kanal</option>
+                    {%endif%} 
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-option">
+                    <label for="size">Area</label>
+                    <input type="text" value="{{list.land_area}}" name="area" class="required" placeholder="" >
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="title">Owner Name</label>
+                    <input type="text" value="{{list.name}}" class="form-control input-default " id="ptitle" name="name" placeholder="" >
+                </div>
+                <div class="form-option">
+                    <label for="description">Owner Contact</label>
+                    <input type="text" value="{{list.contact}}" class="form-control input-default " id="ptitle" name="contact" placeholder="" >
+                 </div>
+            </div>
+           
+        </div>
+
+       
+        <!-- .row -->
+        <div class="row">
+         
+            <div class="col-md-4">
+                <div class="form-option">
+                    <label for="size">image 1</label>
+                    <input type="file" name="img" accept="image/*" > 
+                    <input type="hidden"  name="old_img" value="{{list.img}}">  
+                </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="form-option">
+                     <label for="size">image 2</label>
+                     <input type="file" name="img2" accept="image/*" >
+                     <input type="hidden"  name="old_img2" value="{{list.img2}}"> 
+                 </div>
+             </div>
+             <div class="col-md-4">
+                <div class="form-option">
+                    <label for="size">image 3</label>
+                    <input type="file" value="{{list.img3}}" name="img3" accept="image/*" >
+                    <input type="hidden"  name="old_img3" value="{{list.img3}}"> 
+                </div>
+            </div>
+
+         </div>
+         <div class="row">
+        
+            <div class="col-md-4">
+                <div class="form-option">
+                    <label for="size">image 1</label>
+                    <img src="{{list.img.url}}" alt="Girl in a jacket" width="200" height="150"> 
+                </div>
+             </div>
+             {%if list.img2.url != None %}
+             <div class="col-md-4">
+                 <div class="form-option">
+                     <label for="size">image 2</label>
+                     <img src="{{list.img2.url}}" alt="Girl in a jacket" width="200" height="150"> 
+                 </div>
+             </div>
+             {%endif%}
+             {%if list.img3.url != None %}
+             <div class="col-md-4">
+                <div class="form-option">
+                    <label for="size">image 3</label>
+                    <img src="{{list.img3.url}}" alt="Girl in a jacket" width="200" height="150"> 
+                </div>
+            </div>
+{%endif%}
+         </div>
+
+    
+        <!-- .row -->
+      
+        <!-- .row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <p id="demo"></p>
+                {%if messages%}
+                {%for message in messages%}
+                {{message}}
+                {%endfor%}
+                {% endif %}
+                <div class="form-group" style="margin-left:43px;">
+                    <input type="hidden" name="action" value="add_property">
+                    <input type="hidden" name="userId" value="{{request.user.id}}">
+                    <input type="hidden" name="Feature" value="{{list.isFeatured}}">
+                    <button type="submit" onclick="myFunction()" class="btn-small btn-orange" style="background-color: green;"><i class="ti-plus"></i>Update Property</button>
+                </div>
+                <div id="message-container">&nbsp;</div>
+            </div>
+        </div>
+        <!-- .row -->
+
+
+
+    </form>
+ 
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add New City</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        <div class="modal-body">
+
+
+          <form method="post" action="{%url 'insertCityFromAddListing'%}" >
+              {%csrf_token%}
+            <div class="form-group" style="color:black; font-size:16px;">
+                <label for="title">City Name</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="cityName" placeholder="Enter City Name" >
+            </div>
+            <button type="submit"  style="background-color: #007008;" class="btn btn-primary">Add New City</button>
+        
+
+        </form>
+        </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+</div>
+<script>
+    function myFunction() {
+      // Get the value of the input field with id="numb"
+      let x = document.getElementById("ptitle").value;
+      let y = document.getElementById("pLocation").value;
+      // If x is Not a Number or less than one or greater than 10
+      let text;
+      if (x == "" & y == "") {
+        text = "Input not valid";
+      } else {
+        text = "";
+      }
+      document.getElementById("demo").innerHTML = text;
+    }
+
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+      })
+    </script>
+{%endblock%}

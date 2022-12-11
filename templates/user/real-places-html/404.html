@@ -1,0 +1,40 @@
+{%extends 'user/real-places-html/userBase.html'%}
+
+{%block content%}
+{%load static%}
+<div class="page-head " style="background: url(images/banner.jpg) #494c53 no-repeat center top;  background-size: cover;">
+    <div class="container">
+        <div class="page-head-content">
+            <h1 class="page-title"><span>404 Page</span></h1>
+        </div>
+    </div>
+</div>
+<!-- .page-head -->
+<div id="content-wrapper" class="site-content-wrapper site-pages">
+    <div id="content" class="site-content layout-boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 site-main-content">
+                    <main id="main" class="site-main default-page clearfix">
+                        <div class="wrapper-404">
+                            <h1 title="title-404">4<span>0</span>4</h1>
+                            <div class="content-404">
+                                <p>Look like something went wrong!</p>
+                                <p>The page you were looking for is not here</p>
+                                <p><a href="{%url 'viewHome'%}">Go to Home</a></p>
+                            </div>
+                        </div>
+                    </main>
+                    <!-- .site-main -->
+                </div>
+                <!-- .site-main-content -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .site-content -->
+</div>
+<!-- .site-content-wrapper -->
+
+{%endblock%}

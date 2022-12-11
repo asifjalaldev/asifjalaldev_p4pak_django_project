@@ -1,0 +1,426 @@
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+
+
+<style>
+    .agentName span{
+        height: 28px;
+        width: 140px;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        margin: 0 5px 0 5px;
+        text-align: center;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+       
+    }
+ 
+        .hidden{
+            visibility:hidden;
+         }
+         .swiper-button-next {
+            margin-right: 40px;
+          }
+          .swiper-button-prev {
+            margin-left: 40px;
+          }
+         @media only screen and (max-width: 1200px) {
+            #desktopAgents{
+                display:none;
+            }
+         }
+         @media only screen 
+         and (min-device-width: 1200px) 
+         and (max-device-width: 2000px){
+           #mobileAgent{
+               display:none;
+           }
+/*new code */
+.agent-search-desktop{
+    background: rgba(0, 0, 0, 0.6);
+    padding-left:12px;
+     padding-right:12px;
+     padding-top:6px;
+     padding-bottom:6px;
+ 
+}
+        }
+</style>
+<!--platinum agent custom code-->
+<div class="homepage-slider slider-variation-three flexslider slider-loader">
+    <ul class="slides">
+        <li>
+            <div class="slide-overlay hidden-xs container">
+               
+                <div class="slide-inner-container" style="margin-right:280px; background-color:black; background: rgba(0, 0, 0, 0.6); padding-right:60px;">
+                    <div class="slide-header" >
+                        <h3 class="slide-entry-title entry-title" >
+                            <a href="#" rel="bookmark" style="color:white; background: rgba(0, 0, 0, 1);"><b>Find Real Estate Agents in Pakistan</b></a>
+                        </h3>
+                        <form method='get' action="{%url 'searchAgent'%}">
+                            {%csrf_token%}
+                           <div class="row price-and-status">
+                            <div class="col-md-4" style="padding-left: 1px; padding-right: 10px">
+                            <select class="form-select" name="city_id" aria-label="Default select example">
+                                {% comment %} <option value='Select City' selected>Select City</option> {% endcomment %}
+                                {%for city in agentCity%}
+                                <option value="{{city.id}}">{{city.cityName}}</option>
+                               
+                                {% endfor %}
+                              </select>
+                            </div>
+                            <div class="col-md-6 " style="padding-left: 1px; padding-right: 10px">
+                                <input type="text" name="search_name" class="form-control  form-control-lg" placeholder="Company" style="height:47px; width=50px; font-size:14pt; ">
+                                </div>
+                            <div class="col-md-2" style="padding-left: 1px; padding-right: 10px">
+                              {% comment %} <a class="btn-default hidden-sm hidden-md" href="{%url 'searchAgent'%}" style="background-color:green;">Find<i class="fa fa-angle-right"></i></a>  {% endcomment %}
+                              <button class="btn btn-primary" Type="submit" style="font-size:18px; background-color:green; padding:10px 24px 7px 24px;">Find </button> 
+        
+                            </div>
+                        </form>
+                        </div> 
+                    </div> 
+                    </div>
+            </div>
+                <img src="{%static 'images/agent/agentBg2.jpg'%}" width="60px" height="20px" alt="background image">
+        </li>
+      
+      
+    </ul>
+</div>
+
+<!--mobile search bar-->
+<div class="hidden-lg">
+ <form method='get' action="{%url 'searchAgent'%}">
+    {%csrf_token%}
+   <div class="row price-and-status">
+    <div class="col-md-4" style="padding-left: 1px; padding-right: 10px">
+    <select class="form-select" name="city_id" aria-label="Default select example" style="max-width:90%;">
+        {%for city in agentCity%}
+        <option value="{{city.id}}">{{city.cityName}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-md-6 " style="padding-left: 1px; padding-right: 10px">
+        <input type="text" name="search_name" class="form-control  form-control-lg" placeholder="Company" style="height:40px; font-size:14pt; width: 96%; margin-left:12px;">
+        </div>
+    <div class="col-md-2" style="padding-left: 1px; padding-right: 10px">
+      {% comment %} <a class="btn-default hidden-sm hidden-md" href="{%url 'searchAgent'%}" style="background-color:green;">Find<i class="fa fa-angle-right"></i></a>  {% endcomment %}
+      <button class="btn btn-primary" Type="submit" style="font-size:18px; background-color:green; padding:10px 24px 7px 24px; width:99%;" >Find </button> 
+
+    </div>
+</div>
+ </form>
+</div>
+<!--search bar for mobile ended-->
+<div class="container">
+    <div class="row">
+        <div class ="col-md-12  text-center" >
+            <h1 >
+                <h2 class="section-title">All Agents</h2>
+            </h1>
+            </div>
+        </div>
+    </div>
+    <div id="content-wrapper" class="site-content-wrapper site-pages">
+        <div id="content" class="site-content layout-boxed">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 site-main-content">
+                        <main id="main" class="site-main">
+                            <!-- .filter-by -->
+                            <div id="gallery-container" class="gallery-container gallery-3-columns gallery-post-listing isotope row">
+                                {%for agent in page_obj %}
+                                <div class="col-xs-6 for-sale col-md-4 col-gallery-item isotope-item for-sale ">
+                                    <article class="gallery-post-item gallery-listing-post clearfix hentry " >
+                                        <figure class="gallery-thumbnail">
+                                            {% if agent.img.url is not None %}
+                                            <img class="img-responsive" src="{{agent.img.url}}" style=" width: 444px; height: 328px;" alt="Photo">
+                                            {%else%}
+                                            <img class="img-responsive"  style=" width: 444px; height: 328px; object-fit: cover;" src="{% static '/images/agent/agent_image.png' %}" alt="Photo">
+                                            {%endif%}
+                                        </figure>
+                                        <div class="gallery-title-wrapper">
+                                            <h3 class="gallery-item-title entry-title">
+                                                <a   title="{{agent.name}}">{{agent.name}}</a></h3>
+                                                City: {{agent.AgentCity_id.cityName}}<br>
+                                                Address:
+                                                {{agent.address}}
+                                                <br><br>
+                                              <button class="btn success hidden-xs" href="#login-modal" data-toggle="modal" data-number="{{agent.phoneNo}}" data-Name="{{agent.name}}" id="btnCall" onclick="call(this)"><i class="fa fa-phone"></i>      Call</button>
+                                              {% comment %} <button class="btn success hidden-lg" href="#login-modal" data-toggle="modal" data-number="{{agent.phoneNo}}" data-Name="{{agent.name}}" id="btnCallMobile" onclick="call(this)"><i class="fa fa-phone"></i>      Call</button> {% endcomment %}
+                                              <a class="btn success hidden-lg text-center" style="font-size:12px; border-radius:12px;  background-color: green; color:white; " href="tel:{{agent.phoneNo}}" > <li class="fa fa-phone">   Contact</li></a>
+                                        </div>
+                                        <style>
+                                            .btn {
+                                                border: 2px solid black;
+                                                background-color: white;
+                                                color: white;
+                                                padding:4px 34px 4px 34px;
+                                                font-size: 16px;
+                                                cursor: pointer;
+                                              }
+                                              
+                                              /* Green */
+                                              .success {
+                                                border-color: #04AA6D;
+                                                color: green;
+                                              }
+                                              
+                                              .success:hover {
+                                                background-color: #04AA6D;
+                                                color: white;
+                                              }
+                                        </style>
+                                    </article>
+                                    <!-- .gallery-post-item -->
+                                </div>
+                                {%empty%}
+                                <p style="color: red;">ooOps! no agent found</p>
+                               {%endfor%}
+                                <!-- .col-gallery-item -->
+                            </div>
+                            <!-- .gallery-container -->
+                        </main>
+                        <!-- .site-main -->
+                    </div>
+                    <!-- .site-main-content -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .site-content -->
+    </div>
+    <div class="container" style="background-color:; font-color:white" >
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+   
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}&{{ parameters }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div> 
+    </div>
+
+    <div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="login-section modal-section">
+                <div class="form-wrapper">
+                    <div class="form-heading clearfix">
+                        <button type="button" class="close close-modal-dialog " data-dismiss="modal" aria-hidden="true"><i style="color:black;" class="fa fa-times fa-lg"></i></button>
+                  <h3 class="text-center">Contact Detail</h3>
+                      Agent: <h3 id="agentName"> </h3>
+                      <span> Phone Number:  <h4 id="agentNo"><i class="fa fa-phone"></i></h4></span>
+                    </div>
+               
+                   
+                </div>
+               
+            </div>
+            <!-- .login-section -->
+            {% comment %} <div class="password-section modal-section">
+                <div class="form-wrapper">
+                    <div class="form-heading clearfix">
+                        <span>Reset Password</span>
+                        <button type="button" class="close close-modal-dialog" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times fa-lg"></i></button>
+                    </div>
+                   <form id="forgot-form" action="#" method="post">
+                        <div class="form-element">
+                            <label class="login-form-label" for="password-reset">User Name or Email<span>*</span></label>
+                            <input id="password-reset" name="password-reset" type="text" class="login-form-input login-form-input-common email required" title="* Please provide user name or email!" placeholder="Email">
+                        </div>
+                        <div class="form-element">
+                            <input type="submit" name="user-submit" class="login-form-submit login-form-input-common" value="Reset Password">
+                        </div>
+                    </form>
+                    <div class="clearfix">
+                        <span class="sign-up pull-left">Not a Member?<a href="#" class="activate-section" data-section="register-section">Sign up now</a></span>
+                        <span class="login-link pull-right"><a href="#" class="activate-section" data-section="login-section">Login</a></span>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+        </div>
+        <!-- .modal-dialog -->
+    </div>
+
+ {% comment %} <div id="desktopAgents">
+<section id="SectionCustom" >
+    <div class=" swiper mySwiper containerCustom"  >
+        <div class="swiper-wrapper contentCustom" >
+
+            <!--start loop here-->
+            {%for agent in agents %}
+            <div class="swiper-slide cardCustom" >
+                <div class="card-contentCustom container">
+                    <div class="imageCustom">
+                        
+                    {% if agent.img.url is not None %}
+                     <img src="{{agent.img.url}}" alt="">
+
+                        {% else%}
+                       <img class="img-circle" src="{% static '/images/agent/agent_image.png' %}" alt="{{agent.name}}">
+                     {%endif%}
+
+                    </div>
+
+                    <div class="media-iconsCustom">
+                        {% if agent.facebook_url %}
+                        <a href="agent.facebook_url"><i class="fa-brands fa-facebook"></i></a>
+
+                        <a href="agent.email_address"><i class="fa-brands fa-email"></i></a>
+                        {%endif%}
+                    </div>
+                    <div class="name-professionCustom">
+                        <div class="agentName">
+                        <span class="nameCustom" style="text-overflow:ellipsis;">{{agent.name}}</span>
+                        </div>
+                        <span class="professionCustom">{{agent.AgentCity_id.cityName}} </span>
+                    </div>
+                    <div class="ratingCustom">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                   
+                    </div><br><br><br>
+                    <label id="contactlbl1" class="" style=" font-size:14px; border-radius:10px; padding:6px 16px 6px 6px; margin-top:12px; background-color:green; color:white;"><i  class="fa fa-phone"></i> &nbsp;   {{agent.phoneNo}} </label>
+                    <div class="buttonCustom">
+                        <label class="hidden" id="agentNo">{{agent.phoneNo}}</label>
+                  
+                    </div>
+                </div>
+            </div>
+        
+            {%endfor%}
+
+           
+
+          
+        </div>
+   
+    </div>
+
+    <div class="swiper-button-next" id="desk_next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</section>
+</div>
+
+     <!--swiper2-->
+<div id="mobileAgent">
+    <section id="SectionCustom">
+        <div class=" swiper mySwiper2 containerCustom" >
+            <div class="swiper-wrapper contentCustom" >
+    
+                <!--start loop here-->
+                {%for agent in agents %}
+                
+                
+                <div class="swiper-slide cardCustom" >
+                    <div class="card-contentCustom">
+                        <div class="imageCustom">
+                            
+                         {% if agent.img.url is not None %}
+                           <a href="{%url 'agentDetails'  pk=agent.id %}"><img src="{{agent.img.url}}" alt=""></a>
+    
+                            {% else%}
+                            <a href="{%url 'agentDetails'  pk=agent.id %}"><img class="img-circle" src="{% static '/images/agent/agent_image.png' %}" alt="{{agent.name}}"></a>
+                         {%endif%}
+    
+                        </div>
+    
+                        <div class="media-iconsCustom">
+                            {% if agent.facebook_url %}
+                            <a href="agent.facebook_url"><i class="fa-brands fa-facebook"></i></a>
+    
+                            <a href="agent.email_address"><i class="fa-brands fa-email"></i></a>
+                            {%endif%}
+                        </div>
+                        <div class="name-professionCustom">
+                            <span class="nameCustom" style="text-overflow:ellipsis;">{{agent.name}}</span>
+                            <span class="professionCustom">{{agent.AgentCity_id.cityName}} </span>
+    
+                        </div>
+                        <div class="ratingCustom">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                       
+                        </div>
+                       
+                        <div class="buttonCustom">
+                          
+                            <a class ="fcc-btn" href="tel:{{agent.phoneNo}}" style="background-color:green; color:white; border-radius:12px; padding: 6px 6px 6px 6px">Contact</a>
+    
+                        
+                        </div>
+                    </div>
+                </div>
+             
+                {%endfor%}
+    
+                
+    
+    
+            </div>
+       
+        </div>
+    
+        <div class="swiper-button-next" id="mobile_next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+</div> {% endcomment %}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src=" {% static 'assets/js/agentCarouselJs.js' %}"></script>
+<script>
+    
+
+    window.onload = function(){
+        //document.getElementById('manueClick').click();// manue link button click on page load
+          var button = document.getElementById('mobile_next');
+          setInterval(function(){
+              button.click();
+          },3000);  // this will make it click again every 1000 miliseconds
+      };
+      window.onload = function(){
+       // document.getElementById('manueClick').click();// manue link button click on page load
+          var button = document.getElementById('desk_next');
+          setInterval(function(){
+              button.click();
+          },3000);  // this will make it click again every 1000 miliseconds
+  
+      };
+      function call(e){
+        //var data = JSON.parse("{{agentJSON|escapejs}}");
+          var text = document.getElementById("btnCount");
+         
+          phoneNumber= e.getAttribute('data-number');
+          agentName= e.getAttribute('data-Name');
+         // alert(phoneNumber);
+          document.getElementById("agentNo").innerHTML = phoneNumber;
+          document.getElementById("agentName").innerHTML = agentName;
+       }
+{% comment %} 
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href=" {% static 'assets/css/customCarouselStyle.css' %} "/> {% endcomment %}
+</script>
+{%endblock%}

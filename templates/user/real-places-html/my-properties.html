@@ -1,0 +1,274 @@
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+<style> 
+    {% comment %} .image_with_badge_container {
+  display: inline-block; /* keeps the img with the badge if the img is forced to a new line */
+  position: relative;
+  margin-bottom: 2px;
+ 
+}
+
+.badge-on-image {
+  position: absolute;
+  bottom: 90px; /* position where you want it */
+  left: 2px;
+  padding: 3px 6px;
+  background-color:red;
+  color:white;
+  font-family:sans-serif;
+} {% endcomment %}
+
+</style>
+<div class="page-head " style="background: url(images/banner.jpg) #494c53 no-repeat center top;  background-size: cover;">
+    <div class="container">
+        <div class="page-head-content">
+            <h1 class="page-title"><span>My Properties</span></h1>
+        </div>
+    </div>
+</div>
+{%for message in messages%}
+<div class="alert alert-success" role="alert">{{message}}</div>
+{%endfor%}
+<!-- .page-head -->
+<style>
+    .img-responsive1{
+        width: 100%;
+        height: 169px;
+        object-fit: cover;
+    }
+</style>
+<div id="content-wrapper" class="site-content-wrapper site-pages">
+    <div id="content" class="site-content layout-boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 site-main-content">
+                    <main id="main" class="site-main">
+                   {%for list in listings%}
+                        <article class="user-submit-property meta-item-half hentry clearfix">
+                            <div class="property-thumbnail col-xs-3 col-lg-2">
+                                {%if list.img.url == None %}
+                                <a href="{%url 'viewSingleList' pk=list.id%}"><img class="img-responsive1"  src="images/listing_images/noImage.jpg" alt="Thumbnail"></a>
+                                
+                      
+                                {%else%}
+                               
+                                <a href="{%url 'viewSingleList' pk=list.id%}"><img class="img-responsive1" src="{{list.img.url}}" alt="Thumbnail"></a>
+                           {%endif%}
+                            </div>
+                            <div class="content-wrapper col-xs-9 col-lg-10">
+                                <div class="title-and-meta">
+                                    <header class="entry-header">
+                                        <h3 class="entry-title">
+                                            <a href="{%url 'viewSingleList' pk=list.id%}" rel="bookmark">{{list.property_title}}</a>
+                                            <br>
+                                            {%if list.isFeatured == True %}
+                                            <span class="property-status-tag badge badge-on-image" style="background-color:red;" >Featured</span>
+                                            {%endif%}
+                                            <span class="price">{{list.rental_price}}</span>
+                                        </h3>
+                                        
+                                    </header>
+                                    <!-- .entry-header -->
+                                    <div class="property-meta entry-meta clearfix">
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Posted on:</span>
+                                            <span class="meta-item-value">{{list.submitOn}}  </span>
+                                        </div>
+                                      
+                                      
+                                    </div>
+                                    <!-- .property-meta -->
+
+                                    <div class="property-meta entry-meta clearfix">
+                                        <span class="meta-item-label">Status:</span>
+                                        <span class="meta-item-value approved">Approved</span>
+                                    </div>
+                                    <br>
+                                    <div class="property-meta entry-meta clearfix">
+                                   
+                                    </div>
+
+                                    <div class="property-meta entry-meta clearfix">
+                                        <div class="meta-item">
+                                            {%if list.isFeatured == False %}
+                                                <a class="btn-default meta-item-value" style="color:white; background-color:green;" href="{%url 'boostProperty'%}">Boost property</a>
+                                                {%endif%}
+                                            </div>
+                                       </div>
+
+
+                                    </div>
+                                <!--.title-and-meta -->
+                               <div class="action-buttons">
+                                
+                                    <a href="{%url 'editListing' pk=list.id%}"><i class="fa fa-pencil-square-o"></i></a>
+                                    <a href="{%url 'delelteListing' pk=list.id%}"><i class="fa fa-trash-o"></i></a>
+                                    <a href="{%url 'viewSingleList' pk=list.id%}"><i class="fa fa-eye"></i></a>
+                                </div>
+                                <!-- .action-buttons -->
+                            </div>
+                            <!-- .content-wrapper -->
+                        </article>
+                       {%endfor%}
+                        <!-- .user-submit-property -->
+                        {% comment %} <article class="user-submit-property meta-item-half hentry clearfix">
+                            <div class="property-thumbnail col-xs-3 col-lg-2">
+                                <a href="#"><img class="img-responsive" src="images/property/property-2-660x600.jpg" alt="Thumbnail"></a>
+                            </div>
+                            <div class="content-wrapper col-xs-9 col-lg-10">
+                                <div class="title-and-meta">
+                                    <header class="entry-header">
+                                        <h3 class="entry-title">
+                                            <a href="property-single.html" rel="bookmark">Villa in Coral Gables</a><span class="price">$825,000</span>
+                                        </h3>
+                                    </header>
+                                    <!-- .entry-header -->
+                                    <div class="property-meta entry-meta clearfix">
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Posted on:</span>
+                                            <span class="meta-item-value">12 December '15</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Last Modified:</span>
+                                            <span class="meta-item-value">12 December '15</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Status:</span>
+                                            <span class="meta-item-value pending">Pending</span>
+                                        </div>
+                                    </div>
+                                    <!-- .property-meta -->
+                                </div>
+                                <!--.title-and-meta -->
+                                <div class="action-buttons">
+                                    <a class="btn-default" href="#">Pay with Paypal</a>
+                                    <a href="submit-property.html"><i class="fa fa-pencil-square-o"></i></a>
+                                    <a href="#"><i class="fa fa-trash-o"></i></a>
+                                    <a href="property-single.html"><i class="fa fa-eye"></i></a>
+                                </div>
+                                <!-- .action-buttons -->
+                            </div>
+                            <!-- .content-wrapper -->
+                        </article>
+                        <!-- .user-submit-property -->
+                        <article class="user-submit-property meta-item-half hentry clearfix">
+                            <div class="property-thumbnail col-xs-3 col-lg-2">
+                                <a href="#"><img class="img-responsive" src="images/property/property-5-660x600.jpg" alt="Thumbnail"></a>
+                            </div>
+                            <div class="content-wrapper col-xs-9 col-lg-10">
+                                <div class="title-and-meta">
+                                    <header class="entry-header">
+                                        <h3 class="entry-title">
+                                            <a href="property-single.html" rel="bookmark">Home in Coral Gables</a><span class="price">$850,000</span>
+                                        </h3>
+                                    </header>
+                                    <!-- .entry-header -->
+                                    <div class="property-meta entry-meta clearfix">
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Posted on:</span>
+                                            <span class="meta-item-value">12 December '15</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Last Modified:</span>
+                                            <span class="meta-item-value">12 December '15</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Status:</span>
+                                            <span class="meta-item-value approved">Approved</span>
+                                        </div>
+                                    </div>
+                                    <!-- .property-meta -->
+                                </div>
+                                <!--.title-and-meta -->
+                                <div class="action-buttons">
+                                    <a class="btn-default" href="#">Pay with Paypal</a>
+                                    <a href="submit-property.html"><i class="fa fa-pencil-square-o"></i></a>
+                                    <a href="#"><i class="fa fa-trash-o"></i></a>
+                                    <a href="property-single.html"><i class="fa fa-eye"></i></a>
+                                </div>
+                                <!-- .action-buttons -->
+                            </div>
+                            <!-- .content-wrapper -->
+                        </article>
+                        <!-- .user-submit-property -->
+                        <article class="user-submit-property meta-item-half hentry clearfix">
+                            <div class="property-thumbnail col-xs-3 col-lg-2">
+                                <a href="#"><img class="img-responsive" src="images/property/property-7-660x600.jpg" alt="Thumbnail"></a>
+                            </div>
+                            <div class="content-wrapper col-xs-9 col-lg-10">
+                                <div class="title-and-meta">
+                                    <header class="entry-header">
+                                        <h3 class="entry-title">
+                                            <a href="property-single.html" rel="bookmark">Home in Coral Gables</a><span class="price">$850,000</span>
+                                        </h3>
+                                    </header>
+                                    <!-- .entry-header -->
+                                    <div class="property-meta entry-meta clearfix">
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Posted on:</span>
+                                            <span class="meta-item-value">12 December '15</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Last Modified:</span>
+                                            <span class="meta-item-value">12 December '15</span>
+                                        </div>
+                                        <div class="meta-item">
+                                            <span class="meta-item-label">Status:</span>
+                                            <span class="meta-item-value pending">Pending</span>
+                                        </div>
+                                    </div>
+                                    <!-- .property-meta -->
+                                </div>
+                                <!--.title-and-meta -->
+                                <div class="action-buttons">
+                                    <a class="btn-default" href="#">Pay with Paypal</a>
+                                    <a href="submit-property.html"><i class="fa fa-pencil-square-o"></i></a>
+                                    <a href="#"><i class="fa fa-trash-o"></i></a>
+                                    <a href="property-single.html"><i class="fa fa-eye"></i></a>
+                                </div>
+                                <!-- .action-buttons -->
+                            </div>
+                            <!-- .content-wrapper -->
+                        </article> {% endcomment %}
+                        <!-- .user-submit-property -->
+                        <div class="container" style="background-color:; font-color:white" >
+                            <div class="pagination">
+                                <span class="step-links">
+                                    {% if listings.has_previous %}
+                                        <a href="?page=1">&laquo; first</a>
+                                        <a href="?page={{ listings.previous_page_number }}">previous</a>
+                                    {% endif %}
+                       
+                                    <span class="current">
+                                        Page {{ listings.number }} of {{ listings.paginator.num_pages }}.
+                                    </span>
+                            
+                                    {% if listings.has_next %}
+                                        <a href="?page={{ listings.next_page_number }}">next</a>
+                                        <a href="?page={{ listings.paginator.num_pages }}">last &raquo;</a>
+                                    {% endif %}
+                                </span>
+                            </div> 
+                        </div>
+                        
+                        <div class="pagination">
+                            <a class="prev page-numbers" href="#"><i class="fa fa-angle-left"></i></a>
+                            <span class="page-numbers current">1</span>
+                            <a class="page-numbers" href="#">2</a>
+                            <a class="next page-numbers" href="#"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <!-- .pagination -->
+                    </main>
+                    <!-- .site-main -->
+                </div>
+                <!-- .site-main-content -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .site-content -->
+</div>
+<!-- .site-content-wrapper -->
+{%endblock%}

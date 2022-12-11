@@ -1,0 +1,190 @@
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+<!-- .site-header -->
+<div class="page-head " style="background: url(images/banner.jpg) #494c53 no-repeat center top;  background-size: cover;">
+    <div class="container">
+        <div class="page-head-content">
+            <h1 class="page-title"><span>Edit Profile</span></h1>
+        </div>
+    </div>
+</div>
+<!-- .page-head -->
+
+<div id="content-wrapper" class="site-content-wrapper site-pages">
+    <div id="content" class="site-content layout-boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 site-main-content" style="background-color: gray; border-radius:10px;">
+                    <main id="main" class="site-main">
+                      <p style="color:white;"> Back to <a href="{%url 'viewProfile'%}" style="color:#1CFF17;">View Profile</a></p>
+                        <div class="white-box user-profile-wrapper" style="background-color: #E7E5E5 ;">
+                            <form id="inspiry-edit-user" class="submit-form" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+                              {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-option user-profile-img-wrapper clearfix">
+                                            <div id="user-profile-img">
+                                                <div class="profile-thumb">
+                                                    {%if userProfile.profilePhoto%}
+                                                    <img class="img-responsive" src="{{userProfile.profilePhoto.url}}" alt="" style="object-fit:cover; width: 220px; height: 220px;">
+                                                   
+                                                    <input type="hidden"  name="old_img" value="{{userProfile.profilePhoto}}">
+                                                   {%else%}
+                                                   <img class="img-responsive" src="{% static '/images/agent/agent_image.png' %}" alt="" style="object-fit:cover; width: 220px; height: 220px;">
+                                                   {%endif%}
+                                                    {% comment %} <input type="hidden" class="profile-image-id" name="profile-image-id" value="4018"> {% endcomment %}
+                                                </div>
+                                            </div>
+                                            <!-- #user-profile-img -->
+                                            <div class="profile-img-controls">
+                                                <ul class="field-description list-unstyled">
+                                                    <li><span>*</span>Profile image should have minimum width and height of 220px.</li>
+                                                    <li><span>*</span>Make sure to save changes after uploading the new image.</li>
+                                                </ul>
+                                                <br><br>
+
+                                                <input type="file" name="img" accept="image/*" required> 
+                                                {% comment %} <a id="select-profile-image" class="btn-default" href="#"><i class="fa fa-picture-o"></i>Change</a>
+                                                <a id="remove-profile-image" class="btn-default btn-orange" href="#"><i class="fa fa-trash-o"></i>Remove</a> {% endcomment %}
+                                                <div id="errors-log"></div>
+                                                <div id="plupload-container"></div>
+                                            </div>
+                                            <!-- .profile-img-controls -->
+                                        </div>
+                                        <!-- .user-profile-img-wrapper -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-option">
+                                            <label for="description">Biographical Information</label>
+                                            <textarea name="description" id="description" rows="5" cols="30">{{userProfile.bio}}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .row -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-option">
+                                            <label for="first-name">Full Name</label>
+                                            <input class="valid required" name="name" type="text" id="first-name" value="{{userProfile.fullName}}">
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                </div>
+                                <!-- .row -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-option">
+            <label for="city">City</label>
+            <select name="city" class="search-select valid" aria-invalid="false">
+              {%for c in allCities%}
+              {%if c.id == city1.id %}
+                <option selected="selected" value="{{c.id}}">{{c.cityName}}</option>
+                {%endif%}
+                <option  value="{{c.id}}">{{c.cityName}}</option>
+            {%endfor%}
+            </select>
+        </div>
+    </div>
+</div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-option">
+                                            <label for="email">Email </label>
+                                            <input class="myDIV email required valid" name="email" type="email" id="email" value=" {{ request.user.email }}" disabled>
+                                  <label style="color:gray;"> Contact to admin for changing email address.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-option">
+                                            <label for="mobile-number">Office Number</label>
+                                            <input class="digits" name="phonNumber" type="text" id="mobile-number" value="{{userProfile.phone}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-option">
+                                        <label for="email">Address </label>
+                                        <input class="url" name="address" type="text" id="email" value="{{userProfile.address}}">
+                                    </div>
+                                </div>
+                            </div>
+                                <!-- .row -->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-option">
+                                            <label for="facebook-url">Instagram URL</label>
+                                            <input class="url" name="instagram-url" type="text" id="facebook-url" value="{{userProfile.instagram_url}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-option">
+                                            <label for="facebook-url">Facebook URL</label>
+                                            <input class="url" name="facebook-url" type="text" id="facebook-url" value="{{userProfile.facebook_url}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-option">
+                                            <label for="twitter-url">Twitter URL</label>
+                                            <input class="url" name="twitter-url" type="text" id="twitter-url" value="{{userProfile.twitter_url}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-option">
+                                            <label for="facebook-url">Website URL</label>
+                                            <input class="url" name="website-url" type="text" id="facebook-url" value="{{userProfile.website_url}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                {%if messages%}
+                                {%for message in messages%}
+                                {{message}}
+                                {%endfor%}
+                                {% endif %}
+                                <!-- .row -->
+                               
+                                <!-- .row -->
+                                {% comment %} <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-option">
+                                            <label for="pass1">Password
+                                                <small>( Fill it only when you want to change )</small>
+                                            </label>
+                                            <input name="pass1" type="password" id="pass1">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-option">
+                                            <label for="pass2">Confirm Password</label>
+                                            <input name="pass2" type="password" id="pass2">
+                                        </div>
+                                    </div>
+                                </div> {% endcomment %}
+                                <!-- .row -->
+                                <div class="form-option">
+                                    <button type="submit"  style="background-color: #007008;" class="btn btn-primary">Save Changes</button>
+                                    <img src="images/ajax-loader-2.gif" id="ajax-loader" alt="Loading...">
+                                </div>
+                                <p id="form-message"></p>
+                                <ul id="form-errors"></ul>
+                            </form>
+                            <!-- #inspiry-edit-user -->
+                        </div>
+                        <!-- .user-profile-wrapper -->
+                    </main>
+                    <!-- .site-main -->
+                </div>
+                <!-- .site-main-content -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .site-content -->
+</div>
+<!-- .site-content-wrapper -->
+{%endblock%}

@@ -1,0 +1,256 @@
+{%extends 'admin/admin_main.html'%}
+{%load static%}
+{%block content%}
+
+
+
+<div class="container" style="background-color:#ADB3FC; color:black;">
+    <form method="post" action="{%url 'addListing'%}" enctype="multipart/form-data">
+        <br>
+        {% csrf_token %}
+        
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="form-group ">
+                    <h2 > Add a Property </h2>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="title">Property Title</label>
+                    <input type="text" class="form-control input-default " id="ptitle" name="title" placeholder="" required>
+                </div>
+                <div class="form-option">
+                    <label for="description">Property Description</label><br>
+                    <textarea class="input-default"  rows="4" cols="124" name="description"   required></textarea>
+                </div>
+            </div>
+           
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select name="type" name="type" id="type" class="form-control" aria-invalid="false" required>
+                        <option selected="selected" value="">Select</option>
+                        <option value="Plat">Plot</option>
+                        <option value="House">House</option>
+                        <option value="Land">Land</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-option">
+                    <label for="city">Location</label>
+                    <input type="text" name="location" id="pLocation" class="form-control input-default " placeholder="">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-option">
+                    <label for="city">City</label>
+                    <select name="city"  class="form-control" aria-invalid="false">
+                     
+                      <option value=""> Select City </option>
+                      {%for c in city%}
+                        <option selected="selected" value="{{c.id}}">{{c.cityName}}</option>
+                    {%endfor%}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-option"><br>
+                    <button type="Button" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5" data-toggle="modal" data-target="#exampleModalCenter"><i class="ti-plus"></i>Add New City</button>
+              
+                                      </button>
+                </div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-option">
+                    <label for="status">Status</label>
+                    <select name="purpose" id="status" class="form-control" required>
+                        <option selected="selected" value="-1">Select</option>
+                        <option value="Rent"> For Rent</option>
+                        <option value="Sale"> For Sale</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Bedrooms</label>
+                    <input type="number" name="bedroom" class="form-control input-default " placeholder="" value="0" min="0" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div  class="form-group">
+                    <label>Bathrooms</label>
+                    <input type="number" name="bathroom" class="form-control input-default " placeholder="" value="0" min="0" required>
+                </div>
+            </div>
+           
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="price">Sale OR Rent Price</label>
+                    <input type="text" name="price" class="form-control input-default " placeholder="" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+         
+           <div class="col-md-6">
+               <div class="form-group">
+            <label for="status">Select units</label>
+                    <select name="unit" id="status" class="form-control" required>
+                        <option selected="selected" value="-1">Select</option>
+                        <option value="sqrft"> Sqrft</option>
+                        <option value="marla"> Merla</option>
+                        <option value="Kanal"> Kanal</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="size">Area</label>
+                    <input type="text" name="area" class="form-control input-default " placeholder="" required>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="title">Owner Name</label>
+                    <input type="text" class="form-control input-default " id="ptitle" name="name" placeholder="" required>
+                </div>
+                <div class="form-option">
+                    <label for="description">Owner Contact</label>
+                    <input type="text" class="form-control input-default " id="ptitle" name="contact" placeholder="" required>
+                 </div>
+            </div>
+           
+        </div>
+        <!-- .row -->
+        <div class="row">
+         
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="size">image 1</label>
+                    <input type="file" name="img" accept="image/*" required> 
+                </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="form-group">
+                     <label for="size">image 2</label>
+                     <input type="file" name="img2" accept="image/*" >
+                 </div>
+             </div>
+             <div class="col-md-4">
+                <div class="form-group">
+                    <label for="size">image 3</label>
+                    <input type="file" name="img3" accept="image/*" >
+                </div>
+            </div>
+
+         </div>
+
+        <div class="row">
+            
+            <div class="col-lg-12">
+              
+                <div class="form-group checkbox-option">
+                    <input name="featured" value="True" type="checkbox">
+                    <label for="featured">Mark this property as featured property</label>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+      
+        <!-- .row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <p id="demo"></p>
+                {%if messages%}
+                {%for message in messages%}
+                {{message}}
+                {%endfor%}
+                {% endif %}
+                <div class="form-group" style="margin-left:43px;">
+                    <input type="hidden" name="action" value="add_property">
+                    <button type="submit" onclick="myFunction()" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5"><i class="ti-plus"></i>Submit Listing</button>
+                </div>
+                <div id="message-container">&nbsp;</div>
+            </div>
+        </div>
+        <!-- .row -->
+
+
+
+    </form>
+ 
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add New City</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        <div class="modal-body">
+
+
+          <form method="post" action="{%url 'insertCityFromAddListing'%}" >
+              {%csrf_token%}
+            <div class="form-group" style="color:black; font-size:16px;">
+                <label for="title">City Name</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="cityName" placeholder="Enter City Name" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add New City</button>
+          </form>
+        </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+</div>
+<script>
+    function myFunction() {
+      // Get the value of the input field with id="numb"
+      let x = document.getElementById("ptitle").value;
+      let y = document.getElementById("pLocation").value;
+      // If x is Not a Number or less than one or greater than 10
+      let text;
+      if (x == "" & y == "") {
+        text = "Input not valid";
+      } else {
+        text = "Input OK";
+      }
+      document.getElementById("demo").innerHTML = text;
+    }
+
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+      })
+    </script>
+{%endblock%}

@@ -1,0 +1,265 @@
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+
+
+<!-- .site-header -->
+
+<div class="page-head " style="background: url(images/banner.jpg) #494c53 no-repeat center top;  background-size: cover;">
+    <div class="container">
+        <div class="page-head-content">
+            <h1 class="page-title"><span>Search Your Desire Agents in Your Desire City</span></h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" style="color:red;">
+        <marquee width="100%" direction="right" height="30%">
+            Disclaimer: Deals with agents is at your own risk. We did not verify all of them except those who have Verified tags on our profile.
+        </marquee>
+    </div>
+</div>
+<!--search bar-->
+<style> 
+
+    body {
+        background-color: #eee;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500
+    }
+    
+    .height {
+        height: 10vh
+    }
+    
+    .search {
+        position: relative;
+        box-shadow: 0 0 40px rgba(51, 51, 51, .1)
+     
+    }
+    
+    .search input {
+        height: 60px;
+        text-indent: 25px;
+        border: 2px solid #d6d4d4
+    }
+    
+    .search input:focus {
+        box-shadow: none;
+        border: 2px solid blue
+    }
+    
+    .search .fa-search {
+        position: absolute;
+        top: 20px;
+        left: 16px
+    }
+    
+    .search button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 40px;
+        width: 110px;
+        background: blue
+    }
+</style>
+<div class="container-fluied" style="background-color:#ADADAD;">
+    <div class="row height d-flex justify-content-center align-items-center">
+   
+        <div class="col-md-6">
+            
+            <div class="search"> <i class="fa fa-search"></i> 
+                <form method='get' action="{%url 'searchAgent'%}">
+                    {% comment %} {% csrf_token %} {% endcomment %}
+                <select class="form-select" name="search" aria-label="Default select example">
+                <option value='Select City' selected>Select City</option>
+                {%for city in agentCity%}
+                <option value="{{city.id}}">{{city.cityName}}</option>
+               
+                {% endfor %}
+              </select>
+      <div>
+              <select class="form-select" name="search_name" aria-label="Default select example" >
+                <option value='Select Agent Name' selected>Select Agent Name</option>
+                {%for agent in agents%}
+                <option value="{{agent.name}}">{{agent.name}}</option>
+               
+                {% endfor %}
+              </select>
+
+              <button class="btn btn-primary" Type="submit" style="font-size:17px; background-color:green;">Search</button> </div>
+        </div>
+            </form>
+
+    
+    </div>
+    </div>
+</div>
+<!-- .page-head -->
+<div id="content-wrapper" class="site-content-wrapper site-pages">
+    <div id="content" class="site-content layout-boxed">
+        <div class="container">
+          
+            <div class="row"> 
+            
+                <div class="col-xs-12 site-main-content">
+                  
+                    <main id="main" class="site-main" >
+                        <li><a class="submit-property-link" href="{%url 'viewAgents'%} "><i class="fa fa-user"></i>View All Agents</a></li>
+                        <br>
+                        <div class="agent-post-listing" >
+                            
+                            <div class="row zero-horizontal-margin">
+
+                              
+
+                                {%for agent in page_obj %}
+                             <div  class="col-sm-6 col-lg-4 zero-horizontal-padding ">
+                                    {% if forloop.counter|divisibleby:2 %}
+                                    <article class="agent-listing-post agent-post-even clearfix hentry" style=" inset; border-style: groove;  border-color: #FFEEE3;">
+                                        <!--  style="background-color:  #53DD6C; color:#56203D; box-shadow: 10px 10px 5px #BAE8B5  inset; border-style: groove;  border-color: #FFEEE3;" -->
+                                        {%else %}
+                                        
+                                    <article class="agent-listing-post agent-post-odd clearfix hentry" style=" inset; border-style: groove;  border-color: #FFEEE3;">
+                                        <!--   style="background-color: #3ED459 ;  color:#56203D; box-shadow: 10px 10px 5px #BAE8B5 inset; border-style: groove;  border-color: #FFEEE3;"  -->
+                                         
+                                 {%endif%}
+                                 <div class="agent-content-wrapper agent-common-styles" style="color:#56203D;">
+            
+                                    {% if agent.isFeatured is True %}
+                                    <div style=" text-align: right; margin-right: -24px; margin-top:-18px"><span class="property-status-tag" style="padding: 2, 2,2 2; background-color:green; color:white;">Featured</span> </div>
+                                    
+                                    {% elif agent.status == "Verified" %}
+                                    <div style=" text-align: right; margin-right: -24px; margin-top:-18px"><span class="property-status-tag" style="padding: 2, 2,2 2; background-color:yellow; color:black;">Verified</span> </div>
+                                    
+                                    {%endif%}
+                                    {%if agent.batch == "Gold" %}
+                                    <div><a href="#" style="margin-bottom: 125px;"><img class="img-circle" style="width:36px; height:45px; " src="{% static '/images/agent/gold.png' %}" alt="{{agent.batch}}"></a>
+                                    </div>
+                                    {% endif %}
+                                 
+                                    <div class="inner-wrapper clearfix ">
+                                      
+                                       <figure class="agent-image">
+                                        {% if agent.img.url is not None %}
+                                        <a href="#"><img class="img-circle" src="{{agent.img.url}}" alt="{{agent.name}}"></a>
+                                       
+                                         {% else%}
+                                            <a href="#"><img class="img-circle" src="{% static '/images/agent/agent_image.png' %}" alt="{{agent.name}}"></a>
+                                         {%endif%}
+                                      
+                                           </figure>
+                       
+                                   
+                                        <h5 class="agent-name"  style="color:#483A58;"><a href="#"><h3>{{agent.name}} </h5>
+                                        
+                                        <hr>
+                                       <!--  social-profiles   -->
+                    
+                                        
+                                    </div>
+                                    
+                                    <ul class="agent-contacts-list" >
+                                       
+                                        <li class="mobile">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+                                                <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#56638A" d="M17.001 23.999h-10.001c-1.657 0-3-1.343-3-2.999v-18c0-1.656 1.343-3 3-3h10.001c1.655 0 2.999 1.344 2.999 3v18c0 1.656-1.344 2.999-2.999 2.999zm.999-19.999c0-1.105-.896-2-2-2h-8c-1.105 0-2 .896-2 2v16c0 1.104.895 2 2 2h8c1.104 0 2-.896 2-2v-16zm-4 1h-4c-.552 0-1-.447-1-1 0-.552.448-1 1-1h4c.553 0 1.001.448 1.001 1 0 .553-.448 1-1.001 1zm-2 13c1.105 0 2 .672 2 1.499 0 .829-.895 1.501-2 1.501s-2-.672-2-1.501c0-.827.895-1.499 2-1.499z"/>
+                                            </svg>
+                                            <span class="fa fa-phone" style="color: #483A58">     Mobile:  </span><a href='tel:{{agent.phoneNo}}' style="color: #483A58; font-size:18px">{{agent.phoneNo}}</a>
+                                        </li>
+                                        {% comment %} <li class="fax">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="24" height="24" viewBox="0 0 24 24">
+                                                <path class="fax-fill-one" d="M6 20c0 1.105.896 2 2 2h8c1.104 0 2-.895 2-2v-8h-12v8zm2-6h8v2h-8v-2zm0 4h8v2h-8v-2zM17 2h-10c-1.104 0-2 .896-2 2v3h14v-3c0-1.105-.896-2-2-2z" fill="none"/>
+                                                <circle cx="21" cy="11" r="1" fill="none"/>
+                                                <path class="fax-fill-two" fill="#0080bc" d="M21.999 7h-.999v-5c0-1.105-.896-2-2-2h-14c-1.104 0-2 .895-2 2v5h-.999c-1.105 0-2 .896-2 2.001v7.999c0 1.104.895 2 2 2h.999v3c0 1.105.896 2 2 2h14c1.104 0 2-.895 2-2v-3h.999c1.104 0 2-.896 2-2v-7.999c0-1.105-.895-2.001-2-2.001zm-3.999 13c0 1.105-.896 2-2 2h-8c-1.104 0-2-.895-2-2v-8h12v8zm1-13h-14v-3c0-1.104.896-2 2-2h10c1.104 0 2 .895 2 2v3zm2 4.999c-.553 0-1-.448-1-1 0-.551.447-.999 1-.999s.999.448.999.999c0 .552-.446 1-.999 1zM8 14h8v2h-8zM8 18h8v2h-8z"/>
+                                            </svg>
+                                            <span>Fax:</span>1-333-444-5555
+                                        </li> {% endcomment %}
+                                        <li class="map-pin">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="contacts-icon-container" width="40" height="40" viewBox="0 0 24 24">
+                                                <path class="contacts-icon" fill-rule="evenodd" clip-rule="evenodd" fill="#483A58" d="M12 23.999c.048 0-8-11.582-8-15.999 0-4.419 3.581-8 8-8s8 3.581 8 8c0 4.417-8.084 15.999-8 15.999zm0-19.001c-1.658 0-3.002 1.345-3.002 3.002 0 1.657 1.344 3.002 3.002 3.002 1.657 0 3.002-1.345 3.002-3.002 0-1.658-1.345-3.002-3.002-3.002z"/>
+                                            </svg>
+                                            <span style="color:#483A58;">Address:</span > <span style="color:#56638A;">{{agent.address}}</span>
+                                        </li>
+                                    </ul>
+                                    <h6 class="agent-name" style="color:#483A58;"><a href="#" >City</a>
+                                    
+                                        <span style="color: #483A58; font-size: 18px;">{{agent.AgentCity_id.cityName}}</span></h6>
+                                        <a class="btn-default " style="text-decorations: none; font-family: impact; background-color: white; color:green; " href="tel:{{agent.phoneNo}}" > <span class="fa fa-phone">  Contact</span></a>
+                                                               
+                                    {% comment %} <p>Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor. Duis mollis, est non...</p> {% endcomment %}
+                                    {% comment %} <a class="btn-default show-details" href="agent-single.html">View Profile<i class="fa fa-angle-right"></i></a> {% endcomment %}
+                                </div>
+
+                                <div  class="agent-social-profiles text-center" >
+                                    <div style="background-color: yellow;">
+                                        <h4>Social Links</h4>
+
+                                    </div>
+                                   
+                                    {% if agent.facebook_url %}
+                                                     
+                                         <a  style="font-size:34px;" class="facebook" target="_blank" href="{{agent.facebook_url}}"><i class="fa fa-facebook"></i></a></center>
+                                                       
+                                     {%endif%}
+                                     {% if agent.email_address %}
+                                         <a  style="font-size:34px;" class="gplus" target="_blank" href="{{agent.email_address}}"><i  class="fa fa-envelope"></i></a>
+                                     {%endif%}  
+                                     {%if agent.website_address  %}
+                                     <a  style="font-size:34px;" class="facebook" target="_blank" href="{{agent.website_address}}"><i class="fa fa-globe"></i></a></center>
+                                         
+                                     {% endif %}
+
+                                 </div> 
+                            </article>
+                                  
+                                    <!-- .agent-listing-post -->
+                                 </div>
+                                {%endfor%}
+                       
+                                <!--pagination code from docs-->
+                                
+             <div class="container" style="background-color:#EC6B43">
+                                <div class="pagination">
+                                    <span class="step-links">
+                                        {% if page_obj.has_previous %}
+                                            <a href="?page=1">&laquo; first</a>
+                                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                                        {% endif %}
+                           
+                                        <span class="current">
+                                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                        </span>
+                                
+                                        {% if page_obj.has_next %}
+                                            <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                                        {% endif %}
+                                    </span>
+                                </div>
+                            </div>
+
+        
+
+                       
+                               
+                              
+                            </div>
+                            <!-- .row-->
+                        </div>
+                
+                    </main>
+                    <!-- .site-main -->
+                </div>
+                <!-- .site-main-content -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+    </div>
+    <!-- .site-content -->
+</div>
+<!-- .site-content-wrapper -->
+
+{%endblock%}

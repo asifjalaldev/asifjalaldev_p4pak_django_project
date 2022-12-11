@@ -1,0 +1,1853 @@
+/**
+ * Table of Contents
+ *
+ * 1.0 - RTL Bootstrap
+ *   1.1 - RTL Typography
+ *   1.2 - RTL Grid System
+ *   1.3 - RTL Tables
+ *   1.4 - RTL Embeds Responsive
+ *   1.5 - RTL Modals
+ *   1.6 - RTL Utility Classes
+ * 2.0 - RTL Scaffolding  [Theme specific scaffolding]
+ * 3.0 - RTL Print        [Property detail page print styles]
+ * 4.0 - RTL Forms
+ * 5.0 - RTL Pagination
+ * 6.0 - RTL Login
+ * 7.0 - RTL WPML Language Switcher
+ * 8.0 - RTL IDX
+ * 9.0 - RTL Faqs
+ * 10.0 - RTL Widgets
+ * 11.0 - RTL Listing Control
+ * 12.0 - RTL Header
+ *    12.1 - RTL Header Variation One
+ *    12.2 - RTL Header Variation Two
+ *    12.3 - RTL Header Variation Three
+ *    12.4 - RTL Main Menu
+ *    12.5 - RTL Mean Menu
+ * 13.0 - RTL Sliders
+ * 14.0 - RTL Footer
+ * 15.0 - RTL Advance Search
+ * 16.0 - RTL Property Meta
+ * 17.0 - RTL Home Properties
+ * 18.0 - RTL Featured Properties
+ * 19.0 - RTL Home News Posts
+ * 20.0 - RTL Property Single
+ * 21.0 - RTL Simple Property Listing
+ * 22.0 - RTL Grid Property Listing
+ * 23.0 - RTL User Properties
+ * 24.0 - RTL Agent Listing
+ * 25.0 - RTL Gallery
+ * 26.0 - RTL Contact
+ * 27.0 - RTL Blog
+ * 28.0 - RTL User Profile
+ * 29.0 - RTL Submit Property
+ */
+/*-----------------------------------------------------------------------------------*/
+/* 1.0 - RTL Bootstrap
+/*-----------------------------------------------------------------------------------*/
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 1.1 - RTL Typography
+/*-----------------------------------------------------------------------------------*/
+.flip.text-left {
+  text-align: right;
+}
+.flip.text-right {
+  text-align: left;
+}
+.list-unstyled {
+  padding-right: 0;
+  padding-left: initial;
+}
+.list-inline {
+  padding-right: 0;
+  padding-left: initial;
+  margin-right: -5px;
+  margin-left: 0;
+}
+dd {
+  margin-right: 0;
+  margin-left: initial;
+}
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: right;
+    clear: right;
+    text-align: left;
+  }
+  .dl-horizontal dd {
+    margin-right: 180px;
+    margin-left: 0;
+  }
+}
+blockquote {
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+}
+.blockquote-reverse,
+blockquote.pull-left {
+  padding-left: 15px;
+  padding-right: 0;
+  border-left: 5px solid #eeeeee;
+  border-right: 0;
+  text-align: left;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 1.2 - RTL Grid System
+/*-----------------------------------------------------------------------------------*/
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  float: right;
+}
+.col-xs-pull-12 {
+  left: 100%;
+  right: auto;
+}
+.col-xs-pull-11 {
+  left: 91.66666667%;
+  right: auto;
+}
+.col-xs-pull-10 {
+  left: 83.33333333%;
+  right: auto;
+}
+.col-xs-pull-9 {
+  left: 75%;
+  right: auto;
+}
+.col-xs-pull-8 {
+  left: 66.66666667%;
+  right: auto;
+}
+.col-xs-pull-7 {
+  left: 58.33333333%;
+  right: auto;
+}
+.col-xs-pull-6 {
+  left: 50%;
+  right: auto;
+}
+.col-xs-pull-5 {
+  left: 41.66666667%;
+  right: auto;
+}
+.col-xs-pull-4 {
+  left: 33.33333333%;
+  right: auto;
+}
+.col-xs-pull-3 {
+  left: 25%;
+  right: auto;
+}
+.col-xs-pull-2 {
+  left: 16.66666667%;
+  right: auto;
+}
+.col-xs-pull-1 {
+  left: 8.33333333%;
+  right: auto;
+}
+.col-xs-pull-0 {
+  left: auto;
+  right: auto;
+}
+.col-xs-push-12 {
+  right: 100%;
+  left: 0;
+}
+.col-xs-push-11 {
+  right: 91.66666667%;
+  left: 0;
+}
+.col-xs-push-10 {
+  right: 83.33333333%;
+  left: 0;
+}
+.col-xs-push-9 {
+  right: 75%;
+  left: 0;
+}
+.col-xs-push-8 {
+  right: 66.66666667%;
+  left: 0;
+}
+.col-xs-push-7 {
+  right: 58.33333333%;
+  left: 0;
+}
+.col-xs-push-6 {
+  right: 50%;
+  left: 0;
+}
+.col-xs-push-5 {
+  right: 41.66666667%;
+  left: 0;
+}
+.col-xs-push-4 {
+  right: 33.33333333%;
+  left: 0;
+}
+.col-xs-push-3 {
+  right: 25%;
+  left: 0;
+}
+.col-xs-push-2 {
+  right: 16.66666667%;
+  left: 0;
+}
+.col-xs-push-1 {
+  right: 8.33333333%;
+  left: 0;
+}
+.col-xs-push-0 {
+  right: auto;
+  left: 0;
+}
+.col-xs-offset-12 {
+  margin-right: 100%;
+  margin-left: 0;
+}
+.col-xs-offset-11 {
+  margin-right: 91.66666667%;
+  margin-left: 0;
+}
+.col-xs-offset-10 {
+  margin-right: 83.33333333%;
+  margin-left: 0;
+}
+.col-xs-offset-9 {
+  margin-right: 75%;
+  margin-left: 0;
+}
+.col-xs-offset-8 {
+  margin-right: 66.66666667%;
+  margin-left: 0;
+}
+.col-xs-offset-7 {
+  margin-right: 58.33333333%;
+  margin-left: 0;
+}
+.col-xs-offset-6 {
+  margin-right: 50%;
+  margin-left: 0;
+}
+.col-xs-offset-5 {
+  margin-right: 41.66666667%;
+  margin-left: 0;
+}
+.col-xs-offset-4 {
+  margin-right: 33.33333333%;
+  margin-left: 0;
+}
+.col-xs-offset-3 {
+  margin-right: 25%;
+  margin-left: 0;
+}
+.col-xs-offset-2 {
+  margin-right: 16.66666667%;
+  margin-left: 0;
+}
+.col-xs-offset-1 {
+  margin-right: 8.33333333%;
+  margin-left: 0;
+}
+.col-xs-offset-0 {
+  margin-right: 0%;
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: right;
+  }
+  .col-sm-pull-12 {
+    left: 100%;
+    right: auto;
+  }
+  .col-sm-pull-11 {
+    left: 91.66666667%;
+    right: auto;
+  }
+  .col-sm-pull-10 {
+    left: 83.33333333%;
+    right: auto;
+  }
+  .col-sm-pull-9 {
+    left: 75%;
+    right: auto;
+  }
+  .col-sm-pull-8 {
+    left: 66.66666667%;
+    right: auto;
+  }
+  .col-sm-pull-7 {
+    left: 58.33333333%;
+    right: auto;
+  }
+  .col-sm-pull-6 {
+    left: 50%;
+    right: auto;
+  }
+  .col-sm-pull-5 {
+    left: 41.66666667%;
+    right: auto;
+  }
+  .col-sm-pull-4 {
+    left: 33.33333333%;
+    right: auto;
+  }
+  .col-sm-pull-3 {
+    left: 25%;
+    right: auto;
+  }
+  .col-sm-pull-2 {
+    left: 16.66666667%;
+    right: auto;
+  }
+  .col-sm-pull-1 {
+    left: 8.33333333%;
+    right: auto;
+  }
+  .col-sm-pull-0 {
+    left: auto;
+    right: auto;
+  }
+  .col-sm-push-12 {
+    right: 100%;
+    left: 0;
+  }
+  .col-sm-push-11 {
+    right: 91.66666667%;
+    left: 0;
+  }
+  .col-sm-push-10 {
+    right: 83.33333333%;
+    left: 0;
+  }
+  .col-sm-push-9 {
+    right: 75%;
+    left: 0;
+  }
+  .col-sm-push-8 {
+    right: 66.66666667%;
+    left: 0;
+  }
+  .col-sm-push-7 {
+    right: 58.33333333%;
+    left: 0;
+  }
+  .col-sm-push-6 {
+    right: 50%;
+    left: 0;
+  }
+  .col-sm-push-5 {
+    right: 41.66666667%;
+    left: 0;
+  }
+  .col-sm-push-4 {
+    right: 33.33333333%;
+    left: 0;
+  }
+  .col-sm-push-3 {
+    right: 25%;
+    left: 0;
+  }
+  .col-sm-push-2 {
+    right: 16.66666667%;
+    left: 0;
+  }
+  .col-sm-push-1 {
+    right: 8.33333333%;
+    left: 0;
+  }
+  .col-sm-push-0 {
+    right: auto;
+    left: 0;
+  }
+  .col-sm-offset-12 {
+    margin-right: 100%;
+    margin-left: 0;
+  }
+  .col-sm-offset-11 {
+    margin-right: 91.66666667%;
+    margin-left: 0;
+  }
+  .col-sm-offset-10 {
+    margin-right: 83.33333333%;
+    margin-left: 0;
+  }
+  .col-sm-offset-9 {
+    margin-right: 75%;
+    margin-left: 0;
+  }
+  .col-sm-offset-8 {
+    margin-right: 66.66666667%;
+    margin-left: 0;
+  }
+  .col-sm-offset-7 {
+    margin-right: 58.33333333%;
+    margin-left: 0;
+  }
+  .col-sm-offset-6 {
+    margin-right: 50%;
+    margin-left: 0;
+  }
+  .col-sm-offset-5 {
+    margin-right: 41.66666667%;
+    margin-left: 0;
+  }
+  .col-sm-offset-4 {
+    margin-right: 33.33333333%;
+    margin-left: 0;
+  }
+  .col-sm-offset-3 {
+    margin-right: 25%;
+    margin-left: 0;
+  }
+  .col-sm-offset-2 {
+    margin-right: 16.66666667%;
+    margin-left: 0;
+  }
+  .col-sm-offset-1 {
+    margin-right: 8.33333333%;
+    margin-left: 0;
+  }
+  .col-sm-offset-0 {
+    margin-right: 0%;
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: right;
+  }
+  .col-md-pull-12 {
+    left: 100%;
+    right: auto;
+  }
+  .col-md-pull-11 {
+    left: 91.66666667%;
+    right: auto;
+  }
+  .col-md-pull-10 {
+    left: 83.33333333%;
+    right: auto;
+  }
+  .col-md-pull-9 {
+    left: 75%;
+    right: auto;
+  }
+  .col-md-pull-8 {
+    left: 66.66666667%;
+    right: auto;
+  }
+  .col-md-pull-7 {
+    left: 58.33333333%;
+    right: auto;
+  }
+  .col-md-pull-6 {
+    left: 50%;
+    right: auto;
+  }
+  .col-md-pull-5 {
+    left: 41.66666667%;
+    right: auto;
+  }
+  .col-md-pull-4 {
+    left: 33.33333333%;
+    right: auto;
+  }
+  .col-md-pull-3 {
+    left: 25%;
+    right: auto;
+  }
+  .col-md-pull-2 {
+    left: 16.66666667%;
+    right: auto;
+  }
+  .col-md-pull-1 {
+    left: 8.33333333%;
+    right: auto;
+  }
+  .col-md-pull-0 {
+    left: auto;
+    right: auto;
+  }
+  .col-md-push-12 {
+    right: 100%;
+    left: 0;
+  }
+  .col-md-push-11 {
+    right: 91.66666667%;
+    left: 0;
+  }
+  .col-md-push-10 {
+    right: 83.33333333%;
+    left: 0;
+  }
+  .col-md-push-9 {
+    right: 75%;
+    left: 0;
+  }
+  .col-md-push-8 {
+    right: 66.66666667%;
+    left: 0;
+  }
+  .col-md-push-7 {
+    right: 58.33333333%;
+    left: 0;
+  }
+  .col-md-push-6 {
+    right: 50%;
+    left: 0;
+  }
+  .col-md-push-5 {
+    right: 41.66666667%;
+    left: 0;
+  }
+  .col-md-push-4 {
+    right: 33.33333333%;
+    left: 0;
+  }
+  .col-md-push-3 {
+    right: 25%;
+    left: 0;
+  }
+  .col-md-push-2 {
+    right: 16.66666667%;
+    left: 0;
+  }
+  .col-md-push-1 {
+    right: 8.33333333%;
+    left: 0;
+  }
+  .col-md-push-0 {
+    right: auto;
+    left: 0;
+  }
+  .col-md-offset-12 {
+    margin-right: 100%;
+    margin-left: 0;
+  }
+  .col-md-offset-11 {
+    margin-right: 91.66666667%;
+    margin-left: 0;
+  }
+  .col-md-offset-10 {
+    margin-right: 83.33333333%;
+    margin-left: 0;
+  }
+  .col-md-offset-9 {
+    margin-right: 75%;
+    margin-left: 0;
+  }
+  .col-md-offset-8 {
+    margin-right: 66.66666667%;
+    margin-left: 0;
+  }
+  .col-md-offset-7 {
+    margin-right: 58.33333333%;
+    margin-left: 0;
+  }
+  .col-md-offset-6 {
+    margin-right: 50%;
+    margin-left: 0;
+  }
+  .col-md-offset-5 {
+    margin-right: 41.66666667%;
+    margin-left: 0;
+  }
+  .col-md-offset-4 {
+    margin-right: 33.33333333%;
+    margin-left: 0;
+  }
+  .col-md-offset-3 {
+    margin-right: 25%;
+    margin-left: 0;
+  }
+  .col-md-offset-2 {
+    margin-right: 16.66666667%;
+    margin-left: 0;
+  }
+  .col-md-offset-1 {
+    margin-right: 8.33333333%;
+    margin-left: 0;
+  }
+  .col-md-offset-0 {
+    margin-right: 0%;
+    margin-left: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: right;
+  }
+  .col-lg-pull-12 {
+    left: 100%;
+    right: auto;
+  }
+  .col-lg-pull-11 {
+    left: 91.66666667%;
+    right: auto;
+  }
+  .col-lg-pull-10 {
+    left: 83.33333333%;
+    right: auto;
+  }
+  .col-lg-pull-9 {
+    left: 75%;
+    right: auto;
+  }
+  .col-lg-pull-8 {
+    left: 66.66666667%;
+    right: auto;
+  }
+  .col-lg-pull-7 {
+    left: 58.33333333%;
+    right: auto;
+  }
+  .col-lg-pull-6 {
+    left: 50%;
+    right: auto;
+  }
+  .col-lg-pull-5 {
+    left: 41.66666667%;
+    right: auto;
+  }
+  .col-lg-pull-4 {
+    left: 33.33333333%;
+    right: auto;
+  }
+  .col-lg-pull-3 {
+    left: 25%;
+    right: auto;
+  }
+  .col-lg-pull-2 {
+    left: 16.66666667%;
+    right: auto;
+  }
+  .col-lg-pull-1 {
+    left: 8.33333333%;
+    right: auto;
+  }
+  .col-lg-pull-0 {
+    left: auto;
+    right: auto;
+  }
+  .col-lg-push-12 {
+    right: 100%;
+    left: 0;
+  }
+  .col-lg-push-11 {
+    right: 91.66666667%;
+    left: 0;
+  }
+  .col-lg-push-10 {
+    right: 83.33333333%;
+    left: 0;
+  }
+  .col-lg-push-9 {
+    right: 75%;
+    left: 0;
+  }
+  .col-lg-push-8 {
+    right: 66.66666667%;
+    left: 0;
+  }
+  .col-lg-push-7 {
+    right: 58.33333333%;
+    left: 0;
+  }
+  .col-lg-push-6 {
+    right: 50%;
+    left: 0;
+  }
+  .col-lg-push-5 {
+    right: 41.66666667%;
+    left: 0;
+  }
+  .col-lg-push-4 {
+    right: 33.33333333%;
+    left: 0;
+  }
+  .col-lg-push-3 {
+    right: 25%;
+    left: 0;
+  }
+  .col-lg-push-2 {
+    right: 16.66666667%;
+    left: 0;
+  }
+  .col-lg-push-1 {
+    right: 8.33333333%;
+    left: 0;
+  }
+  .col-lg-push-0 {
+    right: auto;
+    left: 0;
+  }
+  .col-lg-offset-12 {
+    margin-right: 100%;
+    margin-left: 0;
+  }
+  .col-lg-offset-11 {
+    margin-right: 91.66666667%;
+    margin-left: 0;
+  }
+  .col-lg-offset-10 {
+    margin-right: 83.33333333%;
+    margin-left: 0;
+  }
+  .col-lg-offset-9 {
+    margin-right: 75%;
+    margin-left: 0;
+  }
+  .col-lg-offset-8 {
+    margin-right: 66.66666667%;
+    margin-left: 0;
+  }
+  .col-lg-offset-7 {
+    margin-right: 58.33333333%;
+    margin-left: 0;
+  }
+  .col-lg-offset-6 {
+    margin-right: 50%;
+    margin-left: 0;
+  }
+  .col-lg-offset-5 {
+    margin-right: 41.66666667%;
+    margin-left: 0;
+  }
+  .col-lg-offset-4 {
+    margin-right: 33.33333333%;
+    margin-left: 0;
+  }
+  .col-lg-offset-3 {
+    margin-right: 25%;
+    margin-left: 0;
+  }
+  .col-lg-offset-2 {
+    margin-right: 16.66666667%;
+    margin-left: 0;
+  }
+  .col-lg-offset-1 {
+    margin-right: 8.33333333%;
+    margin-left: 0;
+  }
+  .col-lg-offset-0 {
+    margin-right: 0%;
+    margin-left: 0;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 1.3 - RTL Tables
+/*-----------------------------------------------------------------------------------*/
+caption {
+  text-align: right;
+}
+th {
+  text-align: right;
+}
+@media screen and (max-width: 767px) {
+  .table-responsive > .table-bordered {
+    border: 0;
+  }
+  .table-responsive > .table-bordered > thead > tr > th:first-child,
+  .table-responsive > .table-bordered > tbody > tr > th:first-child,
+  .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+  .table-responsive > .table-bordered > thead > tr > td:first-child,
+  .table-responsive > .table-bordered > tbody > tr > td:first-child,
+  .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+    border-right: 0;
+    border-left: initial;
+  }
+  .table-responsive > .table-bordered > thead > tr > th:last-child,
+  .table-responsive > .table-bordered > tbody > tr > th:last-child,
+  .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+  .table-responsive > .table-bordered > thead > tr > td:last-child,
+  .table-responsive > .table-bordered > tbody > tr > td:last-child,
+  .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+    border-left: 0;
+    border-right: initial;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 1.4 - RTL Embeds Responsive
+/*-----------------------------------------------------------------------------------*/
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object {
+  right: 0;
+  left: auto;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 1.5 - RTL Modals
+/*-----------------------------------------------------------------------------------*/
+.modal-footer {
+  text-align: left;
+}
+.modal-footer .btn + .btn {
+  margin-left: auto;
+  margin-right: 5px;
+}
+.modal-footer .btn-group .btn + .btn {
+  margin-right: -1px;
+  margin-left: auto;
+}
+.modal-footer .btn-block + .btn-block {
+  margin-right: 0;
+  margin-left: auto;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 1.6 - RTL Utility Classes
+/*-----------------------------------------------------------------------------------*/
+.pull-right.flip {
+  float: left !important;
+}
+.pull-left.flip {
+  float: right !important;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 2.0 - RTL Scaffolding
+/*-----------------------------------------------------------------------------------*/
+.fa-flip-horizontal,
+.fa-angle-left,
+.fa-angle-right,
+.fa-sign-in,
+.contact-number .contacts-icon-container,
+.contacts-icon-container {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+:root .fa-flip-horizontal {
+  filter: none;
+}
+.property-status-tag {
+  margin-left: 0;
+  margin-right: 12px;
+}
+.property-status-tag:before {
+  left: auto;
+  right: -12px;
+  border-width: 12px 0 12px 12px;
+}
+.property-status-tag-flipped {
+  margin-right: 0;
+  margin-left: 12px;
+}
+.property-status-tag-flipped:after {
+  right: auto;
+  left: -12px;
+  border-width: 12px 12px 12px 0;
+}
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone,
+a img.alignnone,
+.wp-caption.alignnone {
+  margin: 5px 0 20px 30px;
+}
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  left: auto;
+  right: 5px;
+}
+/* Pretty Photo */
+a.pp_next,
+a.pp_prev,
+a.pp_arrow_previous,
+a.pp_close,
+a.pp_arrow_next,
+.pp_nav .pp_play,
+.pp_nav .pp_pause {
+  text-indent: 10000px !important;
+}
+/*  Swipebox */
+html.swipebox-html {
+  overflow: hidden !important;
+}
+html.swipebox-html #swipebox-overlay {
+  direction: ltr;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 3.0 - RTL Print
+/*-----------------------------------------------------------------------------------*/
+@media print {
+  .single-property-title {
+    margin: 0 0 10px 40px;
+  }
+  .agent-common-styles .inner-wrapper {
+    padding-right: 0;
+    padding-left: 60px;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 4.0 - RTL Forms Module Styles
+/*----------------------------------------------------------------------------------*/
+.checkbox-field,
+.radio-field {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.checkbox-field input[type="checkbox"] + label:before,
+.radio-field input[type="radio"] + label:before {
+  margin-right: 0;
+  margin-left: 8px;
+}
+.wpcf7 {
+  direction: rtl;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 5.0 - RTL Pagination Module Styles
+/*-----------------------------------------------------------------------------------*/
+.pagination .fa-angle-right {
+  right: 0;
+}
+.pagination .fa-angle-left {
+  position: relative;
+  right: -2px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 6.0 - RTL Login Modal Module Styles
+/*-----------------------------------------------------------------------------------*/
+.close-modal-dialog {
+  float: left;
+}
+.form-heading .fa-sign-in {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.button .fa {
+  margin-right: 0;
+  margin-left: 15px;
+}
+.login-link.pull-left,
+.sign-up.pull-left {
+  float: right !important;
+}
+.login-link.pull-right,
+.forgot-password.pull-right {
+  float: left !important;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 7.0 - RTL WPML Language Switcher Module Styles
+/*-----------------------------------------------------------------------------------*/
+#inspiry_language_list {
+  text-align: right;
+  background-position: center right;
+}
+#inspiry_language_list ul {
+  left: auto;
+  right: -5px;
+}
+#inspiry_language_list ul:before {
+  margin-left: 0;
+  margin-right: 9px;
+}
+.header-variation-one #inspiry_language_list {
+  margin-left: 0;
+  margin-right: 8px;
+}
+.header-variation-two #inspiry_language_list {
+  float: left;
+}
+@media (max-width: 992px) {
+  #inspiry_language_list {
+    left: auto;
+    right: 48px;
+  }
+  .header-variation-one #inspiry_language_list {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 8.0 - RTL IDX Module Styles
+/*-----------------------------------------------------------------------------------*/
+#dsidx,
+.dsidx-widget-single-listing-wrap,
+.dsidx-widget-listings,
+.dsidx-widget-list-areas,
+.dsidx-widget-quick-search,
+.dsidx-widget-guided-search {
+  direction: ltr;
+}
+#dsidx blockquote:before {
+  content: "\f10d";
+  left: 28px;
+  right: auto;
+}
+.dsidx-widget-single-listing-wrap .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered,
+.dsidx-widget-listings .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered,
+.dsidx-widget-list-areas .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered,
+.dsidx-widget-quick-search .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered,
+.dsidx-widget-guided-search .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered,
+.dsidx-widget .select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
+  padding-right: 20px;
+  padding-left: 15px;
+  text-align: left;
+}
+.dsidx-widget-single-listing-wrap .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow,
+.dsidx-widget-listings .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow,
+.dsidx-widget-list-areas .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow,
+.dsidx-widget-quick-search .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow,
+.dsidx-widget-guided-search .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow,
+.dsidx-widget .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+  left: auto;
+  right: 1px;
+}
+#dsidx .dsidx-sorting-control .select2-container--default .select2-selection--single {
+  text-align: right;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 9.0 - RTL Faqs Module Styles
+/*-----------------------------------------------------------------------------------*/
+.qe-faq-toggle .qe-toggle-title {
+  padding-left: 1em;
+  padding-right: 22px;
+}
+.qe-faq-toggle .qe-toggle-title i.fa {
+  margin-right: 0.5em;
+  margin-left: 13px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 10.0 - RTL Widget Module Styles
+/*-----------------------------------------------------------------------------------*/
+.sidebar .widget_categories li,
+.sidebar .widget_pages li,
+.sidebar .widget_meta li,
+.sidebar .widget_archive li,
+.sidebar .widget_lc_taxonomy li {
+  padding-right: 24px;
+  padding-left: 0;
+}
+/*  Widget Search */
+.widget_search input[type="text"] {
+  float: right;
+}
+/* Widget Recent Entries and Recent Comments */
+.widget-post-image {
+  float: right;
+}
+.widget-post-content {
+  padding: 6px 15px 0 0;
+}
+.widget-post-comments .fa-comments {
+  margin-right: 0;
+  margin-left: 5px;
+}
+/* Widget Advance Search */
+.advance-search-widget-title .fa-search {
+  margin-right: 0;
+  margin-left: 10px;
+}
+@media (min-width: 1199px) {
+  .site-footer .advance-search-widget-title .fa-search {
+    margin-right: 0;
+    margin-left: 5px;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 11.0 - RTL Listing Control Module Styles
+/*-----------------------------------------------------------------------------------*/
+.sort-controls,
+.view-switcher {
+  float: left;
+}
+.view-btn {
+  float: left;
+  margin-right: 0;
+  margin-left: 4px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 12.0 - RTL Header Module Styles
+/*-----------------------------------------------------------------------------------*/
+/* Contact Number Module Styles */
+.contact-number {
+  float: left;
+}
+.contact-number .contacts-icon-container {
+  margin-right: 0;
+  margin-left: 5px;
+}
+/* Logo Module Styles */
+.button-menu-close {
+  right: auto;
+  left: 15px;
+}
+@media (min-width: 992px) {
+  .button-menu-reveal {
+    float: right;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 12.4 - RTL Main Menu Module Styles
+/*-----------------------------------------------------------------------------------*/
+.site-main-nav .main-menu > li {
+  float: right;
+}
+.site-main-nav .sub-menu {
+  left: auto;
+  right: 0;
+}
+.site-main-nav .sub-menu li .sub-menu {
+  left: auto;
+  right: 240px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 12.1 - RTL Header Variation One
+/*-----------------------------------------------------------------------------------*/
+.header-variation-one .header-top {
+  text-align: left;
+}
+.header-variation-one .contact-number {
+  float: right;
+}
+.header-variation-one .user-nav {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.header-variation-one .user-nav .fa {
+  margin-right: 0;
+  margin-left: 7px;
+}
+.header-variation-one .header-social-nav > a {
+  padding-right: 0;
+  padding-left: 15px;
+}
+@media (min-width: 1200px) {
+  .left-column,
+  .right-column {
+    float: right;
+  }
+  .modal-open .header-variation-one {
+    padding-right: 0;
+    padding-left: 17px;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 12.2 - RTL Header Variation Two
+/*-----------------------------------------------------------------------------------*/
+.header-variation-two .contact-number {
+  float: right;
+}
+.header-variation-two .user-nav .fa {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.header-variation-two .user-nav,
+.header-variation-three .user-nav {
+  float: left;
+}
+.header-variation-two .user-nav > li,
+.header-variation-three .user-nav > li {
+  float: right;
+}
+.header-variation-two .header-social-nav,
+.header-variation-three .header-social-nav {
+  float: left;
+}
+.header-variation-two .header-social-nav > a,
+.header-variation-three .header-social-nav > a {
+  float: right;
+}
+@media (min-width: 1200px) {
+  .header-variation-two .header-bottom,
+  .header-variation-three .header-bottom {
+    right: auto;
+    left: 0;
+  }
+  .header-variation-two .site-logo,
+  .header-variation-three .site-logo {
+    text-align: right;
+  }
+  .header-variation-two .site-main-nav,
+  .header-variation-three .site-main-nav {
+    float: left;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 12.3 - Header Variation Three
+/*-----------------------------------------------------------------------------------*/
+.header-variation-three #inspiry_language_list {
+  float: left;
+}
+.header-variation-three .contact-number {
+  margin-right: 10px;
+  margin-left: 0;
+}
+.header-variation-three .user-nav > li {
+  margin-right: 20px;
+  margin-left: 0;
+}
+.header-variation-three .user-nav > li:first-child {
+  margin-right: 0;
+}
+.header-variation-three .user-nav .fa {
+  margin-right: 0;
+  margin-left: 6px;
+}
+.header-variation-three .header-social-nav {
+  margin: 4px 15px 0 0;
+}
+.header-variation-three .header-social-nav > a {
+  margin-left: 0;
+  margin-right: 5px;
+  text-align: left;
+}
+.header-variation-three .header-social-nav > a:first-child {
+  margin-right: 0;
+}
+@media (max-width: 1199px) and (min-width: 992px) {
+  .header-variation-three .site-main-nav {
+    text-align: right;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 12.5 - RTL Mean Menu Module Styles
+/*-----------------------------------------------------------------------------------*/
+.mean-container .mean-push {
+  float: right;
+}
+.mean-container .mean-bar {
+  float: right;
+}
+.mean-container .mean-nav {
+  left: auto;
+  right: 0;
+}
+.mean-container .mean-nav li a {
+  padding-right: 20px;
+  padding-left: 60px;
+}
+.mean-container .mean-nav .mean-expand {
+  right: auto;
+  left: 0;
+}
+.mean-container .mean-nav .mean-expand:before {
+  margin-left: 0;
+  margin-right: 4px;
+}
+.mean-container .mean-nav .mean-expand:after {
+  right: auto;
+  left: 13px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 13.0 - RTL Sliders Module Styles
+/*-----------------------------------------------------------------------------------*/
+.flexslider {
+  direction: ltr;
+}
+.slide-overlay .price {
+  margin-right: 0;
+  margin-left: 8px;
+}
+/* Slider variation one styles */
+.slider-variation-one .slide-overlay {
+  text-align: right;
+  direction: rtl;
+}
+.slider-variation-one .property-meta {
+  margin-left: 0;
+  margin-right: -15px;
+}
+.slider-variation-one .meta-item {
+  padding-left: 0;
+  padding-right: 15px;
+}
+/* Slider variation two styles */
+.slider-variation-two .slide-inner-container {
+  right: auto;
+  left: 50px;
+}
+.slider-variation-two .property-meta {
+  margin-left: 0;
+  margin-right: -30px;
+}
+.slider-variation-two .meta-item {
+  padding-left: 0;
+  padding-right: 30px;
+}
+.slider-variation-two .slide-overlay,
+.slider-variation-three .slide-overlay {
+  text-align: right;
+  direction: rtl;
+}
+.slider-variation-two .slide-overlay .fa,
+.slider-variation-three .slide-overlay .fa {
+  margin-left: 0;
+  margin-right: 10px;
+}
+/* Slider variation three styles */
+.slider-variation-three .slide-inner-container {
+  right: auto;
+  left: 0;
+}
+@media (max-width: 1200px) {
+  .slider-variation-three .slide-inner-container {
+    left: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .slider-variation-two .slide-inner-container {
+    right: auto;
+    left: 15px;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 14.0 - RTL Footer Module Styles
+/*-----------------------------------------------------------------------------------*/
+.site-footer .social-networks a {
+  margin-right: 0;
+  margin-left: 14px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 15.0 - RTL Advance Search
+/*-----------------------------------------------------------------------------------*/
+.option-bar {
+  float: right;
+}
+.header-advance-search .option-bar {
+  padding-right: 0;
+  padding-left: 1px;
+}
+.header-advance-search .inline-fields,
+.header-advance-search .hidden-fields {
+  margin-right: 0;
+  margin-left: -1px;
+}
+.header-advance-search .hidden-fields-reveal-btn {
+  float: right;
+}
+.header-advance-search .form-submit-btn {
+  padding-left: 0;
+  padding-right: 50px;
+  text-align: right;
+}
+.extra-search-fields .text-wrapper {
+  padding-right: 30px;
+  padding-left: 0;
+}
+.extra-search-fields .text-wrapper:before {
+  left: auto;
+  right: 0;
+}
+.features-checkboxes-wrapper > li {
+  float: right;
+}
+.option-set {
+  margin-right: 0;
+  margin-left: 12px;
+}
+input[type="checkbox"] + label:before {
+  margin-right: 0;
+  margin-left: 12px;
+}
+.hidden-fields-reveal-btn {
+  position: relative;
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.hidden-fields-reveal-btn .icon {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.hidden-fields-reveal-btn .icon-plus-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.field-wrapper-expand .icon-plus {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+@media (max-width: 480px) {
+  .features-checkboxes-wrapper > li:nth-child(2n+1) {
+    clear: right;
+  }
+}
+@media (min-width: 768px) {
+  .layout-wide .search-title {
+    left: auto;
+    right: 15px;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* Property Meta Module Styles
+/*-----------------------------------------------------------------------------------*/
+.meta-item {
+  float: right;
+}
+.meta-item-unit {
+  left: auto;
+  right: 2px;
+}
+.meta-icon-container {
+  float: right;
+  margin-right: 0;
+  margin-left: 10px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 17.0 - RTL Home Properties Module Styles
+/*-----------------------------------------------------------------------------------*/
+.property-listing-one .price {
+  margin-right: 0;
+  margin-left: 6px;
+}
+.property-associative-style .property-status-tag,
+.property-listing-two .property-status-tag,
+.featured-properties-two .property-status-tag,
+.property-listing-two .property-status-tag {
+  float: left;
+}
+.property-listing-three-post .property-status {
+  right: auto;
+  left: 0;
+}
+.property-listing-three-post .meta-wrapper {
+  float: right;
+}
+.property-listing-three-post .meta-wrapper + .meta-wrapper:before,
+.featured-properties-three .featured-property-post .meta-wrapper + .meta-wrapper:before {
+  margin-left: -2px;
+}
+@media (min-width: 1200px) {
+  .row-even .property-thumbnail {
+    float: left;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 18.0 - RTL Featured Properties Module Styles
+/*-----------------------------------------------------------------------------------*/
+.featured-properties-one .price {
+  margin-right: 0;
+  margin-left: 8px;
+}
+.featured-properties-three .featured-property-post .meta-wrapper {
+  float: right;
+}
+@media (min-width: 1200px) {
+  .featured-properties-three .property-description,
+  .featured-properties-three .property-thumbnail {
+    float: right;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 19.0 - RTL Home News Posts Module Styles
+/*-----------------------------------------------------------------------------------*/
+.home-recent-posts .post-meta > span + span:before {
+  margin: 0 12px 0 13px;
+}
+.post-thumbnail-container {
+  float: right;
+}
+.read-more .fa {
+  margin-left: 0;
+  margin-right: 5px;
+}
+.recent-posts-carousel-nav {
+  right: auto;
+  left: 0;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 20.0 - RTL Property Single Module Styles
+/*-----------------------------------------------------------------------------------*/
+.fancy-title:after {
+  margin-left: 0;
+  margin-right: 2px;
+}
+.add-to-fav {
+  float: right;
+}
+.printer-icon {
+  float: left;
+}
+.property-single-content .favorite-and-print {
+  float: left;
+  margin-left: 0;
+  margin-right: 8px;
+}
+.property-single-content .favorite-and-print > a + a {
+  margin-left: 0;
+  margin-right: 1px;
+}
+.property-features-list > li {
+  margin-right: 0;
+  margin-left: 15px;
+}
+.property-share-networks .share-this.sharer-0 .social ul li {
+  float: right;
+}
+.property-attachments-list > li {
+  margin-right: 0;
+  margin-left: 35px;
+}
+.property-attachments-list > li:last-child {
+  margin-left: 0;
+}
+.property-attachments-list .fa {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.similar-properties .property-status-tag {
+  margin-left: 0;
+  margin-right: 20px;
+}
+.similar-properties-carousel-nav {
+  float: left;
+}
+/* Property Horizontal Scrolling Module */
+.scrolling-wrapper {
+  direction: ltr;
+}
+@media (max-width: 480px) {
+  .property-single-content .favorite-and-print {
+    margin-right: 0;
+  }
+  .property-single-content .favorite-and-print > a + a {
+    margin-right: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .property-title-wrapper .favorite-and-print {
+    left: auto;
+    right: 0;
+  }
+  .similar-properties .arrow {
+    right: auto;
+    left: 35px;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 21.0 - RTL Simple Property Listing Module Styles
+/*-----------------------------------------------------------------------------------*/
+.property-listing-simple .title-and-meta .prefix-text {
+  margin-right: 0;
+  margin-left: 5px;
+}
+.property-listing-simple-2 .price-wrapper {
+  left: auto;
+  right: 0;
+}
+.property-listing-simple-2 .flex-control-nav {
+  padding-right: 0;
+  margin-left: 15px;
+  text-align: left;
+}
+.btn-default .fa-angle-right {
+  margin-left: 0;
+  margin-right: 16px;
+}
+.fa-map-marker {
+  margin-right: 0;
+  margin-left: 5px;
+}
+@media (min-width: 1200px) {
+  .property-listing-simple-1 .property-description {
+    float: right;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 22.0 - RTL Grid Property Listing Module Styles
+/*-----------------------------------------------------------------------------------*/
+.property-listing-grid .property-status-tag-flipped:after {
+  right: auto;
+  left: -16px;
+  border-width: 16px 16px 16px 0;
+}
+.property-listing-grid .price-wrapper {
+  float: left;
+}
+.property-listing-grid .meta-icon-container {
+  margin-right: 0;
+  margin-left: 6px;
+}
+.price-and-status-wrapper .price-wrapper {
+  float: right;
+}
+.price-and-status-wrapper .property-status-tag {
+  float: right;
+  margin-right: 16px;
+  margin-left: 0;
+}
+.trash-favorite {
+  right: auto;
+  left: 0;
+}
+@media (max-width: 991px) {
+  .col-grid-post:nth-child(2n+1) {
+    clear: right;
+  }
+}
+@media (min-width: 992px) {
+  .col-grid-post:nth-child(3n+1) {
+    clear: right;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 23.0 - RTL User Properties Module Styles
+/*-----------------------------------------------------------------------------------*/
+.inspiry-highlighted-message .close-message {
+  float: left;
+}
+@media (max-width: 1199px) {
+  .user-submit-property .content-wrapper {
+    padding-right: 0;
+    padding-left: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .user-submit-property .content-wrapper {
+    padding-right: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .action-buttons {
+    margin-right: 30px;
+    margin-left: 0;
+    border-left: none;
+    border-right: 1px solid;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 24.0 - RTL Agent Listing Module Styles
+/*-----------------------------------------------------------------------------------*/
+.agent-image {
+  float: right;
+  margin-right: 0;
+  margin-left: 20px;
+}
+.agent-social-profiles a {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.agent-contacts-list span {
+  margin-right: 0;
+  margin-left: 5px;
+}
+@media (max-width: 480px) {
+  .agent-image {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 25.0 - RTL Gallery Module Styles
+/*-----------------------------------------------------------------------------------*/
+.search-plus {
+  margin-right: 0;
+  margin-left: 6px;
+}
+.external-link {
+  margin-left: 0;
+  margin-right: 6px;
+}
+.external-link .fa-external-link {
+  right: auto;
+  left: 2px;
+}
+@media (min-width: 768px) {
+  .gallery-items-filter a {
+    float: right;
+  }
+  .gallery-items-filter a:before {
+    left: auto;
+    right: 0;
+  }
+  .gallery-items-filter a:after {
+    right: auto;
+    left: 0;
+    border-right: none;
+    border-left: 1px solid;
+  }
+  .gallery-items-filter a:last-child:after {
+    border-left: none;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 26.0 - RTL Contact Module Styles
+/*-----------------------------------------------------------------------------------*/
+.contact-details address {
+  padding-left: 0;
+  padding-right: 25px;
+}
+.contact-details .fa-map-marker {
+  left: auto;
+  right: 0;
+}
+.fa-map-marker:before {
+  margin-left: 0;
+  margin-right: 1px;
+}
+.contacts-list .icon-clock {
+  padding-left: 0;
+  padding-right: 25px;
+}
+.contacts-icon-container {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.icon-clock .contacts-icon-container {
+  margin-left: 0;
+  left: auto;
+  right: 0;
+}
+/*-----------------------------------------------------------------------------------*/
+/* 27.0 - RTL Blog Module Styles
+/*-----------------------------------------------------------------------------------*/
+.blog-post-entry-meta > span {
+  margin-right: 0;
+  margin-left: 3px;
+}
+.blog-post-entry-meta > span:last-child {
+  margin-left: 0;
+}
+blockquote {
+  padding-left: 36px;
+  padding-right: 56px;
+}
+blockquote:before {
+  content: "\f10e";
+  left: auto;
+  right: 28px;
+}
+.tag-links .fa-tag {
+  margin-right: 0;
+  margin-left: 8px;
+}
+.tag-links a {
+  margin: 0 0 2px 2px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* Lists
+/*-----------------------------------------------------------------------------------*/
+.list-bullet-arrow li:before {
+  content: "\f100";
+  margin-right: 0;
+  margin-left: 10px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* Comments
+/*-----------------------------------------------------------------------------------*/
+#comments .pingback {
+  padding-left: 10px;
+  padding-right: 0;
+}
+#comments time {
+  margin-left: 0;
+  margin-right: 4px;
+}
+/*-----------------------------------------------------------------------------------*/
+/* Respond
+/*-----------------------------------------------------------------------------------*/
+@media (min-width: 480px) {
+  #comments .author-photo {
+    float: right;
+  }
+}
+@media (min-width: 768px) {
+  #comments .depth-2 article {
+    margin-left: 0;
+    margin-right: 68px;
+  }
+  #comments .depth-3 article {
+    margin-left: 0;
+    margin-right: 156px;
+  }
+}
+@media (min-width: 1200px) {
+  #comments .depth-4 article {
+    margin-left: 0;
+    margin-right: 244px;
+  }
+  #comments .depth-5 article {
+    margin-left: 0;
+    margin-right: 332px;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 28.0 - RTL User Profile Module Styles
+/*-----------------------------------------------------------------------------------*/
+#user-profile-img {
+  float: right;
+}
+.profile-img-controls {
+  padding-left: 0;
+  padding-right: 26px;
+}
+.field-description > li {
+  padding-left: 0;
+  padding-right: 10px;
+}
+.field-description > li > span {
+  left: auto;
+  right: 0;
+}
+.profile-img-controls .btn-default {
+  margin-right: 0;
+  margin-left: 6px;
+}
+.profile-img-controls .fa {
+  margin-right: 0;
+  margin-left: 10px;
+}
+@media (max-width: 480px) {
+  .profile-img-controls {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/*-----------------------------------------------------------------------------------*/
+/* 29.0 - RTL Submit Property Module Styles
+/*-----------------------------------------------------------------------------------*/
+.white-box .fancy-title:after {
+  margin-right: 0;
+}
+#featured-thumb-container,
+#gallery-thumbs-container {
+  margin: 0 -10px 10px 0;
+}
+.gallery-thumb,
+.sortable-placeholder {
+  float: right;
+  margin: 0 10px 10px 0;
+}
+.gallery-thumb img {
+  left: auto;
+  right: 0;
+}
+.gallery-thumb .mark-featured,
+.gallery-thumb .loader,
+.gallery-thumb a {
+  right: auto;
+  left: 0;
+}
+.gallery-thumb .loader {
+  right: 0;
+  left: auto;
+}
+.gallery-thumb .mark-featured {
+  right: 0;
+  left: auto;
+}
+.agent-options .select2-container {
+  margin-left: 0;
+  margin-right: 15px;
+}
+.inspiry-details-wrapper .inspiry-detail-control,
+.inspiry-details-wrapper .inspiry-detail-title,
+.inspiry-details-wrapper .inspiry-detail-value {
+  float: right;
+}

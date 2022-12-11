@@ -1,0 +1,270 @@
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+
+
+<div class="container white-box submit-property-box" style="background-color:#BDFEC2; color:black;">
+    <form method="post" class="submit-form" action="{%url 'submitListing'%}" enctype="multipart/form-data">
+        <br>
+        {% csrf_token %}
+        
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="form-option">
+                    <h2 > Add a Property </h2>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-option">
+                    <label for="title">Property Title</label>
+                    <input type="text" class="required" id="ptitle" name="title" placeholder="" required>
+                </div>
+                <div cclass="form-option">
+                    <label for="description">Property Description</label>
+                    <textarea class="required" rows="3" name="description"  placeholder="" required></textarea>
+                </div>
+            </div>
+           
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-option">
+                    <label for="type">Type</label>
+                    <select name="type"  id="typeOf" class="required" aria-invalid="false" onchange="getType()" required>
+                        <option selected="selected" value="">Select</option>
+                        <option value="Plat">Plat</option>
+                        <option value="House">House</option>
+                        <option value="Land">Land</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-option">
+                    <label for="city">Location</label>
+                    <input type="text" name="location" id="pLocation" class="required" placeholder="">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-option">
+                    <label for="city">City</label>
+                    <select name="city" class="search-select valid" aria-invalid="false">
+                     
+                      <option value=""> Select City </option>
+                      {%for c in city%}
+                        <option selected="selected" value="{{c.id}}">{{c.cityName}}</option>
+                    {%endfor%}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-option"><br>
+                    <button type="Button" style="background-color: #007008;" class="btn-small btn-orange" data-toggle="modal" data-target="#exampleModalCenter"><i class="ti-plus"></i>Add New City</button>
+              
+                                      </button>
+                </div>
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-option">
+                    <label for="status">Status</label>
+                    <select name="purpose" id="status" class="search-select valid" aria-invalid="false" required>
+                        <option selected="selected" value="">Select</option>
+                        <option value="Rent"> For Rent</option>
+                        <option value="Sale"> For Sale</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-option">
+                    <label>Bedrooms</label>
+                    <input type="number" name="bedroom" class="required" placeholder="" value="0" min="0" required>
+                  
+                    {% comment %} <select name="bedroom"class="search-select valid" aria-invalid="false" required>
+                        {% for i in '012345678910111213141516171819202122232425262728293031323334353637383940'|make_list %}
+                        <option value="{{ forloop.counter }}">{{ forloop.counter }}</option> 
+                         {% endfor %}
+                    </select> {% endcomment %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div  class="form-option">
+                    <label>Bathrooms</label>
+                    <input type="number" name="bathroom" class="required" placeholder="" value="0" min="0" required>
+                    {% comment %} <select name="bathroom"class="search-select valid" aria-invalid="false" required>
+                        <option value="">Select</option>
+                       
+                     {% for i in '012345678910111213141516171819202122232425262728293031323334353637383940'|make_list %}
+                     <option value="{{ forloop.counter }}">{{ forloop.counter }}</option> 
+                      {% endfor %}
+                    </select> {% endcomment %}
+                </div>
+            </div>
+           
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-option">
+                    <label for="price">Sale OR Rent Price</label>
+                    <input type="number" name="price" class="required" placeholder="" min="0" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+         
+           <div class="col-md-6">
+               <div class="form-option">
+            <label for="status">Select units</label>
+                    <select name="unit" id="status" class="search-select valid" aria-invalid="false" required>
+                        <option selected="selected" value="">Select</option>
+                        <option value="sqrft"> Sqrft</option>
+                        <option value="marla"> Merla</option>
+                        <option value="Kanal"> Kanal</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-option">
+                    <label for="size">Area</label>
+                    <input type="text" name="area" class="required" placeholder="" required>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="title">Owner Name</label>
+                    <input type="text" id="ptitle" name="name"  required>
+                </div>
+                <div class="form-option">
+                    <label for="description">Owner Contact</label>
+                    <input type="number" class="required" id="ptitle" name="contact"  required>
+                 </div>
+            </div>
+           
+        </div>
+
+
+        <!-- .row -->
+        <div class="row">
+         
+            <div class="col-md-4">
+                <div class="form-option">
+                    <label for="size">image 1</label>
+                    <input type="file" name="img" accept="image/*" required> 
+                </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="form-option">
+                     <label for="size">image 2</label>
+                     <input type="file" name="img2" accept="image/*" >
+                 </div>
+             </div>
+             <div class="col-md-4">
+                <div class="form-option">
+                    <label for="size">image 3</label>
+                    <input type="file" name="img3" accept="image/*" >
+                </div>
+            </div>
+
+         </div>
+
+    
+        <!-- .row -->
+      
+        <!-- .row -->
+        <div class="row">
+            <div class="col-xs-12">
+                <p id="demo"></p>
+                {%if messages%}
+                {%for message in messages%}
+                {{message}}
+                {%endfor%}
+                {% endif %}
+                <div class="form-group" style="margin-left:43px;">
+                    <input type="hidden" name="action" value="add_property">
+                    <input type="hidden" name="userId" value="{{request.user.id}}">
+                    <button type="submit" onclick="myFunction()" class="btn-small btn-orange" style="background-color: green;"><i class="ti-plus"></i>Submit Property</button>
+                </div>
+                <div id="message-container">&nbsp;</div>
+            </div>
+        </div>
+        <!-- .row -->
+
+
+
+    </form>
+ 
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add New City</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        <div class="modal-body">
+
+
+          <form method="post" action="{%url 'insertCityFromAddListing'%}" >
+              {%csrf_token%}
+            <div class="form-group" style="color:black; font-size:16px;">
+                <label for="title">City Name</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="cityName" placeholder="Enter City Name" required>
+            </div>
+            <button type="submit"  style="background-color: #007008;" class="btn btn-primary">Add New City</button>
+          </form>
+        </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+</div>
+<script>
+    document.getElementById("typeOf").onchange = function(){
+        console.log(document.getElementById("typeOf").value);
+    };
+    function getType(){
+      //  var select=document.getElementById('typeOf').value;
+      //  var value= select.options[select.selectedIndex].value;
+     //   console.log('you select : ', select);
+     //   alert(select);
+    
+    }
+    function myFunction() {
+      // Get the value of the input field with id="numb"
+      let x = document.getElementById("ptitle").value;
+      let y = document.getElementById("pLocation").value;
+      // If x is Not a Number or less than one or greater than 10
+      let text;
+      if (x == "" & y == "") {
+        text = "Input not valid";
+      } else {
+        text = "";
+      }
+      document.getElementById("demo").innerHTML = text;
+    }
+
+    </script>
+{%endblock%}

@@ -1,0 +1,309 @@
+{%extends 'user/real-places-html/userBase.html'%}
+{%load static%}
+{%block content%}
+
+<!-- .site-header -->
+<div class="page-head " style="background: url(images/banner.jpg) #494c53 no-repeat center top;  background-size: cover;">
+    <div class="container">
+        <div class="page-head-content">
+            <h1 class="page-title"><span>Listings</span></h1>
+        </div>
+    </div>
+</div>
+<!-- .page-head -->
+<div id="content-wrapper" class="site-content-wrapper site-pages">
+    <div id="content" class="site-content layout-boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 site-main-content">
+                    <main id="main" class="site-main">
+                        <div id="gallery-items-filter" class="gallery-items-filter clearfix"><a href="{%url 'viewListings'%}" class="active" data-filter="*">All</a><a href="{% url 'forRent'%}" data-filter=".for-rent">For Rent</a><a href="{% url 'forSale'%}" data-filter=".for-sale">For Sale</a></div>
+                        <!-- .filter-by --> 
+                        <div id="gallery-container" class="gallery-container gallery-4-columns gallery-post-listing isotope row">
+                            {% for list in page_obj %}
+                           
+                            <div class="col-xs-6 for-sale col-md-3 col-gallery-item isotope-item for-rent ">
+                         
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="{{list.img.url}}" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="{%url 'viewSingleList'  pk=list.id %}"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" style=" width: 100%; height: 189px; object-fit: cover; "  src="{{list.img.url}}" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="{%url 'viewSingleList'  pk=list.id %}" title="Home in Merrick Way">{{list.property_title}}</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                  
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                            {%endfor%}
+
+                           {% comment %} 
+                            <div class="col-xs-6 for-sale col-md-3 col-gallery-item isotope-item for-sale ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-12-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-12-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Villa in Coral Gables">Villa in Coral Gables</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                          
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-sale col-md-3 col-gallery-item isotope-item for-sale ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-10-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-10-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Street Food Restaurant">Street Food Restaurant</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                           
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-rent col-md-3 col-gallery-item isotope-item for-rent ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-9-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-9-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Villa on Hollywood Boulevard">Villa on Hollywood Boulevard</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-sale col-md-3 col-gallery-item isotope-item for-rent ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-2-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-2-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Villa on Grand Avenue">Villa on Grand Avenue</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-rent col-md-3 col-gallery-item isotope-item for-rent ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-8-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-8-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Office Space at Northwest 107th Avenue">Office Space at Northwest 107th Avenue</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-rent col-md-3 col-gallery-item isotope-item for-sale ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-7-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-7-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Condo on Biscayne Boulevard">Condo on Biscayne Boulevard</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-rent col-md-3 col-gallery-item isotope-item for-rent ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-3-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-3-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Home in Coral Gables">Home in Coral Gables</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-rent col-md-3 col-gallery-item isotope-item for-sale ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-apartment-1-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-apartment-1-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Luxury Apartment">Luxury Apartment</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-rent col-md-3 col-gallery-item isotope-item for-rent ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-13-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-13-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Building Having 15 Apartments">Building Having 15 Apartments</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-rent col-md-3 col-gallery-item isotope-item for-rent ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-5-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-5-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Single Home at Florida 5, Pinecrest">Single Home at Florida 5, Pinecrest</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                            <div class="col-xs-6 for-rent col-md-3 col-gallery-item isotope-item for-rent ">
+                                <article class="gallery-post-item gallery-listing-post clearfix hentry">
+                                    <figure class="gallery-thumbnail">
+                                        <div class="media-container">
+                                            <div class="btn-wrapper">
+                                                <a class="search-plus swipebox" href="images/property/property-shop-1-850x570.jpg" title="Photo"><i class="fa fa-search-plus"></i></a>
+                                                <a class="external-link" href="property-single.html"><i class="fa fa-external-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <img class="img-responsive" src="images/property/property-shop-1-850x570.jpg" alt="Photo">
+                                    </figure>
+                                    <div class="gallery-title-wrapper">
+                                        <h3 class="gallery-item-title entry-title">
+                                            <a href="property-single.html" title="Shop at Southwest 186th Street">Shop at Southwest 186th Street</a>
+                                        </h3>
+                                    </div>
+                                </article>
+                                <!-- .gallery-post-item -->
+                            </div>
+                            <!-- .col-gallery-item -->
+                                {% endcomment %}
+                        </div>
+                        <!-- .gallery-container -->
+                    </main>
+                    <!-- .site-main -->
+                </div>
+                <!-- .site-main-content -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- .container -->
+{%if page_obj.has_next%}
+        <div class="container" style="background-color:#EC6B43">
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+       
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+            
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+{%endif%}
+    </div>
+    <!-- .site-content -->
+</div>
+<!-- .site-content-wrapper -->
+  
+{%endblock%}

@@ -1,0 +1,166 @@
+{%extends 'admin/admin_main.html'%}
+{%load static%}
+{%block content%}
+<div class="container">
+
+<form method="post" action="{%url 'editAgent' pk=agent.id%}" enctype="multipart/form-data" style="background-color:#ADB3FC; color:black;">
+    <br>
+    {% csrf_token %}
+    
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="form-group ">
+                <h2 > Edit Agent </h2>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="title">Agent Name</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="name" value="{{agent.name}}" placeholder="" >
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-option">
+                <label for="description">Phone Number</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="phoneNo" value="{{agent.phoneNo}}" placeholder="" >
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="title">Agent address</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="address" value="{{agent.address}}" placeholder="" >
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-option">
+                <label for="description"> status</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="status" value="{{agent.status}}" placeholder="" >
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-option">
+                <label for="size">Facebook Link </label>
+                <input type="text" class="form-control input-default " id="ptitle" name="title" value="{{agent.facebook_url}}" placeholder="" >
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="size">Email</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="email" value="{{agent.email_address}}" placeholder="" >
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="size">Website Link</label>
+                <input type="text" class="form-control input-default " id="ptitle" name="website" value="{{agent.website_address}}" placeholder="" >
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-option">
+                <label for="city">City</label>
+                <select name="city" class="search-select valid" class="form-control" aria-invalid="False">
+                 
+                  <option value=""> Select City </option>
+                  {%for c in allCities%}
+                  {%if c.id == agent.AgentCity_id.id %}
+                    <option selected="selected" value="{{c.id}}">{{c.cityName}}</option>
+                    
+                    {%endif%}
+                    <option  value="{{c.id}}">{{c.cityName}}</option>
+                {%endfor%}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-option">
+                <label for="city">Badge</label>
+                <select name="badge" class="search-select valid" class="form-control" aria-invalid="False">
+                 
+                  <option value="0"> Select Badge </option>
+                  {%for b in badges%}
+                  {%if b.id == agent.batch_id.id %}
+                    <option selected="selected" value="{{b.id}}">{{b.batch_name}}</option>
+                    
+                    {%endif%}
+                    <option  value="{{b.id}}">{{b.batch_name}}</option>
+                {%endfor%}
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="size">Select image </label>
+                <input type="file" name="img" accept="image/*" > 
+               
+               {%if agent.img%}
+                <input type="hidden"  name="old_img" value="{{agent.img}}">  
+                {%endif%}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                {%if agent.img%}
+                <label for="size">Agent image</label>
+                <img src="{{agent.img.url}}" alt="agent" width="150" height="150"> 
+                {%endif%}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+               
+                <label for="size">Feature? </label>
+                <select name="isFeatured" class="search-select valid" class="form-control" aria-invalid="False">
+                 
+                    <option value="False"> Select </option>
+                    {%if agent.isFeatured%}
+                      <option selected="selected" value="True">Featured</option>
+                      <option  value="False">Not Featured</option>
+                      {%else%}
+                      <option  value="True">Featured</option>
+                      <option  value="False">Not Featured</option>
+                    {%endif%}
+                  </select>
+                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary btn-flat btn-addon m-b-10 m-l-5 "><i class="ti-plus"></i>Update Agent info</button>
+        </div>
+
+  
+        <div class="col-md-6">
+            <p id="demo"></p>
+            {%if messages%}
+            {%for message in messages%}
+            {{message}}
+            {%endfor%}
+            {% endif %}
+           
+ 
+        </div>
+    </div>
+</div>
+</form>
+</div>
+{%endblock%}
