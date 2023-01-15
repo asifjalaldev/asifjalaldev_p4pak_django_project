@@ -1,5 +1,4 @@
- pip install django-jazzmin
- asgiref==3.4.1
+asgiref==3.4.1
 defusedxml==0.7.1
 diff-match-patch==20200713
 Django==4.0
